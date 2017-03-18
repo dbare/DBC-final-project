@@ -1,0 +1,10 @@
+<h1>All Job Postings</h1>
+
+<div>
+	<% @jobs.each do |job| %>
+		<p>Company: <%=job.company.name%></p>
+		<p>Postion: <%=job.position%></p>
+		<p>Description: <%=job.description%></p><br>
+	<% end %>
+</div>
+<%= link_to "Post a New Job", new_job_path %>
