@@ -10,20 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170318015050) do
+ActiveRecord::Schema.define(version: 20170318054437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "candidates", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.string   "photo"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -36,12 +26,12 @@ ActiveRecord::Schema.define(version: 20170318015050) do
   end
 
   create_table "contracts", force: :cascade do |t|
-    t.integer  "candidate_id"
+    t.integer  "user_id"
     t.integer  "project_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["candidate_id"], name: "index_contracts_on_candidate_id", using: :btree
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_contracts_on_project_id", using: :btree
+    t.index ["user_id"], name: "index_contracts_on_user_id", using: :btree
   end
 
   create_table "evaluations", force: :cascade do |t|
@@ -67,20 +57,20 @@ ActiveRecord::Schema.define(version: 20170318015050) do
     t.string   "link_type"
     t.string   "url"
     t.text     "description"
-    t.integer  "candidate_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["candidate_id"], name: "index_links_on_candidate_id", using: :btree
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_links_on_user_id", using: :btree
   end
 
   create_table "profiles", force: :cascade do |t|
     t.string   "location"
     t.text     "objective"
     t.text     "summary"
-    t.integer  "candidate_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["candidate_id"], name: "index_profiles_on_candidate_id", using: :btree
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
   end
 
   create_table "projects", force: :cascade do |t|
@@ -96,25 +86,36 @@ ActiveRecord::Schema.define(version: 20170318015050) do
 
   create_table "resumes", force: :cascade do |t|
     t.string   "file"
-    t.integer  "candidate_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["candidate_id"], name: "index_resumes_on_candidate_id", using: :btree
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_resumes_on_user_id", using: :btree
   end
 
   create_table "tokens", force: :cascade do |t|
     t.string   "characters"
-    t.integer  "candidate_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["candidate_id"], name: "index_tokens_on_candidate_id", using: :btree
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tokens_on_user_id", using: :btree
   end
 
-  add_foreign_key "contracts", "candidates"
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "photo"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "company_id"
+  end
+
   add_foreign_key "contracts", "projects"
+  add_foreign_key "contracts", "users"
   add_foreign_key "jobs", "companies"
-  add_foreign_key "links", "candidates"
-  add_foreign_key "profiles", "candidates"
+  add_foreign_key "links", "users"
+  add_foreign_key "profiles", "users"
   add_foreign_key "projects", "companies"
-  add_foreign_key "tokens", "candidates"
+  add_foreign_key "tokens", "users"
 end

@@ -1,3 +1,3 @@
 class Resume < ApplicationRecord
-	belongs_to :candidate, required: false
+	belongs_to :user, required: false
 end

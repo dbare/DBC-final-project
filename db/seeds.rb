@@ -1,27 +1,30 @@
-# Company.destroy_all
-# Candidate.destroy_all
-# Job.destroy_all
-# Project.destroy_all
-# Profile.destroy_all
-# Contract.destroy_all
-# Link.destroy_all
-# Evaluation.destroy_all
+Company.destroy_all
+User.destroy_all
+Job.destroy_all
+Project.destroy_all
+Profile.destroy_all
+Contract.destroy_all
+Link.destroy_all
+Evaluation.destroy_all
 
 
 # All sample candidates
-Candidate.create(first_name: "Ethan", last_name: "Fertsch", email: "efertsch@gmail.com", password: "password")
-Candidate.create(first_name: "Davison", last_name: "Bare", email: "davis@mail.com", password: "password")
-Candidate.create(first_name: "Kimberly", last_name: "Embry", email: "kim@mail.com", password: "password")
-Candidate.create(first_name: "Brian", last_name: "Bernheim", email: "brian@mail.com", password: "password")
-Candidate.create(first_name: "Jack", last_name: "Howerton", email: "jack@mail.com", password: "password")
+User.create(first_name: "Ethan", last_name: "Fertsch", email: "efertsch@gmail.com", password: "password")
+User.create(first_name: "Davison", last_name: "Bare", email: "davis@mail.com", password: "password")
+User.create(first_name: "Kimberly", last_name: "Embry", email: "kim@mail.com", password: "password")
+User.create(first_name: "Brian", last_name: "Bernheim", email: "brian@mail.com", password: "password")
+User.create(first_name: "Jack", last_name: "Howerton", email: "jack@mail.com", password: "password")
+
+# User that works for a company aka HR rep.
+User.create(first_name: "test", last_name: "test", email: "test", password: "test", company_id: 1)
 
 
 #All sample Profiles 
-Profile.create(location: "Greater Boston Area", objective: "Get a job building beautiful and meaningful things", summary: "My name is Ethan and I love dogs.", candidate_id: 1)
-Profile.create(location: "San Francisco Bay Area", objective: "Get a job building beautiful and meaningful things", summary: "My name is Davis and I love pizza.", candidate_id: 2)
-Profile.create(location: "San Francisco Bay Area", objective: "Get a job building beautiful and meaningful things", summary: "My name is Kim and I love looking on fleek at all times.", candidate_id: 3)
-Profile.create(location: "San Francisco Bay Area", objective: "Get a job building beautiful and meaningful things", summary: "My name is Jack and I love wearing flip flops in March. ", candidate_id: 4)
-Profile.create(location: "San Francisco Bay Area", objective: "Get a job building beautiful and meaningful things", summary: "My name is Brian and I love the word 'chill'", candidate_id: 5)
+Profile.create(location: "Greater Boston Area", objective: "Get a job building beautiful and meaningful things", summary: "My name is Ethan and I love dogs.", user_id: 1)
+Profile.create(location: "San Francisco Bay Area", objective: "Get a job building beautiful and meaningful things", summary: "My name is Davis and I love pizza.", user_id: 2)
+Profile.create(location: "San Francisco Bay Area", objective: "Get a job building beautiful and meaningful things", summary: "My name is Kim and I love looking on fleek at all times.", user_id: 3)
+Profile.create(location: "San Francisco Bay Area", objective: "Get a job building beautiful and meaningful things", summary: "My name is Jack and I love wearing flip flops in March. ", user_id: 4)
+Profile.create(location: "San Francisco Bay Area", objective: "Get a job building beautiful and meaningful things", summary: "My name is Brian and I love the word 'chill'", user_id: 5)
 
 
 
@@ -102,30 +105,30 @@ Project.create(title: "copy stuff", location: "New Leslie, North Dakota", descri
 Project.create(title: "migrations", location: "New Leslie, North Dakota", description: "Need a developer to configure my app", company_id: 9)
 
 # All Sample Contracts 
-Contract.create(candidate_id: 1, project_id: 4)
-Contract.create(candidate_id: 2, project_id: 9)
-Contract.create(candidate_id: 2, project_id: 6)
-Contract.create(candidate_id: 3, project_id: 15)
-Contract.create(candidate_id: 4, project_id: 1)
-Contract.create(candidate_id: 5, project_id: 7)
+Contract.create(user_id: 1, project_id: 4)
+Contract.create(user_id: 2, project_id: 9)
+Contract.create(user_id: 2, project_id: 6)
+Contract.create(user_id: 3, project_id: 15)
+Contract.create(user_id: 4, project_id: 1)
+Contract.create(user_id: 5, project_id: 7)
 
 
 
 # All Sample Links
 
 #GitHub
-Link.create(link_type: "Github", url: "https://github.com/efertsch", description: "Link to Gituhb" , candidate_id: 1)
-Link.create(link_type: "Github", url: "https://github.com/dbare", description: "Link to Gituhb", candidate_id: 2)
-Link.create(link_type: "Github", url: "https://github.com/kimberlyjoyceembry", description: "Link to Gituhb" , candidate_id: 3)
-Link.create(link_type: "Github", url: "https://github.com/jackhowerton", description: "Link to Gituhb" , candidate_id: 4)
-Link.create(link_type: "Github", url: "https://github.com/btbernheim", description: "Link to Gituhb", candidate_id: 5)
+Link.create(link_type: "Github", url: "https://github.com/efertsch", description: "Link to Gituhb" , user_id: 1)
+Link.create(link_type: "Github", url: "https://github.com/dbare", description: "Link to Gituhb", user_id: 2)
+Link.create(link_type: "Github", url: "https://github.com/kimberlyjoyceembry", description: "Link to Gituhb" , user_id: 3)
+Link.create(link_type: "Github", url: "https://github.com/jackhowerton", description: "Link to Gituhb" , user_id: 4)
+Link.create(link_type: "Github", url: "https://github.com/btbernheim", description: "Link to Gituhb", user_id: 5)
 
 #LinkedIn
-Link.create(link_type: "LinkedIn", url: "https://www.linkedin.com/in/ethan-fertsch/", description: "Link to LinkedIn", candidate_id: 1)
-Link.create(link_type: "LinkedIn", url: "https://www.linkedin.com/in/davis-bare/", description: "Link to LinkedIn", candidate_id: 2)
-Link.create(link_type: "LinkedIn", url: "https://www.linkedin.com/in/kimberly-embry-53346388/", description: "Link to LinkedIn", candidate_id: 3)
-Link.create(link_type: "LinkedIn", url: "https://www.linkedin.com/in/jackhowerton/", description: "Link to LinkedIn", candidate_id: 4)
-Link.create(link_type: "LinkedIn", url: "https://www.linkedin.com/in/brian-bernheim-67381665/", description: "Link to LinkedIn", candidate_id: 5)
+Link.create(link_type: "LinkedIn", url: "https://www.linkedin.com/in/ethan-fertsch/", description: "Link to LinkedIn", user_id: 1)
+Link.create(link_type: "LinkedIn", url: "https://www.linkedin.com/in/davis-bare/", description: "Link to LinkedIn", user_id: 2)
+Link.create(link_type: "LinkedIn", url: "https://www.linkedin.com/in/kimberly-embry-53346388/", description: "Link to LinkedIn", user_id: 3)
+Link.create(link_type: "LinkedIn", url: "https://www.linkedin.com/in/jackhowerton/", description: "Link to LinkedIn", user_id: 4)
+Link.create(link_type: "LinkedIn", url: "https://www.linkedin.com/in/brian-bernheim-67381665/", description: "Link to LinkedIn", user_id: 5)
 
 
 
@@ -135,5 +138,15 @@ Evaluation.create(review: "Excellent attention to detail with an eye for design"
 Evaluation.create(review: "Compassionate, consistently brought 110 percent to every aspect of project", rating: 5,  contract_id: 4)
 Evaluation.create(review: "Thorough and logical, an exceptional problem solver", rating: 5,  contract_id: 5)
 Evaluation.create(review: "Has a big ol' beard", rating: 5,  contract_id: 6)
+
+
+# All sample tokens
+Token.create(characters: "abc")
+Token.create(characters: "def")
+Token.create(characters: "ghi")
+Token.create(characters: "jkl")
+Token.create(characters: "mno")
+Token.create(characters: "pqr")
+
 
 
