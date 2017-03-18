@@ -1,0 +1,13 @@
+<h1>Information About <%= @company.name %></h1>
+
+<ul>
+	<% @company.jobs.each do |job| %>
+		<li><%= job.position %></li>
+	<% end %>
+</ul>
+
+<ul>
+	<% @company.projects.each do |project| %>
+		<li><%= job.project %></li>
+	<% end %>
+</ul>
