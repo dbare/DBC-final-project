@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 	resources :users
 	resources :projects
 
-	get '/team' => 'team#index'
-	get '/contact' => 'contact#index'
+	get '/team' => 'teams#index'
+	get '/contact' => 'contacts#index'
 
 	get '/login' => 'sessions#new'
 	post '/login' => 'sessions#create'
