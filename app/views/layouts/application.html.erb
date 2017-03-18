@@ -23,10 +23,10 @@
 		</ul>
 	</nav>
     <%= yield %>
-    <footer>
-    	<%= link_to "About", root_path %>
-    	<%= link_to "Contact", contact_path %>
-    	<%= link_to "Team", team_path %>
-    </footer>
+    <div class="text-center">
+      <center><div class="footer"><footer id="layout-footer" class="col-md-8 col-lg-8 text-center">
+        <%= link_to "About", root_path %>  |  <%= link_to "Contact", contact_path %>  |  <%= link_to "Team", team_path %>
+      </footer></div></center>
+    </div>
   </body>
 </html>

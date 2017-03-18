@@ -1,9 +1,7 @@
 <h1 class="text-center container col-md-8 col-lg-8">All Job Postings</h1>
 
-<<<<<<< HEAD
 <div class="text-center container col-md-8 col-lg-8">
-=======
-<div>
+
 	<%= search_form_for @search do |f| %>
 		<%= f.condition_fields do |c| %>
 		<div>
@@ -14,23 +12,24 @@
 			<%= c.value_fields do |v| %>
 				<%= v.text_field :value %>
 			<% end %>
+		</div>
+<% end %>
+<div id="search-buttons">
+	<div><%= f.submit "Search"%> </div>
+	<% end %>
+	<%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %>
 	</div>
-<% end %>
-<div><%= f.submit "Search"%> </div>
-<% end %>
-<%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %>
 </div>
 
 
 
 <div>
->>>>>>> c0dbf6cf5d504729e036035ca965d820c3228e84
 	<% @jobs.each do |job| %>
-		<div  id="job-container">
+		<div class="text-center container col-lg-8 col-md-8" id="job-container">
 			<p><strong>Position:</strong><br> <%=job.position%></p>
 			<p><strong>Description:</strong><br><%=job.description%></p><br>
 		</div>
 	<% end %>
 </div>
 
-<%= link_to "Post a New Job", new_job_path %>
+<div class="text-center"><%= link_to "Post a New Job", new_job_path %></div>
