@@ -13,6 +13,8 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_params)
+		@companies = Company.all
+		Profile.create(user_id: @user.id)
 		@token = Token.find_by(characters: params[:user][:unique_token])
 
 		if @token && @token.used? == false && @user.save
@@ -20,13 +22,6 @@ class UsersController < ApplicationController
 			login
 			redirect_to @user
 		else
-			
-			# if @user.company_id != nil
-			# 	render "new", locals: {:@user_type => HR}
-			# else
-			# 	render 'new'
-			# end
-
 			render 'new'
 		end
 	end
