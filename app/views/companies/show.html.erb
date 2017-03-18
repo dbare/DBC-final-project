@@ -1,0 +1,27 @@
+<h1>Information About <%= @company.name %></h1>
+
+<div>
+	<p>Location: <%= @company.location %></p>
+	<p>Email: <%= @company.email %></p>
+	<p>Logo: <%= @company.logo %></p>
+</div>
+
+<h2>Open Job Posiitons</h2>
+
+<div>
+	<ul>
+		<% @company.jobs.each do |job| %>
+			<li><%= link_to "#{job.position}", job_path(job) %></li>
+		<% end %>
+	</ul>
+</div>
+
+<h2>Open Freelance Positions</h2>
+
+<div>
+	<ul>
+		<% @company.projects.each do |project| %>
+			<li><%= job.project %></li>
+		<% end %>
+	</ul>
+</div>

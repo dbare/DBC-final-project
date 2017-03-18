@@ -49,6 +49,8 @@ gem 'rubocop'
 
 gem 'shoulda-matchers'
 
+gem 'ckeditor', '4.1.3'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

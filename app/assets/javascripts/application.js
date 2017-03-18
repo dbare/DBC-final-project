@@ -15,4 +15,5 @@
 //= require bootstrap
 //= require tether
 //= require turbolinks
+//= require ckeditor/init
 //= require_tree .
