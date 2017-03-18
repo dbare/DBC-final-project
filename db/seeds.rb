@@ -1,11 +1,11 @@
-Company.destroy_all
-User.destroy_all
-Job.destroy_all
-Project.destroy_all
-Profile.destroy_all
-Contract.destroy_all
-Link.destroy_all
-Evaluation.destroy_all
+# Company.destroy_all
+# User.destroy_all
+# Job.destroy_all
+# Project.destroy_all
+# Profile.destroy_all
+# Contract.destroy_all
+# Link.destroy_all
+# Evaluation.destroy_all
 
 
 # All sample candidates
