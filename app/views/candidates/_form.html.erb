@@ -1,0 +1,7 @@
+<%= simple_form_for @candidate do |f| %>
+	<%= f.error_notification %>
+	<%= f.input :name, label: 'Company Name', error: 'Company is mandatory, please specify one' %>
+	<%= f.input :password, label: 'Password' %>
+	<%= f.input :email, label: 'Email' placeholder: 'company@domain.com' %>
+	<%= f.button :submit %>
+<% end %>
