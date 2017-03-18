@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 
+	def index
+		@boots = User.where(company_id: nil)
+		render 'boots_index'
+	end
+
 	def new
 		@user = User.new
 		@companies = Company.all
@@ -28,6 +33,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		@profile = @user.profile
 	end
 
 	private
