@@ -21,6 +21,11 @@ class UsersController < ApplicationController
 
 		if @token && @token.used? == false && @user.save
 			@token.update_attribute(:user_id, @user.id)
+			
+			if @token.admin_token
+				@user.update_attribute(:admin_status, true)
+			end
+			
 			login
 			redirect_to @user
 		else
