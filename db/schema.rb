@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317212516) do
+ActiveRecord::Schema.define(version: 20170318015050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20170317212516) do
   end
 
   create_table "links", force: :cascade do |t|
-    t.string   "type"
+    t.string   "link_type"
     t.string   "url"
     t.text     "description"
     t.integer  "candidate_id"
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 20170317212516) do
     t.integer  "company_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "title"
     t.index ["company_id"], name: "index_projects_on_company_id", using: :btree
   end
 
@@ -111,7 +112,6 @@ ActiveRecord::Schema.define(version: 20170317212516) do
 
   add_foreign_key "contracts", "candidates"
   add_foreign_key "contracts", "projects"
-  add_foreign_key "evaluations", "contracts"
   add_foreign_key "jobs", "companies"
   add_foreign_key "links", "candidates"
   add_foreign_key "profiles", "candidates"

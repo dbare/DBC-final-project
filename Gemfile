@@ -45,6 +45,8 @@ gem 'rubocop'
 
 gem 'shoulda-matchers'
 
+gem 'figaro'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
