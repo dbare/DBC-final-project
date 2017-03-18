@@ -1,0 +1,10 @@
+<h1>All Freelance Projects</h1>
+
+<div>
+	<% @projects.each do |project| %>
+		<p>Location: <%=project.position%></p>
+		<p>Description: <%=project.description%></p><br>
+	<% end %>
+</div>
+
+<%= link_to "Post a New Project", new_project_path %>
