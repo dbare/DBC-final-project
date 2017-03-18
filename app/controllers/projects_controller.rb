@@ -3,8 +3,14 @@ class ProjectsController < ApplicationController
 	before_action :find_project, except: [:index, :new, :create]
 
 	def index
-		@projects = Project.all 
-	end
+		@search = Project.search(params[:q])
+		if @search 
+			@search.build_condition
+			@projects = @search.result
+		else 
+			@projects = Project.all
+		end 
+	end 
 
 	def new
 		@project = Project.new
