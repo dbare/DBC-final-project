@@ -1,9 +1,9 @@
-<h1>All Job Postings</h1>
+<h1 class="container col-md-8 col-lg-8">All Job Postings</h1>
 
-<div>
+<div class="container col-md-8 col-lg-8">
 	<% @jobs.each do |job| %>
-		<p>Position: <%=job.position%></p>
-		<p>Description: <%=job.description%></p><br>
+		<p><strong>Position:</strong><br> <%=job.position%></p>
+		<p><strong>Description:</strong><br><%=job.description%></p><br>
 	<% end %>
 </div>
 
