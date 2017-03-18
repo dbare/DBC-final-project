@@ -1,3 +1,12 @@
 Rails.application.routes.draw do
-  resources :jobs 
+  
+	root "application#index"
+
+	resources :jobs 
+	resources :users
+
+	get '/login' => 'sessions#new'
+	post '/login' => 'sessions#create'
+	get '/logout' => 'sessions#destroy'
+
 end
