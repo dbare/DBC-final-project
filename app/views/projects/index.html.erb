@@ -23,6 +23,7 @@
 
 <div>
 	<% @projects.each do |project| %>
+		<h3> ProjectID: <%= link_to project.id, project_path(project) %> </h3>
 		<p>Location: <%=project.location%></p>
 		<p>Description: <%=project.description%></p>
 		<p>Compensation: <%=project.compensation%></p><br>
