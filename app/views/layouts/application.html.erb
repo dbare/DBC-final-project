@@ -22,9 +22,9 @@
 			<%end%>
 		</ul>
 	</nav>
-    <div style="color:red;">
-     <% flash.each do |key, value| %>
-        <div class="alert<%= key %>"><%= value %></div>
+    <div>
+      <% flash.each do |key, value| %>
+        <div style="color:red; "class="alert <%= key %>"><%= value %></div>
       <% end %>
     </div>
     <%= yield %>
