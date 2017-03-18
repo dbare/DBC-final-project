@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 	resources :jobs 
 	resources :users
 	resources :projects
+	resources :companies
+
 
 	get '/team' => 'teams#index'
 	get '/contact' => 'contacts#index'

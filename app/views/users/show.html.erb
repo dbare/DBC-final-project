@@ -1,0 +1,37 @@
+<h3><%= @user.full_name %>'s Profile:</h3>
+
+<!-- <br> -->
+<!-- <br> -->
+
+<strong>Contact:</strong>
+<%= @user.email %>
+
+<br>
+<br>
+
+
+<strong>Photo:</strong>
+<%= @user.photo %>
+
+
+<br>
+<br>
+
+<strong>About Me:</strong>
+<ul>
+	<li>Location: <%= @profile.location %></li>
+	<li>Objective: <%= @profile.objective %></li>
+	<li>Summary: <%= @profile.summary %></li>
+</ul>
+
+
+
+
+<strong>Current Projects:</strong>
+<ul>
+<% @user.projects.each do |project|%>
+	<li><%= link_to "#{project.title} (#{project.company.name})", project_path(project)%> </li>
+<%end%>
+</ul>
+
+
