@@ -111,7 +111,6 @@ ActiveRecord::Schema.define(version: 20170318004440) do
 
   add_foreign_key "contracts", "candidates"
   add_foreign_key "contracts", "projects"
-  add_foreign_key "evaluations", "contracts"
   add_foreign_key "jobs", "companies"
   add_foreign_key "links", "candidates"
   add_foreign_key "profiles", "candidates"

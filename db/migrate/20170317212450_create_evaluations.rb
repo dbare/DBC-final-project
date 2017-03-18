@@ -3,7 +3,7 @@ class CreateEvaluations < ActiveRecord::Migration[5.0]
     create_table :evaluations do |t|
       t.text :review
       t.integer :rating
-      t.references :contract, foreign_key: true
+      t.references :contract
 
       t.timestamps
     end

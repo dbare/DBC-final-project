@@ -2415,3 +2415,773 @@ Migrating to ChangeTypeColInLinks (20170318004440)
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "evaluations" ("review", "rating", "contract_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["review", "Compassionate, consistently brought 110 percent to every aspect of project"], ["rating", 5], ["contract_id", 4], ["created_at", 2017-03-18 00:49:06 UTC], ["updated_at", 2017-03-18 00:49:06 UTC]]
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCandidate Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "candidates" WHERE "candidates"."email" = $1 LIMIT $2[0m  [["email", "efertsch@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCandidate Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "candidates" WHERE "candidates"."email" = $1 LIMIT $2[0m  [["email", "davis@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCandidate Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "candidates" WHERE "candidates"."email" = $1 LIMIT $2[0m  [["email", "kim@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCandidate Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "candidates" WHERE "candidates"."email" = $1 LIMIT $2[0m  [["email", "brian@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCandidate Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "candidates" WHERE "candidates"."email" = $1 LIMIT $2[0m  [["email", "jack@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "profiles" ("location", "objective", "summary", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["location", "Greater Boston Area"], ["objective", "Get a job building beautiful and meaningful things"], ["summary", "My name is Ethan and I love dogs."], ["candidate_id", 1], ["created_at", 2017-03-18 00:59:05 UTC], ["updated_at", 2017-03-18 00:59:05 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "profiles" ("location", "objective", "summary", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["location", "San Francisco Bay Area"], ["objective", "Get a job building beautiful and meaningful things"], ["summary", "My name is Davis and I love pizza."], ["candidate_id", 2], ["created_at", 2017-03-18 00:59:05 UTC], ["updated_at", 2017-03-18 00:59:05 UTC]]
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "profiles" ("location", "objective", "summary", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["location", "San Francisco Bay Area"], ["objective", "Get a job building beautiful and meaningful things"], ["summary", "My name is Kim and I love looking on fleek at all times."], ["candidate_id", 3], ["created_at", 2017-03-18 00:59:05 UTC], ["updated_at", 2017-03-18 00:59:05 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "profiles" ("location", "objective", "summary", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["location", "San Francisco Bay Area"], ["objective", "Get a job building beautiful and meaningful things"], ["summary", "My name is Jack and I love wearing flip flops in March. "], ["candidate_id", 4], ["created_at", 2017-03-18 00:59:05 UTC], ["updated_at", 2017-03-18 00:59:05 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "profiles" ("location", "objective", "summary", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["location", "San Francisco Bay Area"], ["objective", "Get a job building beautiful and meaningful things"], ["summary", "My name is Brian and I love the word 'chill'"], ["candidate_id", 5], ["created_at", 2017-03-18 00:59:05 UTC], ["updated_at", 2017-03-18 00:59:05 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "cry@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "hpw@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "cwb@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "hk@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "swo@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "jacobson@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", " hkoelpin@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "ledner@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "ca@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "br@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Immersive Conduct Commentator"], ["location", "Klingburgh, Michigan"], ["description", "Duties include syndicating sexy convergence and synthesizing e-business models"], ["company_id", 1], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Decisive Branding Reporter"], ["location", "Klingburgh, Michigan"], ["description", "Duties include empowering 24/7 bandwidth and integrating wearable paradigms"], ["company_id", 1], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Lead Infrastructure Engineer"], ["location", "Cydneyport, Colorado"], ["description", "Duties include implementing end-to-end synergies and strategizing real-time partnerships"], ["company_id", 2], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Legacy Empowerment Planner"], ["location", "Cydneyport, Colorado"], ["description", "Duties include synergizing global niches and empowering viral mindshare"], ["company_id", 2], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Systematic Diversity Analyst"], ["location", "Cydneyport, Colorado"], ["description", "Duties include benchmarking killer paradigms and reinventing real-time models"], ["company_id", 2], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Location-Aware Clickthrough Evangelist"], ["location", "Hettingerville, Virginia"], ["description", "Duties include evolving front-end web-readiness and incubating viral initiatives"], ["company_id", 3], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Real-Time Share Options Discoverer"], ["location", "Rolandostad, Nevada"], ["description", "Duties include grow dot-com convergence and enabling killer infrastructures"], ["company_id", 4], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Social Software Technician"], ["location", "Rolandostad, Nevada"], ["description", "Duties include integrating disintermediate 24/7 technologies and maximizing bleeding-edge platforms"], ["company_id", 4], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Lead Infrastructure Engineer"], ["location", "San Francisco, California"], ["description", "Duties include facilitating virtual e-tailers and incentivizing B2B communities"], ["company_id", 6], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Legacy Empowerment Planner"], ["location", "San Francisco, California"], ["description", "Duties include harnessing front-end vortals and reinventing granular technologies"], ["company_id", 6], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Systematic Diversity Analyst"], ["location", "San Francisco, California"], ["description", "Duties include syndicating frictionless e-markets and mesh viral relationships"], ["company_id", 6], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Localized Paradigm Blogger"], ["location", "East Mckenzie, Tennessee"], ["description", "Duties include evolving value-added channels with an uncanny ability to orchestrate distributed functionalities"], ["company_id", 10], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Off Shore Module Guru"], ["location", "East Mckenzie, Tennessee"], ["description", "Duties include synthesizing efficient mindshare and targeting extensible partnerships"], ["company_id", 10], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Human Identity Discoverer"], ["location", "East Mckenzie, Tennessee"], ["description", "Duties include orchestrating sticky convergence and fulfilling the office ukelele supply"], ["company_id", 10], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Streamlined Tactics Orchestrator"], ["location", "East Mckenzie, Tennessee"], ["description", "Duties include aggregating wearable initiatives with clicks-and-mortar infomediaries"], ["company_id", 10], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Global Social Media Theorist"], ["location", "East Mckenzie, Tennessee"], ["description", "Duties include seizing and dominating dot-com supply-chains"], ["company_id", 10], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "End User Synergy Instructor"], ["location", "East Mckenzie, Tennessee"], ["description", "Duties include maximizing dynamic hashtags and drinking coffee alone"], ["company_id", 10], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to update the footer of my website"], ["location", "Hettingerville, Virginia"], ["company_id", 3], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to explain to me what a ruby is"], ["location", "Hettingerville, Virginia"], ["company_id", 3], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to help energize my team"], ["location", "Hettingerville, Virginia"], ["company_id", 3], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to organize an internal hackathon"], ["location", "Hettingerville, Virginia"], ["company_id", 3], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to DRY up my codebase"], ["location", "Hettingerville, Virginia"], ["company_id", 3], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to optimize my algorithms"], ["location", "Joeymouth, Wyoming"], ["company_id", 5], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to write a gem"], ["location", "Ibrahimberg, Nebraska"], ["company_id", 7], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to make our site dynamic"], ["location", "Ibrahimberg, Nebraska"], ["company_id", 7], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to fix a bug"], ["location", "Trantowfort, Ohio"], ["company_id", 6], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to google it for me"], ["location", "Trantowfort, Ohio"], ["company_id", 6], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to mentor interns"], ["location", "Trantowfort, Ohio"], ["company_id", 8], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to promote diversity in the space"], ["location", "Trantowfort, Ohio"], ["company_id", 8], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to illustrate a schema"], ["location", "New Leslie, North Dakota"], ["company_id", 9], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to set up a server"], ["location", "New Leslie, North Dakota"], ["company_id", 9], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to configure my app"], ["location", "New Leslie, North Dakota"], ["company_id", 9], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "contracts" ("candidate_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["candidate_id", 1], ["project_id", 4], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contracts" ("candidate_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["candidate_id", 2], ["project_id", 9], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contracts" ("candidate_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["candidate_id", 2], ["project_id", 6], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contracts" ("candidate_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["candidate_id", 3], ["project_id", 15], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contracts" ("candidate_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["candidate_id", 4], ["project_id", 1], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contracts" ("candidate_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["candidate_id", 5], ["project_id", 7], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "Github"], ["url", "https://github.com/efertsch"], ["description", "Link to Gituhb"], ["candidate_id", 1], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "Github"], ["url", "https://github.com/dbare"], ["description", "Link to Gituhb"], ["candidate_id", 2], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "Github"], ["url", "https://github.com/kimberlyjoyceembry"], ["description", "Link to Gituhb"], ["candidate_id", 3], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "Github"], ["url", "https://github.com/jackhowerton"], ["description", "Link to Gituhb"], ["candidate_id", 4], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "Github"], ["url", "https://github.com/btbernheim"], ["description", "Link to Gituhb"], ["candidate_id", 5], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "LinkedIn"], ["url", "https://www.linkedin.com/in/ethan-fertsch/"], ["description", "Link to LinkedIn"], ["candidate_id", 1], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "LinkedIn"], ["url", "https://www.linkedin.com/in/davis-bare/"], ["description", "Link to LinkedIn"], ["candidate_id", 2], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "LinkedIn"], ["url", "https://www.linkedin.com/in/kimberly-embry-53346388/"], ["description", "Link to LinkedIn"], ["candidate_id", 3], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "LinkedIn"], ["url", "https://www.linkedin.com/in/jackhowerton/"], ["description", "Link to LinkedIn"], ["candidate_id", 4], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "LinkedIn"], ["url", "https://www.linkedin.com/in/brian-bernheim-67381665/"], ["description", "Link to LinkedIn"], ["candidate_id", 5], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "evaluations" ("review", "rating", "contract_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["review", "Exceeds expectations, brings unmatched enthusiasm to the project"], ["rating", 5], ["contract_id", 1], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "evaluations" ("review", "rating", "contract_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["review", "Excellent attention to detail with an eye for design"], ["rating", 5], ["contract_id", 2], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "evaluations" ("review", "rating", "contract_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["review", "Compassionate, consistently brought 110 percent to every aspect of project"], ["rating", 5], ["contract_id", 4], ["created_at", 2017-03-18 00:59:06 UTC], ["updated_at", 2017-03-18 00:59:06 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCandidate Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "candidates" WHERE "candidates"."email" = $1 LIMIT $2[0m  [["email", "efertsch@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCandidate Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "candidates" WHERE "candidates"."email" = $1 LIMIT $2[0m  [["email", "davis@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCandidate Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "candidates" WHERE "candidates"."email" = $1 LIMIT $2[0m  [["email", "kim@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCandidate Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "candidates" WHERE "candidates"."email" = $1 LIMIT $2[0m  [["email", "brian@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCandidate Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "candidates" WHERE "candidates"."email" = $1 LIMIT $2[0m  [["email", "jack@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "profiles" ("location", "objective", "summary", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["location", "Greater Boston Area"], ["objective", "Get a job building beautiful and meaningful things"], ["summary", "My name is Ethan and I love dogs."], ["candidate_id", 1], ["created_at", 2017-03-18 01:01:33 UTC], ["updated_at", 2017-03-18 01:01:33 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "profiles" ("location", "objective", "summary", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["location", "San Francisco Bay Area"], ["objective", "Get a job building beautiful and meaningful things"], ["summary", "My name is Davis and I love pizza."], ["candidate_id", 2], ["created_at", 2017-03-18 01:01:33 UTC], ["updated_at", 2017-03-18 01:01:33 UTC]]
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "profiles" ("location", "objective", "summary", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["location", "San Francisco Bay Area"], ["objective", "Get a job building beautiful and meaningful things"], ["summary", "My name is Kim and I love looking on fleek at all times."], ["candidate_id", 3], ["created_at", 2017-03-18 01:01:33 UTC], ["updated_at", 2017-03-18 01:01:33 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "profiles" ("location", "objective", "summary", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["location", "San Francisco Bay Area"], ["objective", "Get a job building beautiful and meaningful things"], ["summary", "My name is Jack and I love wearing flip flops in March. "], ["candidate_id", 4], ["created_at", 2017-03-18 01:01:33 UTC], ["updated_at", 2017-03-18 01:01:33 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "profiles" ("location", "objective", "summary", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["location", "San Francisco Bay Area"], ["objective", "Get a job building beautiful and meaningful things"], ["summary", "My name is Brian and I love the word 'chill'"], ["candidate_id", 5], ["created_at", 2017-03-18 01:01:33 UTC], ["updated_at", 2017-03-18 01:01:33 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "cry@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "hpw@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "cwb@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "hk@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "swo@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "jacobson@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", " hkoelpin@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "ledner@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "ca@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "br@mail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Immersive Conduct Commentator"], ["location", "Klingburgh, Michigan"], ["description", "Duties include syndicating sexy convergence and synthesizing e-business models"], ["company_id", 1], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Decisive Branding Reporter"], ["location", "Klingburgh, Michigan"], ["description", "Duties include empowering 24/7 bandwidth and integrating wearable paradigms"], ["company_id", 1], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Lead Infrastructure Engineer"], ["location", "Cydneyport, Colorado"], ["description", "Duties include implementing end-to-end synergies and strategizing real-time partnerships"], ["company_id", 2], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Legacy Empowerment Planner"], ["location", "Cydneyport, Colorado"], ["description", "Duties include synergizing global niches and empowering viral mindshare"], ["company_id", 2], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Systematic Diversity Analyst"], ["location", "Cydneyport, Colorado"], ["description", "Duties include benchmarking killer paradigms and reinventing real-time models"], ["company_id", 2], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Location-Aware Clickthrough Evangelist"], ["location", "Hettingerville, Virginia"], ["description", "Duties include evolving front-end web-readiness and incubating viral initiatives"], ["company_id", 3], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Real-Time Share Options Discoverer"], ["location", "Rolandostad, Nevada"], ["description", "Duties include grow dot-com convergence and enabling killer infrastructures"], ["company_id", 4], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Social Software Technician"], ["location", "Rolandostad, Nevada"], ["description", "Duties include integrating disintermediate 24/7 technologies and maximizing bleeding-edge platforms"], ["company_id", 4], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Lead Infrastructure Engineer"], ["location", "San Francisco, California"], ["description", "Duties include facilitating virtual e-tailers and incentivizing B2B communities"], ["company_id", 6], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Legacy Empowerment Planner"], ["location", "San Francisco, California"], ["description", "Duties include harnessing front-end vortals and reinventing granular technologies"], ["company_id", 6], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Systematic Diversity Analyst"], ["location", "San Francisco, California"], ["description", "Duties include syndicating frictionless e-markets and mesh viral relationships"], ["company_id", 6], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Localized Paradigm Blogger"], ["location", "East Mckenzie, Tennessee"], ["description", "Duties include evolving value-added channels with an uncanny ability to orchestrate distributed functionalities"], ["company_id", 10], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Off Shore Module Guru"], ["location", "East Mckenzie, Tennessee"], ["description", "Duties include synthesizing efficient mindshare and targeting extensible partnerships"], ["company_id", 10], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Human Identity Discoverer"], ["location", "East Mckenzie, Tennessee"], ["description", "Duties include orchestrating sticky convergence and fulfilling the office ukelele supply"], ["company_id", 10], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Streamlined Tactics Orchestrator"], ["location", "East Mckenzie, Tennessee"], ["description", "Duties include aggregating wearable initiatives with clicks-and-mortar infomediaries"], ["company_id", 10], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Global Social Media Theorist"], ["location", "East Mckenzie, Tennessee"], ["description", "Duties include seizing and dominating dot-com supply-chains"], ["company_id", 10], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "End User Synergy Instructor"], ["location", "East Mckenzie, Tennessee"], ["description", "Duties include maximizing dynamic hashtags and drinking coffee alone"], ["company_id", 10], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to update the footer of my website"], ["location", "Hettingerville, Virginia"], ["company_id", 3], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to explain to me what a ruby is"], ["location", "Hettingerville, Virginia"], ["company_id", 3], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to help energize my team"], ["location", "Hettingerville, Virginia"], ["company_id", 3], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to organize an internal hackathon"], ["location", "Hettingerville, Virginia"], ["company_id", 3], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to DRY up my codebase"], ["location", "Hettingerville, Virginia"], ["company_id", 3], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to optimize my algorithms"], ["location", "Joeymouth, Wyoming"], ["company_id", 5], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to write a gem"], ["location", "Ibrahimberg, Nebraska"], ["company_id", 7], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to make our site dynamic"], ["location", "Ibrahimberg, Nebraska"], ["company_id", 7], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to fix a bug"], ["location", "Trantowfort, Ohio"], ["company_id", 6], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to google it for me"], ["location", "Trantowfort, Ohio"], ["company_id", 6], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to mentor interns"], ["location", "Trantowfort, Ohio"], ["company_id", 8], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to promote diversity in the space"], ["location", "Trantowfort, Ohio"], ["company_id", 8], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to illustrate a schema"], ["location", "New Leslie, North Dakota"], ["company_id", 9], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to set up a server"], ["location", "New Leslie, North Dakota"], ["company_id", 9], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to configure my app"], ["location", "New Leslie, North Dakota"], ["company_id", 9], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "contracts" ("candidate_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["candidate_id", 1], ["project_id", 4], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "contracts" ("candidate_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["candidate_id", 2], ["project_id", 9], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contracts" ("candidate_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["candidate_id", 2], ["project_id", 6], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contracts" ("candidate_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["candidate_id", 3], ["project_id", 15], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contracts" ("candidate_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["candidate_id", 4], ["project_id", 1], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contracts" ("candidate_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["candidate_id", 5], ["project_id", 7], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "Github"], ["url", "https://github.com/efertsch"], ["description", "Link to Gituhb"], ["candidate_id", 1], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "Github"], ["url", "https://github.com/dbare"], ["description", "Link to Gituhb"], ["candidate_id", 2], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "Github"], ["url", "https://github.com/kimberlyjoyceembry"], ["description", "Link to Gituhb"], ["candidate_id", 3], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "Github"], ["url", "https://github.com/jackhowerton"], ["description", "Link to Gituhb"], ["candidate_id", 4], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "Github"], ["url", "https://github.com/btbernheim"], ["description", "Link to Gituhb"], ["candidate_id", 5], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "LinkedIn"], ["url", "https://www.linkedin.com/in/ethan-fertsch/"], ["description", "Link to LinkedIn"], ["candidate_id", 1], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "LinkedIn"], ["url", "https://www.linkedin.com/in/davis-bare/"], ["description", "Link to LinkedIn"], ["candidate_id", 2], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "LinkedIn"], ["url", "https://www.linkedin.com/in/kimberly-embry-53346388/"], ["description", "Link to LinkedIn"], ["candidate_id", 3], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "LinkedIn"], ["url", "https://www.linkedin.com/in/jackhowerton/"], ["description", "Link to LinkedIn"], ["candidate_id", 4], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "LinkedIn"], ["url", "https://www.linkedin.com/in/brian-bernheim-67381665/"], ["description", "Link to LinkedIn"], ["candidate_id", 5], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "evaluations" ("review", "rating", "contract_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["review", "Exceeds expectations, brings unmatched enthusiasm to the project"], ["rating", 5], ["contract_id", 1], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "evaluations" ("review", "rating", "contract_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["review", "Excellent attention to detail with an eye for design"], ["rating", 5], ["contract_id", 2], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "evaluations" ("review", "rating", "contract_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["review", "Compassionate, consistently brought 110 percent to every aspect of project"], ["rating", 5], ["contract_id", 4], ["created_at", 2017-03-18 01:01:34 UTC], ["updated_at", 2017-03-18 01:01:34 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (123.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "code_connect_development"[0m
+  [1m[35m (121.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "code_connect_test"[0m
+  [1m[35m (495.3ms)[0m  [1m[35mCREATE DATABASE "code_connect_development" ENCODING = 'unicode'[0m
+  [1m[35m (703.4ms)[0m  [1m[35mCREATE DATABASE "code_connect_test" ENCODING = 'unicode'[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7983525966442521915);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCandidates (20170317212403)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "candidates" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "password_digest" character varying, "photo" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170317212403"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLinks (20170317212415)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "links" ("id" serial primary key, "type" character varying, "url" character varying, "description" text, "candidate_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_0764b407c2"
+FOREIGN KEY ("candidate_id")
+  REFERENCES "candidates" ("id")
+)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_links_on_candidate_id" ON "links"  ("candidate_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170317212415"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCompanies (20170317212426)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "companies" ("id" serial primary key, "name" character varying, "location" character varying, "email" character varying, "logo" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170317212426"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJobs (20170317212431)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "jobs" ("id" serial primary key, "position" character varying, "location" character varying, "description" text, "company_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b34da78090"
+FOREIGN KEY ("company_id")
+  REFERENCES "companies" ("id")
+)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_jobs_on_company_id" ON "jobs"  ("company_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170317212431"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProjects (20170317212436)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "projects" ("id" serial primary key, "description" text, "location" character varying, "compensation" character varying, "company_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_44a549d7b3"
+FOREIGN KEY ("company_id")
+  REFERENCES "companies" ("id")
+)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_projects_on_company_id" ON "projects"  ("company_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170317212436"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContracts (20170317212441)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "contracts" ("id" serial primary key, "candidate_id" integer, "project_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_e11b0b053e"
+FOREIGN KEY ("candidate_id")
+  REFERENCES "candidates" ("id")
+, CONSTRAINT "fk_rails_6746a71977"
+FOREIGN KEY ("project_id")
+  REFERENCES "projects" ("id")
+)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_contracts_on_candidate_id" ON "contracts"  ("candidate_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_contracts_on_project_id" ON "contracts"  ("project_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170317212441"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEvaluations (20170317212450)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "evaluations" ("id" serial primary key, "review" text, "rating" integer, "contract_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_evaluations_on_contract_id" ON "evaluations"  ("contract_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170317212450"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTokens (20170317212456)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "tokens" ("id" serial primary key, "characters" character varying, "candidate_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_7236760d2f"
+FOREIGN KEY ("candidate_id")
+  REFERENCES "candidates" ("id")
+)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_tokens_on_candidate_id" ON "tokens"  ("candidate_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170317212456"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProfiles (20170317212509)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" serial primary key, "location" character varying, "objective" text, "summary" text, "candidate_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_4bcf89c51b"
+FOREIGN KEY ("candidate_id")
+  REFERENCES "candidates" ("id")
+)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_profiles_on_candidate_id" ON "profiles"  ("candidate_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170317212509"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateResumes (20170317212516)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "resumes" ("id" serial primary key, "file" character varying, "candidate_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_resumes_on_candidate_id" ON "resumes"  ("candidate_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170317212516"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeTypeColInLinks (20170318004440)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "links" RENAME COLUMN "type" TO "link_type"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170318004440"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-18 01:02:02 UTC], ["updated_at", 2017-03-18 01:02:02 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7983525966442521915)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCandidate Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "candidates" WHERE "candidates"."email" = $1 LIMIT $2[0m  [["email", "efertsch@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "candidates" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Ethan"], ["last_name", "Fertsch"], ["email", "efertsch@gmail.com"], ["password_digest", "$2a$10$8yZCQ8bIPluVMJKZSS5e3OBWE7kwuzd4NBeXssDxFXQTbgyRHA8PS"], ["created_at", 2017-03-18 01:02:12 UTC], ["updated_at", 2017-03-18 01:02:12 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCandidate Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "candidates" WHERE "candidates"."email" = $1 LIMIT $2[0m  [["email", "davis@mail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "candidates" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Davison"], ["last_name", "Bare"], ["email", "davis@mail.com"], ["password_digest", "$2a$10$AH5sImJbkEYhHacJvRflPuZX8pwcNYUQAW45JPhJ2nM0hWgYu8xUC"], ["created_at", 2017-03-18 01:02:12 UTC], ["updated_at", 2017-03-18 01:02:12 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCandidate Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "candidates" WHERE "candidates"."email" = $1 LIMIT $2[0m  [["email", "kim@mail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "candidates" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Kimberly"], ["last_name", "Embry"], ["email", "kim@mail.com"], ["password_digest", "$2a$10$5HxhDFhinAokfrsbOyOhQe6Itwrmm5B42WEOI2HdMzj5FlvZTayFK"], ["created_at", 2017-03-18 01:02:12 UTC], ["updated_at", 2017-03-18 01:02:12 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCandidate Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "candidates" WHERE "candidates"."email" = $1 LIMIT $2[0m  [["email", "brian@mail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "candidates" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Brian"], ["last_name", "Bernheim"], ["email", "brian@mail.com"], ["password_digest", "$2a$10$Ro/00KH55YUXukWE4HGDkOf1ujyQsVgQeaHnuO6ViDKk4AJUw/ACu"], ["created_at", 2017-03-18 01:02:12 UTC], ["updated_at", 2017-03-18 01:02:12 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCandidate Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "candidates" WHERE "candidates"."email" = $1 LIMIT $2[0m  [["email", "jack@mail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "candidates" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Jack"], ["last_name", "Howerton"], ["email", "jack@mail.com"], ["password_digest", "$2a$10$rubMYieDhrihWejd.f5AKOAExLgIW9DNhcsVSmFjz5doq6NWCzT0a"], ["created_at", 2017-03-18 01:02:12 UTC], ["updated_at", 2017-03-18 01:02:12 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "profiles" ("location", "objective", "summary", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["location", "Greater Boston Area"], ["objective", "Get a job building beautiful and meaningful things"], ["summary", "My name is Ethan and I love dogs."], ["candidate_id", 1], ["created_at", 2017-03-18 01:02:12 UTC], ["updated_at", 2017-03-18 01:02:12 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "profiles" ("location", "objective", "summary", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["location", "San Francisco Bay Area"], ["objective", "Get a job building beautiful and meaningful things"], ["summary", "My name is Davis and I love pizza."], ["candidate_id", 2], ["created_at", 2017-03-18 01:02:12 UTC], ["updated_at", 2017-03-18 01:02:12 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "profiles" ("location", "objective", "summary", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["location", "San Francisco Bay Area"], ["objective", "Get a job building beautiful and meaningful things"], ["summary", "My name is Kim and I love looking on fleek at all times."], ["candidate_id", 3], ["created_at", 2017-03-18 01:02:12 UTC], ["updated_at", 2017-03-18 01:02:12 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "profiles" ("location", "objective", "summary", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["location", "San Francisco Bay Area"], ["objective", "Get a job building beautiful and meaningful things"], ["summary", "My name is Jack and I love wearing flip flops in March. "], ["candidate_id", 4], ["created_at", 2017-03-18 01:02:12 UTC], ["updated_at", 2017-03-18 01:02:12 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "profiles" ("location", "objective", "summary", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["location", "San Francisco Bay Area"], ["objective", "Get a job building beautiful and meaningful things"], ["summary", "My name is Brian and I love the word 'chill'"], ["candidate_id", 5], ["created_at", 2017-03-18 01:02:12 UTC], ["updated_at", 2017-03-18 01:02:12 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "cry@mail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Carter, Reilly and Yost"], ["location", "5072 Stark Garden, Klingburgh, Michigan 48647"], ["email", "cry@mail.com"], ["password_digest", "$2a$10$rc6zYIwi5Nae/KbnA3ZbROY56J.L2l2oM8gbqXKNQmn2faO/8BX6i"], ["created_at", 2017-03-18 01:02:12 UTC], ["updated_at", 2017-03-18 01:02:12 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "hpw@mail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Hartmann, Paucek and Ward"], ["location", "7277 Steuber Spurs, Cydneyport, Colorado 95202"], ["email", "hpw@mail.com"], ["password_digest", "$2a$10$fsokjnNPUSzqTxpRHO5s7eth73nB0aZ5ooHpaYxH3Y16jzX8uL7z2"], ["created_at", 2017-03-18 01:02:12 UTC], ["updated_at", 2017-03-18 01:02:12 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "cwb@mail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Christiansen, Weissnat and Bradtke"], ["location", "64920 Jast Track, Hettingerville, Virginia 88020"], ["email", "cwb@mail.com"], ["password_digest", "$2a$10$cCsUAQT.ZVIgjPiPKZXsiup2H/lbylBSUaGfqyL/H8FaYg4GYfkGS"], ["created_at", 2017-03-18 01:02:12 UTC], ["updated_at", 2017-03-18 01:02:12 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "hk@mail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Hintz-Kiehn"], ["location", "9267 Brown Lodge, Rolandostad, Nevada 43860"], ["email", "hk@mail.com"], ["password_digest", "$2a$10$zNc.rB0kgxG3BsPnf5VzK.U9IJgPV9On4D4DwpOQ953iU3K9RjVD2"], ["created_at", 2017-03-18 01:02:12 UTC], ["updated_at", 2017-03-18 01:02:12 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "swo@mail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Schmidt, Will and Ortiz"], ["location", "1847 Bailey Parks, Joeymouth, Wyoming 96527"], ["email", "swo@mail.com"], ["password_digest", "$2a$10$ziJO7/DrGxFpkpSutOuDkuW0U43RhNUaD3OVv1vw6xAhj/AchLCUu"], ["created_at", 2017-03-18 01:02:12 UTC], ["updated_at", 2017-03-18 01:02:12 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "jacobson@mail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jacobson LLC"], ["location", "633 Folsom Street, San Francisco, California 94107"], ["email", "jacobson@mail.com"], ["password_digest", "$2a$10$LX1KOyB0vIVrcBQkms5tVO0hauZzV7nEYCKpLOeewrIgBs.ZjVl9e"], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", " hkoelpin@mail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Heaney-Koelpin"], ["location", "741 Javier Ridge, Ibrahimberg, Nebraska 45526"], ["email", " hkoelpin@mail.com"], ["password_digest", "$2a$10$iLhUssCqN2HhB/I8zrDGZ.EjgZj2yF6ymrJSdreXPOY/v6vjFRfTe"], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "ledner@mail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ledner LLC"], ["location", "38669 Cremin Squares, Trantowfort, Ohio 57413"], ["email", "ledner@mail.com"], ["password_digest", "$2a$10$OVtl8OZdUavzjdZtcYjOfuHsKMflMdgQLF2uluBvvg22A3fREmZ5C"], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "ca@mail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Considine-Abshire"], ["location", "124 Dario Plaza, New Leslie, North Dakota 46909"], ["email", "ca@mail.com"], ["password_digest", "$2a$10$h8XWQ6gmX7yQKuNafO5XzO/oQlQvqP49hs5p/4NVXvmIBdZXF0QFe"], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."email" = $1 LIMIT $2[0m  [["email", "br@mail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Bashirian-Rath"], ["location", "813 Crooks Mount, East Mckenzie, Tennessee 35401"], ["email", "br@mail.com"], ["password_digest", "$2a$10$qGJRzj.bZMVlx2dwTwLzE.fMtCYOU0n.SkFFX490d5XDq.z6sBJUO"], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Immersive Conduct Commentator"], ["location", "Klingburgh, Michigan"], ["description", "Duties include syndicating sexy convergence and synthesizing e-business models"], ["company_id", 1], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Decisive Branding Reporter"], ["location", "Klingburgh, Michigan"], ["description", "Duties include empowering 24/7 bandwidth and integrating wearable paradigms"], ["company_id", 1], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Lead Infrastructure Engineer"], ["location", "Cydneyport, Colorado"], ["description", "Duties include implementing end-to-end synergies and strategizing real-time partnerships"], ["company_id", 2], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Legacy Empowerment Planner"], ["location", "Cydneyport, Colorado"], ["description", "Duties include synergizing global niches and empowering viral mindshare"], ["company_id", 2], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Systematic Diversity Analyst"], ["location", "Cydneyport, Colorado"], ["description", "Duties include benchmarking killer paradigms and reinventing real-time models"], ["company_id", 2], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Location-Aware Clickthrough Evangelist"], ["location", "Hettingerville, Virginia"], ["description", "Duties include evolving front-end web-readiness and incubating viral initiatives"], ["company_id", 3], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Real-Time Share Options Discoverer"], ["location", "Rolandostad, Nevada"], ["description", "Duties include grow dot-com convergence and enabling killer infrastructures"], ["company_id", 4], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Social Software Technician"], ["location", "Rolandostad, Nevada"], ["description", "Duties include integrating disintermediate 24/7 technologies and maximizing bleeding-edge platforms"], ["company_id", 4], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Lead Infrastructure Engineer"], ["location", "San Francisco, California"], ["description", "Duties include facilitating virtual e-tailers and incentivizing B2B communities"], ["company_id", 6], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Legacy Empowerment Planner"], ["location", "San Francisco, California"], ["description", "Duties include harnessing front-end vortals and reinventing granular technologies"], ["company_id", 6], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Systematic Diversity Analyst"], ["location", "San Francisco, California"], ["description", "Duties include syndicating frictionless e-markets and mesh viral relationships"], ["company_id", 6], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Localized Paradigm Blogger"], ["location", "East Mckenzie, Tennessee"], ["description", "Duties include evolving value-added channels with an uncanny ability to orchestrate distributed functionalities"], ["company_id", 10], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Off Shore Module Guru"], ["location", "East Mckenzie, Tennessee"], ["description", "Duties include synthesizing efficient mindshare and targeting extensible partnerships"], ["company_id", 10], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Human Identity Discoverer"], ["location", "East Mckenzie, Tennessee"], ["description", "Duties include orchestrating sticky convergence and fulfilling the office ukelele supply"], ["company_id", 10], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Streamlined Tactics Orchestrator"], ["location", "East Mckenzie, Tennessee"], ["description", "Duties include aggregating wearable initiatives with clicks-and-mortar infomediaries"], ["company_id", 10], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "Global Social Media Theorist"], ["location", "East Mckenzie, Tennessee"], ["description", "Duties include seizing and dominating dot-com supply-chains"], ["company_id", 10], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("position", "location", "description", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["position", "End User Synergy Instructor"], ["location", "East Mckenzie, Tennessee"], ["description", "Duties include maximizing dynamic hashtags and drinking coffee alone"], ["company_id", 10], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to update the footer of my website"], ["location", "Hettingerville, Virginia"], ["company_id", 3], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to explain to me what a ruby is"], ["location", "Hettingerville, Virginia"], ["company_id", 3], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to help energize my team"], ["location", "Hettingerville, Virginia"], ["company_id", 3], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to organize an internal hackathon"], ["location", "Hettingerville, Virginia"], ["company_id", 3], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to DRY up my codebase"], ["location", "Hettingerville, Virginia"], ["company_id", 3], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to optimize my algorithms"], ["location", "Joeymouth, Wyoming"], ["company_id", 5], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to write a gem"], ["location", "Ibrahimberg, Nebraska"], ["company_id", 7], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to make our site dynamic"], ["location", "Ibrahimberg, Nebraska"], ["company_id", 7], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to fix a bug"], ["location", "Trantowfort, Ohio"], ["company_id", 6], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to google it for me"], ["location", "Trantowfort, Ohio"], ["company_id", 6], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to mentor interns"], ["location", "Trantowfort, Ohio"], ["company_id", 8], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to promote diversity in the space"], ["location", "Trantowfort, Ohio"], ["company_id", 8], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to illustrate a schema"], ["location", "New Leslie, North Dakota"], ["company_id", 9], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to set up a server"], ["location", "New Leslie, North Dakota"], ["company_id", 9], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("description", "location", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Need a developer to configure my app"], ["location", "New Leslie, North Dakota"], ["company_id", 9], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "contracts" ("candidate_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["candidate_id", 1], ["project_id", 4], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contracts" ("candidate_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["candidate_id", 2], ["project_id", 9], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contracts" ("candidate_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["candidate_id", 2], ["project_id", 6], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contracts" ("candidate_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["candidate_id", 3], ["project_id", 15], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contracts" ("candidate_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["candidate_id", 4], ["project_id", 1], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contracts" ("candidate_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["candidate_id", 5], ["project_id", 7], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "Github"], ["url", "https://github.com/efertsch"], ["description", "Link to Gituhb"], ["candidate_id", 1], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "Github"], ["url", "https://github.com/dbare"], ["description", "Link to Gituhb"], ["candidate_id", 2], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "Github"], ["url", "https://github.com/kimberlyjoyceembry"], ["description", "Link to Gituhb"], ["candidate_id", 3], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "Github"], ["url", "https://github.com/jackhowerton"], ["description", "Link to Gituhb"], ["candidate_id", 4], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "Github"], ["url", "https://github.com/btbernheim"], ["description", "Link to Gituhb"], ["candidate_id", 5], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "LinkedIn"], ["url", "https://www.linkedin.com/in/ethan-fertsch/"], ["description", "Link to LinkedIn"], ["candidate_id", 1], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "LinkedIn"], ["url", "https://www.linkedin.com/in/davis-bare/"], ["description", "Link to LinkedIn"], ["candidate_id", 2], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "LinkedIn"], ["url", "https://www.linkedin.com/in/kimberly-embry-53346388/"], ["description", "Link to LinkedIn"], ["candidate_id", 3], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "LinkedIn"], ["url", "https://www.linkedin.com/in/jackhowerton/"], ["description", "Link to LinkedIn"], ["candidate_id", 4], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "links" ("link_type", "url", "description", "candidate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["link_type", "LinkedIn"], ["url", "https://www.linkedin.com/in/brian-bernheim-67381665/"], ["description", "Link to LinkedIn"], ["candidate_id", 5], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "evaluations" ("review", "rating", "contract_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["review", "Exceeds expectations, brings unmatched enthusiasm to the project"], ["rating", 5], ["contract_id", 1], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "evaluations" ("review", "rating", "contract_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["review", "Excellent attention to detail with an eye for design"], ["rating", 5], ["contract_id", 2], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "evaluations" ("review", "rating", "contract_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["review", "Compassionate, consistently brought 110 percent to every aspect of project"], ["rating", 5], ["contract_id", 4], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "evaluations" ("review", "rating", "contract_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["review", "Thorough and logical, an exceptional problem solver"], ["rating", 5], ["contract_id", 5], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "evaluations" ("review", "rating", "contract_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["review", "Has a big ol' beard"], ["rating", 5], ["contract_id", 6], ["created_at", 2017-03-18 01:02:13 UTC], ["updated_at", 2017-03-18 01:02:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mJob Load (0.7ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mEvaluation Load (0.7ms)[0m  [1m[34mSELECT "evaluations".* FROM "evaluations"[0m

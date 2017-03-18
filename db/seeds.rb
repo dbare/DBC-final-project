@@ -105,7 +105,7 @@ Project.create(location: "New Leslie, North Dakota", description: "Need a develo
 Contract.create(candidate_id: 1, project_id: 4)
 Contract.create(candidate_id: 2, project_id: 9)
 Contract.create(candidate_id: 2, project_id: 6)
-Contract.create(candidate_id: 3, project_id: 16)
+Contract.create(candidate_id: 3, project_id: 15)
 Contract.create(candidate_id: 4, project_id: 1)
 Contract.create(candidate_id: 5, project_id: 7)
 
