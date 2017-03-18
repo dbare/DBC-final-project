@@ -11,7 +11,7 @@
 
 
 <strong>Photo:</strong>
-<%= @user.photo %>
+<%= image_tag @user.photo.avatar.url %>
 
 
 <br>
@@ -19,9 +19,21 @@
 
 <strong>About Me:</strong>
 <ul>
-	<li>Location: <%= @profile.location %></li>
+	
+<% if @profile %>
+	<li>Location: <%= @profile.location %> </li>
 	<li>Objective: <%= @profile.objective %></li>
 	<li>Summary: <%= @profile.summary %></li>
+<%else%>
+	YOU DONT HAVE A PROFILE
+<% end %>
+
+
+	
+
+<!-- test -->
+	
+
 </ul>
 
 
