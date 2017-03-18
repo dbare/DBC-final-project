@@ -1,5 +1,7 @@
 class JobsController < ApplicationController
 
+	before_action :require_valid_user
+
 	def index
 		@search = Job.search(params[:q])
 		if @search 

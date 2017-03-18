@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
 
+	before_action :require_valid_user
+
 	def index
 		@search = Project.search(params[:q])
 		if @search 
