@@ -3,7 +3,13 @@ class JobsController < ApplicationController
 	before_action :find_job, except: [:index, :new, :create]
 
 	def index
-		@jobs = Job.all 
+		@search = Job.search(params[:q])
+		if @search 
+			@search.build_condition
+			@jobs = @search.result
+		else 
+			@jobs = Job.all
+		end 
 	end
 
 	def new

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
 	resources :jobs 
 	resources :users
+	resources :projects
 	resources :companies
 
 	get '/login' => 'sessions#new'
