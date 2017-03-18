@@ -23,8 +23,9 @@
 
 <div>
 	<% @projects.each do |project| %>
-		<p>Location: <%=project.position%></p>
-		<p>Description: <%=project.description%></p><br>
+		<p>Location: <%=project.location%></p>
+		<p>Description: <%=project.description%></p>
+		<p>Compensation: <%=project.compensation%></p><br>
 	<% end %>
 </div>
 
