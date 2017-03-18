@@ -1,11 +1,11 @@
-Company.destroy_all
-Candidate.destroy_all
-Job.destroy_all
-Project.destroy_all
-Profile.destroy_all
-Contract.destroy_all
-Link.destroy_all
-Evaluation.destroy_all
+# Company.destroy_all
+# Candidate.destroy_all
+# Job.destroy_all
+# Project.destroy_all
+# Profile.destroy_all
+# Contract.destroy_all
+# Link.destroy_all
+# Evaluation.destroy_all
 
 
 # All sample candidates
@@ -91,7 +91,7 @@ Project.create(location: "Ibrahimberg, Nebraska", description: "Need a developer
 Project.create(location: "Trantowfort, Ohio", description: "Need a developer to fix a bug", company_id: 6)
 Project.create(location: "Trantowfort, Ohio", description: "Need a developer to google it for me", company_id: 6)
 
-Projects posted from company 8
+# Projects posted from company 8
 Project.create(location: "Trantowfort, Ohio", description: "Need a developer to mentor interns", company_id: 8)
 Project.create(location: "Trantowfort, Ohio", description: "Need a developer to promote diversity in the space", company_id: 8)
 
@@ -114,25 +114,25 @@ Contract.create(candidate_id: 5, project_id: 7)
 # All Sample Links
 
 #GitHub
-Link.create(type: "Github", url: "https://github.com/efertsch", description: "Link to Gituhb" , candidate_id: 1)
-Link.create(type: "Github", url: "https://github.com/dbare", description: "Link to Gituhb", candidate_id: 2)
-Link.create(type: "Github", url: "https://github.com/kimberlyjoyceembry", description: "Link to Gituhb" , candidate_id: 3)
-Link.create(type: "Github", url: "https://github.com/jackhowerton", description: "Link to Gituhb" , candidate_id: 4)
-Link.create(type: "Github", url: "https://github.com/btbernheim", description: "Link to Gituhb", candidate_id: 5)
+Link.create(link_type: "Github", url: "https://github.com/efertsch", description: "Link to Gituhb" , candidate_id: 1)
+Link.create(link_type: "Github", url: "https://github.com/dbare", description: "Link to Gituhb", candidate_id: 2)
+Link.create(link_type: "Github", url: "https://github.com/kimberlyjoyceembry", description: "Link to Gituhb" , candidate_id: 3)
+Link.create(link_type: "Github", url: "https://github.com/jackhowerton", description: "Link to Gituhb" , candidate_id: 4)
+Link.create(link_type: "Github", url: "https://github.com/btbernheim", description: "Link to Gituhb", candidate_id: 5)
 
 #LinkedIn
-Link.create(type: "LinkedIn", url: "https://www.linkedin.com/in/ethan-fertsch/", description: "Link to LinkedIn", candidate_id: 1)
-Link.create(type: "LinkedIn", url: "https://www.linkedin.com/in/davis-bare/", description: "Link to LinkedIn", candidate_id: 2)
-Link.create(type: "LinkedIn", url: "https://www.linkedin.com/in/kimberly-embry-53346388/", description: "Link to LinkedIn", candidate_id: 3)
-Link.create(type: "LinkedIn", url: "https://www.linkedin.com/in/jackhowerton/", description: "Link to LinkedIn", candidate_id: 4)
-Link.create(type: "LinkedIn", url: "https://www.linkedin.com/in/brian-bernheim-67381665/", description: "Link to LinkedIn", candidate_id: 5)
+Link.create(link_type: "LinkedIn", url: "https://www.linkedin.com/in/ethan-fertsch/", description: "Link to LinkedIn", candidate_id: 1)
+Link.create(link_type: "LinkedIn", url: "https://www.linkedin.com/in/davis-bare/", description: "Link to LinkedIn", candidate_id: 2)
+Link.create(link_type: "LinkedIn", url: "https://www.linkedin.com/in/kimberly-embry-53346388/", description: "Link to LinkedIn", candidate_id: 3)
+Link.create(link_type: "LinkedIn", url: "https://www.linkedin.com/in/jackhowerton/", description: "Link to LinkedIn", candidate_id: 4)
+Link.create(link_type: "LinkedIn", url: "https://www.linkedin.com/in/brian-bernheim-67381665/", description: "Link to LinkedIn", candidate_id: 5)
 
 
 
 #All Sample Evaluations
 Evaluation.create(review: "Exceeds expectations, brings unmatched enthusiasm to the project" , rating: 5,  contract_id: 1)
 Evaluation.create(review: "Excellent attention to detail with an eye for design", rating: 5,  contract_id: 2)
-Evaluation.create(review: "Compassionate, consistently brought 110% to every aspect of project", rating: 5,  contract_id: 4)
+Evaluation.create(review: "Compassionate, consistently brought 110 percent to every aspect of project", rating: 5,  contract_id: 4)
 Evaluation.create(review: "Thorough and logical, an exceptional problem solver", rating: 5,  contract_id: 5)
 Evaluation.create(review: "Has a big ol' beard", rating: 5,  contract_id: 6)
 
