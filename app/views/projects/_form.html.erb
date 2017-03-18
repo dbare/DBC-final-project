@@ -1,0 +1,6 @@
+<%= simple_form_for @project do |f| %>
+  <%= f.input :location, error: 'Location is a required field' %>
+  <%= f.input :description, label: 'Position Description', error: 'Description is a required field'   %>
+  <%= f.input :compensation, label: 'Compensation' %>
+  <%= f.button :submit %>
+<% end %>
