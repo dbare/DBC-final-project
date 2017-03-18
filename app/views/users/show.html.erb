@@ -1,37 +1,41 @@
-<h3 class="text-center"><%= @user.full_name %>'s Profile:</h3>
+<div class="text-center">	
+	<h3><%= @user.full_name %>'s Profile</h3>
 
-<!-- <br> -->
-<!-- <br> -->
+	<!-- <br> -->
+	<!-- <br> -->
 
-<strong>Contact:</strong>
-<%= @user.email %>
-
-<br>
-<br>
-
-
-<strong>Photo:</strong>
-<%= @user.photo %>
-
+	<strong>Contact:</strong>
+	<%= @user.email %>
+</div>	
 
 <br>
 <br>
 
-<strong>About Me:</strong>
-<ul>
-	<li>Location: <%= @profile.location %></li>
-	<li>Objective: <%= @profile.objective %></li>
-	<li>Summary: <%= @profile.summary %></li>
-</ul>
+<div class="col-md-4 col-lg-4">	
+	<strong>Photo:</strong>
+	<%= @user.photo %>
+</div>
 
 
+<br>
+<br>
+<div class="text-center">
+	<h4>About Me</h4>
+	<ul>
+		<li><strong>Location:</strong> <%= @profile.location %></li>
+		<li><strong>Objective:</strong> <%= @profile.objective %></li>
+		<li><strong>Summary:</strong> <%= @profile.summary %></li>
+	</ul>
+</div>
 
 
-<strong>Current Projects:</strong>
-<ul>
-<% @user.projects.each do |project|%>
-	<li><%= link_to "#{project.title} (#{project.company.name})", project_path(project)%> </li>
-<%end%>
-</ul>
+<div id="boots-list-of-jobs" class="text-center ">
+	<h4>Current Projects</h4>
+		<ul>
+			<% @user.projects.each do |project|%>
+				<li><%= link_to "#{project.title} || (#{project.company.name})", project_path(project)%> </li>
+			<%end%>
+		</ul>
+</div>
 
 

@@ -26,8 +26,8 @@
 <div>
 	<% @jobs.each do |job| %>
 		<div class="text-center container col-lg-8 col-md-8" id="job-container">
-			<p><strong>Position:</strong><br> <%=job.position%></p>
-			<p><strong>Description:</strong><br><%=job.description%></p><br>
+			<p><h5>Position</h5><%=job.position%></p>
+			<p><h5>Description</h5><%=job.description%></p>
 		</div>
 	<% end %>
 </div>
