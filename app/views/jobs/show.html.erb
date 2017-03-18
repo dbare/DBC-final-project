@@ -1,3 +1,11 @@
-<h1> The page for a specific Job </h1>
+<h1> Job ID: <%=@job.id%> </h1>
 
-<%= link_to "Update this Listing", edit_job_path(@job) %>  |  <%= link_to "Delete this Listing", job_path(@job) %>
+<div>
+	<p>Position: <%= @job.position %></p>
+	<p>Location: <%= @job.location %></p>
+	<p>Description: <%= @job.description %></p>
+</div>	
+
+
+<%= link_to "Update this Listing", edit_job_path(@job) %>  |  <%= link_to "Delete this Listing", job_path(@job), method: :delete %>
+

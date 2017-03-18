@@ -19,23 +19,24 @@
 
 <br>
 <br>
-<div class="text-center">
-	<h4>About Me</h4>
-	<ul>
-		<li><strong>Location:</strong> <%= @profile.location %></li>
-		<li><strong>Objective:</strong> <%= @profile.objective %></li>
-		<li><strong>Summary:</strong> <%= @profile.summary %></li>
-	</ul>
+<div id="user-about-me" class="text-center">
+	<h3>About Me</h3>
+	<br>	
+	<% if @profile%>
+		<h5>Location</h5><%= @profile.location %><br><br>
+		<h5>Objective</h5><%= @profile.objective %><br><br>
+		<h5>Summary</h5><%= @profile.summary %><br><br>
+	<% else %>
+		You dont have a profile
+	<% end %>
 </div>
-
+<br>
 
 <div id="boots-list-of-jobs" class="text-center ">
-	<h4>Current Projects</h4>
-		<ul>
-			<% @user.projects.each do |project|%>
-				<li><%= link_to "#{project.title} || (#{project.company.name})", project_path(project)%> </li>
-			<%end%>
-		</ul>
+	<h5>Current Projects</h5>
+		<% @user.projects.each do |project|%>
+			<%= link_to "#{project.title}  ||  (#{project.company.name})", project_path(project)%> </li>
+		<%end%>
 </div>
 
 

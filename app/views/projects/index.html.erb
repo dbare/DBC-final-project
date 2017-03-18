@@ -22,6 +22,8 @@
 <div>
 	<% @projects.each do |project| %>
 		<div class="text-center container col-lg-8 col-md-8" id="job-container">	
+			<h3> ProjectID: <%= link_to project.id, project_path(project) %> </h3>
+			<h4><%= link_to project.title, project_path(project) %></h4>
 			<p><h5>Location</h5> <%=project.location%></p>
 			<p><h5>Description</h5> <%=project.description%></p>
 			<p><h5>Compensation</h5> <%=project.compensation%></p>
