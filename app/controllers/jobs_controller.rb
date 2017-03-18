@@ -20,26 +20,32 @@ class JobsController < ApplicationController
 	end
 
 	def edit
-	  find_job
 	end
 
 	def show
-		find_job
+		@job = find_job
 	end 
 
 
 	def update
-		find_job
+		@job = find_job
+		@job.update_attributes(job_params)
+		if @job.save
+			redirect_to @job
+		else
+			render :edit
+		end 
 	end 
 
 	def destroy
-		find_job 
+		find_job.destroy
+		redirect_to jobs_path  
 	end 
 
 	private 
 
 	def find_job
-		@job = @job.find(params[:id])
+		Job.find(params[:id])
 	end 
 
 	def job_params
