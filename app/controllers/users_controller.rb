@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_params)
+		@companies = Company.all
 		@token = Token.find_by(characters: params[:user][:unique_token])
 
 		if @token && @token.used? == false && @user.save

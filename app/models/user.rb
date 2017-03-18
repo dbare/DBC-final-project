@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 	attr_accessor :unique_token
+	mount_uploader :photo, PhotoUploader
 
 	has_many :links
 	has_many :contracts
