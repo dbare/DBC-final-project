@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 	resources :users
 	resources :projects
 
+	get '/team' => 'teams#index'
+	get '/contact' => 'contacts#index'
+
 	get '/login' => 'sessions#new'
 	post '/login' => 'sessions#create'
 	get '/logout' => 'sessions#destroy'
