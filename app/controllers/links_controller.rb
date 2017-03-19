@@ -8,18 +8,11 @@ class LinksController < ApplicationController
 	end
 
 	def create
-		
 		@link = Link.new(link_params)
-		
 		if @link.save
-
 			@link.update_attribute(:user_id, current_user.id)
-
 			redirect_to user_path(current_user)
 		else
-			p "*" * 100
-			p "NOPE"
-			p "*" * 100
 			render 'new'
 		end
 	end
@@ -43,10 +36,6 @@ class LinksController < ApplicationController
 		@link.destroy
 		redirect_to user_path(@user)  
 	end 
-
-
-
-
 
 private
 

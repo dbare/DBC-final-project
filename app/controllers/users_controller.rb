@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		@companies = Company.all
 		@token = Token.find_by(characters: params[:user][:unique_token])
-
+		p "BEFORE SAVE LINE"
 		if @token && @token.used? == false && @user.save
 			@token.update_attribute(:user_id, @user.id)
 
@@ -31,9 +31,12 @@ class UsersController < ApplicationController
 				@user.update_attribute(:admin_status, true)
 			end
 
+			UserMailer.welcome_email(@user).deliver
+			p "AFTER EMAIL LINE"
 			login
 			redirect_to @user
 		else
+			p "ELSE"
 			render 'new'
 		end
 	end
