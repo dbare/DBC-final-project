@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 	
+	before_action :require_valid_user, only: [:index]
+
 	def index
 		@boots = User.where(company_id: nil)
 		render 'boots_index'
