@@ -1,7 +1,7 @@
 class EvaluationsController < ApplicationController
-
+	
 	def new
-	end 
+	end
 
 	def create
 		@user = User.find(params[:user_id])
@@ -11,13 +11,12 @@ class EvaluationsController < ApplicationController
 			redirect_to @user
 		else
 			render 'users/show'
-		end 
+		end
 	end
 
-	private 
+	private
 
 	def evaluation_params
 		params.require(:evaluation).permit(:rating, :review)
-	end 
-
-end 
+	end
+end

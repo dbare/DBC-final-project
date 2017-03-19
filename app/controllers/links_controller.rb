@@ -1,7 +1,6 @@
 class LinksController < ApplicationController
-
 	before_action :require_valid_user
-	
+
 	def new
 		@link = Link.new
 		@user = current_user
@@ -23,7 +22,7 @@ class LinksController < ApplicationController
 
 	def update
 		@link = Link.find(params[:id])
-		if @link.update(link_params)	
+		if @link.update(link_params)
 			redirect_to user_path(@link.user)
 		else
 			render 'edit'
@@ -34,13 +33,12 @@ class LinksController < ApplicationController
 		@link = Link.find(params[:id])
 		@user = @link.user
 		@link.destroy
-		redirect_to user_path(@user)  
-	end 
+		redirect_to user_path(@user)
+	end
 
-private
+	private
 
-def link_params
-	params.require(:link).permit(:link_type, :url, :description)
-end
-
+	def link_params
+		params.require(:link).permit(:link_type, :url, :description)
+	end
 end

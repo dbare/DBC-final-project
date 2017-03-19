@@ -1,7 +1,6 @@
 class ProfilesController < ApplicationController
-
 	before_action :require_valid_user
-	
+
 	def new
 		@profile = Profile.new
 		@user = current_user
@@ -34,10 +33,9 @@ class ProfilesController < ApplicationController
 	end
 
 
-private
+	private
 
-def profile_params
-	params.require(:profile).permit(:location, :objective, :summary, :user_id)
-end
-
+	def profile_params
+		params.require(:profile).permit(:location, :objective, :summary, :user_id)
+	ends
 end
