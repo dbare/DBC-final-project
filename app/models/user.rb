@@ -3,7 +3,6 @@ class User < ApplicationRecord
 	mount_uploader :photo, PhotoUploader
 
 	has_many :links
-	has_many :contracts
 	
 	has_one :token
 	has_one :profile
