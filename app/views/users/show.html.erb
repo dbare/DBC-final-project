@@ -10,13 +10,14 @@
 <br>
 
 
-<strong>Photo:</strong>
-<%= image_tag @user.photo.avatar.url %>
+<% if @user.photo? %>
+	<strong>Photo:</strong>
+	<%= image_tag @user.photo.avatar.url %>
 
 
-<br>
-<br>
-
+	<br>
+	<br>
+<%end%>
 
 
 	
@@ -38,14 +39,5 @@
 <br>
 <br>
 
-
-
-
-<strong>Current Projects:</strong>
-<ul>
-<% @user.projects.each do |project|%>
-	<li><%= link_to "#{project.title} (#{project.company.name})", project_path(project)%> </li>
-<%end%>
-</ul>
 
 
