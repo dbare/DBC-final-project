@@ -1,6 +1,9 @@
 class Job < ApplicationRecord
 	belongs_to :company, required: false
 
+
+	private
+
 	UNRANSACKABLE_ATTRIBUTES = ["id", "updated_at"]
 
 	def self.ransackable_attributes(auth_object = nil)
