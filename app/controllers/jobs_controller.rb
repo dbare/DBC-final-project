@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
 
-	before_action :find_job, except: [:index, :new, :create]
+	before_action :require_valid_user
 
 	def index
 		@search = Job.search(params[:q])
@@ -18,6 +18,7 @@ class JobsController < ApplicationController
 
 	def create
 		@job = Job.new(job_params)
+		@job.company = current_user.company
 		if @job.save
 			redirect_to @job 
 		else
@@ -26,15 +27,16 @@ class JobsController < ApplicationController
 	end
 
 	def edit
+		@job = Job.find(params[:id])
 	end
 
 	def show
-		@job = find_job
+		@job = Job.find(params[:id])
 	end 
 
 
 	def update
-		@job = find_job
+		@job = Job.find(params[:id])
 		@job.update_attributes(job_params)
 		if @job.save
 			redirect_to @job
@@ -44,15 +46,13 @@ class JobsController < ApplicationController
 	end 
 
 	def destroy
-		find_job.destroy
+		@job = Job.find(params[:id])
+		@job.destroy
 		redirect_to jobs_path  
 	end 
 
 	private 
 
-	def find_job
-		Job.find(params[:id])
-	end 
 
 	def job_params
 		params.require(:job).permit(:position, :location, :description)

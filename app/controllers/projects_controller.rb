@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
 
-	before_action :find_project, except: [:index, :new, :create]
+	before_action :require_valid_user
 
 	def index
 		@search = Project.search(params[:q])
@@ -18,6 +18,7 @@ class ProjectsController < ApplicationController
 
 	def create
 		@project = Project.new(project_params)
+		@project.company = current_user.company
 		if @project.save
 			redirect_to @project 
 		else
@@ -26,15 +27,16 @@ class ProjectsController < ApplicationController
 	end
 
 	def edit
+		@project = Project.find(params[:id])
 	end
 
 	def show
-		@project = find_project
+		@project = Project.find(params[:id])
 	end 
 
 
 	def update
-		@project = find_project
+		@project = Project.find(params[:id])
 		@project.update_attributes(project_params)
 		if @project.save
 			redirect_to @project
@@ -44,17 +46,14 @@ class ProjectsController < ApplicationController
 	end 
 
 	def destroy
-		find_project.destroy
+		@project = Project.find(params[:id])
+		@project.destroy
 		redirect_to projects_path  
 	end 
 
 	private 
 
-	def find_project
-		Project.find(params[:id])
-	end 
-
 	def project_params
-		params.require(:project).permit(:location, :description, :compensation)
+		params.require(:project).permit(:title, :location, :description, :compensation)
 	end  
 end

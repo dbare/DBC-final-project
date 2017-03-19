@@ -3,7 +3,7 @@
 <div>
 	<p>Location: <%= @company.location %></p>
 	<p>Email: <%= @company.email %></p>
-	<p>Logo: <%= @company.logo %></p>
+	<p>Logo: <%= image_tag @company.photo.avatar.url %></p>
 </div>
 
 <h2>Open Job Posiitons</h2>
@@ -21,7 +21,7 @@
 <div>
 	<ul>
 		<% @company.projects.each do |project| %>
-			<li><%= job.project %></li>
+			<li><%= link_to "#{job.project}", project_path(project) %></li>
 		<% end %>
 	</ul>
 </div>

@@ -22,6 +22,7 @@
 
 <div>
 	<% @jobs.each do |job| %>
+		<h3> JobID: <%= link_to job.id, job_path(job) %> </h3>
 		<p>Position: <%=job.position%></p>
 		<p>Description: <%=job.description%></p><br>
 	<% end %>
