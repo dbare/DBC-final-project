@@ -2,6 +2,9 @@ class User < ApplicationRecord
 	attr_accessor :unique_token
 	mount_uploader :photo, PhotoUploader
 
+	# validates_processing_of :photo
+	# validate :photo_size_validation
+
 	has_many :links
 	
 	has_one :token
@@ -25,5 +28,10 @@ class User < ApplicationRecord
  		Evaluation.where(subject_id: self.id)
  	end
 
-
+ 	private
+ 	
+ 		# def photo_size_validation
+ 		# 	if photo.size > 0.5 megaby
+ 		# 	errors[:photo] << "should be less than 500KB" if photo.size > 0.5 megabytes
+ 		# end
 end

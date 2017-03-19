@@ -1,6 +1,7 @@
+<% @errors.each do |error| %>
+	<%= error %>
+<% end %>
+
 <div>
-	<%= simple_form_for @resume do |f| %>
-		<%= f.file_field :resume, label: "Add Resume" %>
-		<%= f.button :submit %>		
-	<% end %>
-</div>
+	<%= render 'form' %>
+ </div>
