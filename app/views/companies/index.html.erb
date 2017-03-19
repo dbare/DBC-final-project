@@ -1,4 +1,10 @@
 <h1>All Company Listings</h1>
+
+<% if current_user %>
+	<!-- Add admin only validation -->
+	<h3><%= link_to "Create New Company", new_company_path %></h3>
+<% end %>
+
 <% @companies.each do |company| %>
 	<div class="text-center container col-lg-6 col-md-6" id="company-container">
 		<%= link_to "#{company.name}", company_path(company) %>
