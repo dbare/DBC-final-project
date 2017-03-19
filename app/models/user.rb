@@ -25,5 +25,10 @@ class User < ApplicationRecord
  		Evaluation.where(subject_id: self.id)
  	end
 
+ 	UNRANSACKABLE_ATTRIBUTES = ["id", "admin_status", "email", "password_digest", "photo", "created_at", "updated_at", "company"]
+
+	def self.ransackable_attributes(auth_object = nil)
+  	(column_names - UNRANSACKABLE_ATTRIBUTES) + _ransackers.keys
+	end
 
 end
