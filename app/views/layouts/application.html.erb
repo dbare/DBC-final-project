@@ -24,6 +24,11 @@
 			<%end%>
 		</ul>
 	</nav>
+    <div>
+      <% flash.each do |key, value| %>
+        <div style="color:red; "class="alert <%= key %>"><%= value %></div>
+      <% end %>
+    </div>
     <%= yield %>
     <div class="text-center">
       <center><div class="footer"><footer id="layout-footer" class="col-md-8 col-lg-8 text-center">

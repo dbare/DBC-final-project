@@ -13,8 +13,9 @@
 
 <div class="col-md-4 col-lg-4">	
 	<strong>Photo:</strong>
-	<%= @user.photo %>
+	<%= image_tag @user.photo.avatar.url %>
 </div>
+
 
 
 <br>
@@ -32,11 +33,17 @@
 </div>
 <br>
 
-<div id="boots-list-of-jobs" class="text-center ">
-	<h5>Current Projects</h5>
-		<% @user.projects.each do |project|%>
-			<%= link_to "#{project.title}  ||  (#{project.company.name})", project_path(project)%> </li>
-		<%end%>
-</div>
+	
+<% if @profile %>
+	<strong>About Me:</strong>
+	<ul>
+		<li>Location: <%= @profile.location %> </li>
+		<li>Objective: <%= @profile.objective %></li>
+		<li>Summary: <%= @profile.summary %></li>
+	</ul>
+<%else%>
+	
+	<%= link_to "Create 'About Me' Section", new_profile_path %>
 
+<% end %>
 
