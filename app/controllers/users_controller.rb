@@ -36,6 +36,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@links = @user.links
 		@profile = @user.profile
+
 	end
 
 	private
