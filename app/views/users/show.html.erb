@@ -59,6 +59,7 @@
 			
 			<% if @user == current_user%>
 				<button><%= link_to "Edit", edit_link_path(link) %></button>
+				<button><%= link_to "Delete", link_path(link), method: :delete %></button>
 			<%end%>
 
 		
