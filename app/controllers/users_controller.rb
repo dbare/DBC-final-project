@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	
+
 	before_action :require_valid_user, only: [:index]
 
 	def index
@@ -26,11 +26,11 @@ class UsersController < ApplicationController
 
 		if @token && @token.used? == false && @user.save
 			@token.update_attribute(:user_id, @user.id)
-			
+
 			if @token.admin_token
 				@user.update_attribute(:admin_status, true)
 			end
-			
+
 			login
 			redirect_to @user
 		else
@@ -42,6 +42,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@links = @user.links
 		@profile = @user.profile
+		@uploads = @user.uploads
 
 	end
 

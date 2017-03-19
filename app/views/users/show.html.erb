@@ -1,4 +1,4 @@
-<div class="text-center">	
+<div class="text-center">
 	<h3><%= @user.full_name %>'s Profile</h3>
 
 	<!-- <br> -->
@@ -6,13 +6,13 @@
 
 	<strong>Contact:</strong>
 	<%= @user.email %>
-</div>	
+</div>
 
 <br>
 <br>
 
 <% if @user.photo? %>
-	<div class="col-md-4 col-lg-4">	
+	<div class="col-md-4 col-lg-4">
 		<strong>Photo:</strong>
 		<%= image_tag @user.photo.avatar.url %>
 	</div>
@@ -52,17 +52,17 @@
 	<ul>
 
 	<% @links.each do |link| %>
-		
+
 		<li>
 
-			<%= link_to link.description, link.url %> 
-			
+			<%= link_to link.description, link.url %>
+
 			<% if @user == current_user%>
 				<button><%= link_to "Edit", edit_link_path(link) %></button>
 				<button><%= link_to "Delete", link_path(link), method: :delete %></button>
 			<%end%>
 
-		
+
 		</li>
 
 	<% end%>
@@ -74,8 +74,23 @@
 	<% end %>
 <div>
 
+<div class="text-center">
+	<h3>Portfolio</h3>
+	<ul>
+	<% @uploads.each do |upload| %>
+		<li>
+			<%= image_tag upload.photo.avatar.url %>
+		</li>
+	<% end%>
+	</ul>
 
-	
+	<% if @user == current_user%>
+		<h3><%= link_to "Upload Portfolio Image", new_user_upload_path(@user) %></h3>
+	<% end %>
+</div>
+
+
+
 <br>
 <br>
 
@@ -89,5 +104,3 @@
 		<% end %>
 	<% end %>
 </div>
-
-
