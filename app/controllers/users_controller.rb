@@ -3,7 +3,13 @@ class UsersController < ApplicationController
 	before_action :require_valid_user, only: [:index]
 
 	def index
-		@boots = User.where(company_id: nil)
+		@search = User.search(params[:q])
+		if @search
+			@search.build_condition
+			@boots = @search.result
+		else
+			@boots = User.where(company_id: nil)
+		end
 		render 'boots_index'
 	end
 
