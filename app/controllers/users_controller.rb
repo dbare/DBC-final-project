@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-
-	before_action :require_valid_user
 	
 	def index
 		@boots = User.where(company_id: nil)
