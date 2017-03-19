@@ -50,12 +50,18 @@
 <div class="text-center">
 	<h3>Links Section</h3>
 	<ul>
-	
+
 	<% @links.each do |link| %>
 		
 		<li>
-		<%= link_to link.description, link.url %> 
-		<button><%= link_to "Edit", edit_link_path(link) %></button>
+		
+			<%= link_to link.description, link.url %> 
+			
+			<% if @user == current_user%>
+				<button><%= link_to "Edit", edit_link_path(link) %></button>
+			<%end%>
+
+		
 		</li>
 
 	<% end%>
