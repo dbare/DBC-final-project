@@ -141,12 +141,15 @@ Evaluation.create(review: "Has a big ol' beard", rating: 5,  contract_id: 6)
 
 
 # All sample tokens
-Token.create(characters: "abc")
-Token.create(characters: "def")
-Token.create(characters: "ghi")
-Token.create(characters: "jkl")
-Token.create(characters: "mno")
-Token.create(characters: "pqr")
+("a".."z").to_a.each do |letter|
+	Token.create(characters: letter)
+end
+
+(1..9).to_a.each do |number|
+	Token.create(characters: number, admin_token: true)
+end
+
+
 
 
 

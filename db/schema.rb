@@ -9,7 +9,6 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
 ActiveRecord::Schema.define(version: 20170318221642) do
 
   # These are extensions that must be enabled in order to support this database
@@ -94,8 +93,9 @@ ActiveRecord::Schema.define(version: 20170318221642) do
   create_table "tokens", force: :cascade do |t|
     t.string   "characters"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "admin_token", default: false
     t.index ["user_id"], name: "index_tokens_on_user_id", using: :btree
   end
 
@@ -105,9 +105,10 @@ ActiveRecord::Schema.define(version: 20170318221642) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "photo"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.integer  "company_id"
+    t.boolean  "admin_status",    default: false
   end
 
   add_foreign_key "contracts", "projects"

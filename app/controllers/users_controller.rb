@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+	before_action :require_valid_user
+	
 	def index
 		@boots = User.where(company_id: nil)
 		render 'boots_index'
@@ -20,6 +22,11 @@ class UsersController < ApplicationController
 
 		if @token && @token.used? == false && @user.save
 			@token.update_attribute(:user_id, @user.id)
+			
+			if @token.admin_token
+				@user.update_attribute(:admin_status, true)
+			end
+			
 			login
 			redirect_to @user
 		else
@@ -36,6 +43,6 @@ class UsersController < ApplicationController
 
 	def user_params
 		params.require(:user).permit(:first_name, :last_name, :username, :email, :password, :photo, :company_id)
-  	end
+	end
 
 end

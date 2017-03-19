@@ -17,24 +17,26 @@
 <br>
 <br>
 
-<strong>About Me:</strong>
-<ul>
+
+
 	
 <% if @profile %>
-	<li>Location: <%= @profile.location %> </li>
-	<li>Objective: <%= @profile.objective %></li>
-	<li>Summary: <%= @profile.summary %></li>
+	<strong>About Me:</strong>
+	<ul>
+		<li>Location: <%= @profile.location %> </li>
+		<li>Objective: <%= @profile.objective %></li>
+		<li>Summary: <%= @profile.summary %></li>
+	</ul>
 <%else%>
-	YOU DONT HAVE A PROFILE
+	
+	<%= link_to "Create 'About Me' Section", new_profile_path %>
+
 <% end %>
 
 
 	
-
-<!-- test -->
-	
-
-</ul>
+<br>
+<br>
 
 
 
