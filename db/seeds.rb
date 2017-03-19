@@ -29,16 +29,16 @@ Profile.create(location: "San Francisco Bay Area", objective: "Get a job buildin
 
 
 # All sample companies 
-Company.create(name: "Carter, Reilly and Yost", email: "cry@mail.com", location: "5072 Stark Garden, Klingburgh, Michigan 48647", password: "password")
-Company.create(name: "Hartmann, Paucek and Ward", email: "hpw@mail.com", location: "7277 Steuber Spurs, Cydneyport, Colorado 95202", password: "password")
-Company.create(name: "Christiansen, Weissnat and Bradtke", email: "cwb@mail.com", location: "64920 Jast Track, Hettingerville, Virginia 88020", password: "password")
-Company.create(name: "Hintz-Kiehn", email: "hk@mail.com", location: "9267 Brown Lodge, Rolandostad, Nevada 43860", password: "password")
-Company.create(name: "Schmidt, Will and Ortiz", email: "swo@mail.com", location: "1847 Bailey Parks, Joeymouth, Wyoming 96527", password:"password")
-Company.create(name: "Jacobson LLC", email: "jacobson@mail.com", location: "633 Folsom Street, San Francisco, California 94107", password:"password")
-Company.create(name: "Heaney-Koelpin", email:" hkoelpin@mail.com", location: "741 Javier Ridge, Ibrahimberg, Nebraska 45526", password:"password")
-Company.create(name: "Ledner LLC", email: "ledner@mail.com", location: "38669 Cremin Squares, Trantowfort, Ohio 57413", password:"password")
-Company.create(name: "Considine-Abshire", email: "ca@mail.com", location: "124 Dario Plaza, New Leslie, North Dakota 46909", password:"password")
-Company.create(name: "Bashirian-Rath", email: "br@mail.com" , location: "813 Crooks Mount, East Mckenzie, Tennessee 35401", password:"password")
+Company.create(name: "Carter, Reilly and Yost", email: "cry@mail.com", location: "5072 Stark Garden, Klingburgh, Michigan 48647")
+Company.create(name: "Hartmann, Paucek and Ward", email: "hpw@mail.com", location: "7277 Steuber Spurs, Cydneyport, Colorado 95202")
+Company.create(name: "Christiansen, Weissnat and Bradtke", email: "cwb@mail.com", location: "64920 Jast Track, Hettingerville, Virginia 88020")
+Company.create(name: "Hintz-Kiehn", email: "hk@mail.com", location: "9267 Brown Lodge, Rolandostad, Nevada 43860")
+Company.create(name: "Schmidt, Will and Ortiz", email: "swo@mail.com", location: "1847 Bailey Parks, Joeymouth, Wyoming 96527")
+Company.create(name: "Jacobson LLC", email: "jacobson@mail.com", location: "633 Folsom Street, San Francisco, California 94107")
+Company.create(name: "Heaney-Koelpin", email:" hkoelpin@mail.com", location: "741 Javier Ridge, Ibrahimberg, Nebraska 45526")
+Company.create(name: "Ledner LLC", email: "ledner@mail.com", location: "38669 Cremin Squares, Trantowfort, Ohio 57413")
+Company.create(name: "Considine-Abshire", email: "ca@mail.com", location: "124 Dario Plaza, New Leslie, North Dakota 46909")
+Company.create(name: "Bashirian-Rath", email: "br@mail.com" , location: "813 Crooks Mount, East Mckenzie, Tennessee 35401")
 
 
 # All sample jobs 
