@@ -1,5 +1,7 @@
 <h1>Information About <%= @company.name %></h1>
 
+<br> 
+
 <div>
 	<p>Location: <%= @company.location %></p>
 	<p>Email: <%= @company.email %></p>
@@ -7,27 +9,63 @@
 		<% if @company.photo?%>
 			<%= image_tag @company.photo.avatar.url %>
 		<% else %>
-			<img src="https://i.ytimg.com/vi/x9Jr9JKpsX8/maxresdefault.jpg" height="200" width="400">
+			<img src="https://i.ytimg.com/vi/x9Jr9JKpsX8/maxresdefault.jpg" height="70" width="100">
 		<% end%>		
 	</p>
 </div>
 
-<h2>Open Job Positons</h2>
+<br>
 
-<div>
-	<ul>
-		<% @company.jobs.each do |job| %>
-			<li><%= link_to "#{job.position}", job_path(job) %></li>
-		<% end %>
-	</ul>
-</div>
+<h4>Openings:</h4>
 
-<h2>Open Freelance Positions</h2>
 
-<div>
-	<ul>
-		<% @freelance_jobs.each do |project| %>
-			<li><%= link_to "#{job.project}", project_path(project) %></li>
-		<% end %>
-	</ul>
-</div>
+<ul>
+
+	<%if @full_time_jobs.any?%>
+		<strong>Full-Time Positons</strong>
+		<div>
+			<ul>
+				<% @full_time_jobs.each do |job| %>
+					<li><%= link_to job.position, job_path(job) %></li>
+				<% end %>
+			</ul>
+		</div>
+	<%end%>
+
+
+	<%if @part_time_jobs.any?%>
+		<strong>Part-Time Positons</strong>
+		<div>
+			<ul>
+				<% @part_time_jobs.each do |job| %>
+					<li><%= link_to "#{job.position}", job_path(job) %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+
+	<%if @internships.any?%>
+		<strong>Internship Positons</strong>
+		<div>
+			<ul>
+				<% @internships.each do |job| %>
+					<li><%= link_to "#{job.position}", job_path(job) %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+
+	<%if @freelance_jobs.any?%>
+		<strong>Freelance Positions</strong>
+		<div>
+			<ul>
+				<% @freelance_jobs.each do |job| %>
+					<li><%= link_to "#{job.position}", job_path(job) %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+</ul>
