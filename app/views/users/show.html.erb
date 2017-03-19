@@ -54,7 +54,7 @@
 	<% @links.each do |link| %>
 		
 		<li>
-		
+
 			<%= link_to link.description, link.url %> 
 			
 			<% if @user == current_user%>
@@ -68,7 +68,9 @@
 
 	</ul>
 	<br>
-	<h3><%= link_to "Add New Link", new_link_path %></h3>
+	<% if @user == current_user%>
+		<h3><%= link_to "Add New Link", new_link_path %></h3>
+	<% end %>
 <div>
 
 
