@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 	resources :jobs 
 	resources :users
 	resources :profiles
+	resources :links
 	
 	resources :projects
 	resources :companies

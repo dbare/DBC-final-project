@@ -19,16 +19,6 @@
 <%end%>
 
 
-
-<% if @user.photo? %>
-	<strong>Photo:</strong>
-	<%= image_tag @user.photo.avatar.url %>
-
-
-	<br>
-	<br>
-<%end%>
-
 <br>
 <br>
 <div id="user-about-me" class="text-center">
@@ -48,6 +38,19 @@
 	<% end %>
 </div>
 <br>
+
+<div class="text-center">
+	<h3>Links Section</h3>
+	<ul>
+	<% @links.each do |link| %>
+		
+		<li><%= link_to link.description, link.url %> </li>
+	<% end%>
+	</ul>
+	<br>
+
+	<h3><%= link_to "Add New Link", new_link_path %></h3>
+<div>
 
 
 	
