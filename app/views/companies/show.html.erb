@@ -1,16 +1,16 @@
 <h1>Information About <%= @company.name %></h1>
 
-<br> 
+<br>
 
 <div>
 	<p>Location: <%= @company.location %></p>
 	<p>Email: <%= @company.email %></p>
-	<p>Logo: 
+	<p>Logo:
 		<% if @company.photo?%>
 			<%= image_tag @company.photo.avatar.url %>
 		<% else %>
 			<img src="https://i.ytimg.com/vi/x9Jr9JKpsX8/maxresdefault.jpg" height="70" width="100">
-		<% end%>		
+		<% end%>
 	</p>
 </div>
 
@@ -18,9 +18,7 @@
 
 <h4>Openings:</h4>
 
-
 <ul>
-
 	<%if @full_time_jobs.any?%>
 		<strong>Full-Time Positons</strong>
 		<div>
@@ -31,7 +29,6 @@
 			</ul>
 		</div>
 	<%end%>
-
 
 	<%if @part_time_jobs.any?%>
 		<strong>Part-Time Positons</strong>
@@ -44,7 +41,6 @@
 		</div>
 	<% end %>
 
-
 	<%if @internships.any?%>
 		<strong>Internship Positons</strong>
 		<div>
@@ -55,7 +51,6 @@
 			</ul>
 		</div>
 	<% end %>
-
 
 	<%if @freelance_jobs.any?%>
 		<strong>Freelance Positions</strong>

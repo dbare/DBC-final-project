@@ -1,7 +1,6 @@
 class Job < ApplicationRecord
 	belongs_to :company, required: false
 
-
 	private
 
 	UNRANSACKABLE_ATTRIBUTES = ["id", "updated_at"]

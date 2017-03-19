@@ -1,10 +1,12 @@
 <h1>Create A New Company</h1>
+
 <%= flash[:notice] %>
 	<% if @errors %>
 		<% @errors.each do |error| %>
 			<%= error %>
 		<% end %>
 	<% end %>
+
 <div>
 	<%= render "form" %>
 </div>

@@ -1,16 +1,14 @@
 class User < ApplicationRecord
 	attr_accessor :unique_token
+
 	mount_uploader :photo, PhotoUploader
 
 	has_many :links
 	has_many :uploads
-
 	has_one :token
 	has_one :profile
 	has_one :resume
-
 	has_many :evaluations
-
 	belongs_to :company, required: false
 
 	validates :first_name, :last_name, :email, :password, presence: true
@@ -26,8 +24,8 @@ class User < ApplicationRecord
  		Evaluation.where(subject_id: self.id)
  	end
 
- 	private 
- 	
+ 	private
+
  	UNRANSACKABLE_ATTRIBUTES = ["id", "admin_status", "email", "password_digest", "photo", "created_at", "updated_at", "company"]
 
 	def self.ransackable_attributes(auth_object = nil)

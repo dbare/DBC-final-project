@@ -14,14 +14,13 @@
 			<% end %>
 		</div>
 <% end %>
+
 <div id="search-buttons">
 	<div><%= f.submit "Search"%> </div>
 	<% end %>
 	<%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %>
 	</div>
 </div>
-
-
 
 <div>
 	<% @jobs.each do |job| %>
@@ -33,10 +32,6 @@
 	<% end %>
 </div>
 
-
 <% if current_user.company_id != nil %>
 	<div class="text-center"><%= link_to "Post a New Job", new_job_path %></div>
 <% end %>
-
-
-

@@ -7,6 +7,4 @@ class Evaluation < ApplicationRecord
 	def author
 		User.find(self.author_id)
 	end
-
-
 end

@@ -4,8 +4,6 @@
 	<p>Position: <%= @job.position %></p>
 	<p>Location: <%= @job.location %></p>
 	<p>Description: <%= @job.description %></p>
-</div>	
-
+</div>
 
 <%= link_to "Update this Listing", edit_job_path(@job) %>  |  <%= link_to "Delete this Listing", job_path(@job), method: :delete %>
-

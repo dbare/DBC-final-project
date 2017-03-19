@@ -5,8 +5,6 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
 
   def index
-  	render '/index.html.erb'
+    render '/index.html.erb'
   end
-
-  
 end
