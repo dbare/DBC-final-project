@@ -28,4 +28,6 @@
 	<% end %>
 </div>
 
-<%= link_to "Post a New Job", new_job_path %>
+<% if current_user.company_id != nil %>
+	<%= link_to "Post a New Job", new_job_path %>
+<% end %>
