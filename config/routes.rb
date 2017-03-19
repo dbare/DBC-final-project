@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 	end 
 
 	resources :profiles
+	resources :links
 	
 	resources :projects
 	resources :companies

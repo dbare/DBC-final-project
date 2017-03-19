@@ -1,0 +1,29 @@
+THIS IS THE FORM FOR A LINK MKAY
+
+
+
+<div class="container col-md-8 col-lg-8">
+	<h1>Register</h1>
+
+<%= form_for @link, :html => { multipart: true} do |f| %>
+	
+	<div>
+		<%= f.label :link_type %>
+		<%= f.text_field :link_type , class: "form-control"%>
+	</div>
+
+	<div>
+		<%= f.label :url %>
+		<%= f.text_field :url,  class: "form-control" %>
+	</div>
+
+	<div>
+		<%= f.label :description %>
+		<%= f.text_field :description,  class: "form-control" %>
+	</div>
+
+
+	<%= submit_tag "Register", :class => "btn btn-lg btn-primary"  %>
+
+<% end %>
+</div>
