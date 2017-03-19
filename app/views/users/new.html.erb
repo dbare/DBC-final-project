@@ -24,7 +24,6 @@
 
 	</div>
 
-
 	<div>
 		<%= f.label :email %>
 		<%= f.text_field :email, class: "form-control" %>
@@ -48,3 +47,10 @@
 	<%= submit_tag "Register", :class => "btn btn-lg btn-primary"  %>
 <% end %>
 </div>
+
+<!-- if admin, link_to company new page. -->
+<h3><%= link_to "Create New Company", new_company_path %></h3>
+
+
+
+
