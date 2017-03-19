@@ -7,4 +7,11 @@ module ApplicationHelper
 		end 
 	end
 
+	def require_company_rep
+		if current_user.company_id == nil
+			flash[:error] = "Access Denied: Please get permission to continue"
+			redirect_to root_path
+		end 
+	end
+
 end

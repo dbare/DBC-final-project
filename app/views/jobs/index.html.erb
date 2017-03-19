@@ -33,4 +33,10 @@
 	<% end %>
 </div>
 
-<div class="text-center"><%= link_to "Post a New Job", new_job_path %></div>
+
+<% if current_user.company_id != nil %>
+	<div class="text-center"><%= link_to "Post a New Job", new_job_path %></div>
+<% end %>
+
+
+

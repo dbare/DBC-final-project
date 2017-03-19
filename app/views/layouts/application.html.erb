@@ -26,7 +26,7 @@
 	</nav>
     <div>
       <% flash.each do |key, value| %>
-        <div style="color:red; "class="alert <%= key %>"><%= value %></div>
+        <div style="color:red;" class="alert <%= key %>"><%= value %></div>
       <% end %>
     </div>
     <%= yield %>
