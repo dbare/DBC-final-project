@@ -3,10 +3,16 @@
 <div>
 	<p>Location: <%= @company.location %></p>
 	<p>Email: <%= @company.email %></p>
-	<p>Logo: <%= image_tag @company.photo.avatar.url %></p>
+	<p>Logo: 
+		<% if @company.photo?%>
+			<%= image_tag @company.photo.avatar.url %>
+		<% else %>
+			<img src="https://i.ytimg.com/vi/x9Jr9JKpsX8/maxresdefault.jpg" height="200" width="400">
+		<% end%>		
+	</p>
 </div>
 
-<h2>Open Job Posiitons</h2>
+<h2>Open Job Positons</h2>
 
 <div>
 	<ul>
@@ -20,7 +26,7 @@
 
 <div>
 	<ul>
-		<% @company.projects.each do |project| %>
+		<% @freelance_jobs.each do |project| %>
 			<li><%= link_to "#{job.project}", project_path(project) %></li>
 		<% end %>
 	</ul>

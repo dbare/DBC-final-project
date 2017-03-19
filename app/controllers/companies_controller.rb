@@ -23,6 +23,7 @@ class CompaniesController < ApplicationController
 
 	def show
 		@company = Company.find(params[:id])
+		@freelance_jobs = @company.jobs.where(job_type: 'freelance')
 	end
 
 	private
