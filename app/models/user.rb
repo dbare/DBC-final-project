@@ -7,6 +7,8 @@ class User < ApplicationRecord
 	has_one :token
 	has_one :profile
 	has_one :resume
+
+	has_many :evaluations 
 	
 	belongs_to :company, required: false
 
