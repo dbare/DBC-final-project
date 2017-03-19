@@ -1,49 +1,90 @@
-<h3><%= @user.full_name %>'s Profile:</h3>
+<div class="text-center">	
+	<h3><%= @user.full_name %>'s Profile</h3>
 
-<!-- <br> -->
-<!-- <br> -->
+	<!-- <br> -->
+	<!-- <br> -->
 
-<strong>Contact:</strong>
-<%= @user.email %>
-
-<br>
-<br>
-
-
-<strong>Photo:</strong>
-<%= @user.photo %>
-
+	<strong>Contact:</strong>
+	<%= @user.email %>
+</div>	
 
 <br>
 <br>
 
-<strong>About Me:</strong>
-<ul>
-	
-<% if @profile %>
-	<li>Location: <%= @profile.location %> </li>
-	<li>Objective: <%= @profile.objective %></li>
-	<li>Summary: <%= @profile.summary %></li>
-<%else%>
-	YOU DONT HAVE A PROFILE
-<% end %>
-
-
-	
-
-<!-- test -->
-	
-
-</ul>
-
-
-
-
-<strong>Current Projects:</strong>
-<ul>
-<% @user.projects.each do |project|%>
-	<li><%= link_to "#{project.title} (#{project.company.name})", project_path(project)%> </li>
+<% if @user.photo? %>
+	<div class="col-md-4 col-lg-4">	
+		<strong>Photo:</strong>
+		<%= image_tag @user.photo.avatar.url %>
+	</div>
 <%end%>
-</ul>
+
+
+<br>
+<br>
+<div id="user-about-me" class="text-center">
+	<% if @profile%>
+
+		<h3>About Me</h3>
+		<br>
+
+		<h5>Location</h5><%= @profile.location %><br><br>
+		<h5>Objective</h5><%= @profile.objective %><br><br>
+		<h5>Summary</h5><%= @profile.summary %><br><br>
+
+		<br>
+		<h3><%= link_to "Edit 'About Me' Section", edit_profile_path(@profile) %></h3>
+	<% else %>
+		<h3><%= link_to "Add 'About Me' Section", new_profile_path %></h3>
+	<% end %>
+</div>
+
+<div class="text-center">
+	<h3>Testimonials</h3>
+	<% @user.evaluations.each do |eval|%>
+		<p><%= eval.review %></p>
+		<p><%= eval.author.full_name %></p>
+	<% end %>
+</div>
+<br>
+
+<div class="text-center">
+	<h3>Links Section</h3>
+	<ul>
+
+	<% @links.each do |link| %>
+		
+		<li>
+		
+			<%= link_to link.description, link.url %> 
+			
+			<% if @user == current_user%>
+				<button><%= link_to "Edit", edit_link_path(link) %></button>
+			<%end%>
+
+		
+		</li>
+
+	<% end%>
+
+	</ul>
+	<br>
+	<h3><%= link_to "Add New Link", new_link_path %></h3>
+<div>
+
+
+	
+<br>
+<br>
+
+<div class="text-center">
+	<% if current_user.id != @user.id %>
+		<h4>Evaluate this Dev:</h4>
+		<%= simple_form_for :evaluation, url: user_evaluations_path(@user) do |f|%>
+			<%= f.input :rating, label: 'Rating', collection: [1, 2, 3, 4, 5] %>
+  		<%= f.input :review, label: 'Review', as: :text %>
+  		<%= f.button :submit %>
+		<% end %>
+	<% end %>
+</div>
 
 

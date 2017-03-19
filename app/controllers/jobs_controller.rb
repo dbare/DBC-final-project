@@ -1,5 +1,8 @@
 class JobsController < ApplicationController
 
+	before_action :require_valid_user
+	before_action :require_company_rep, except: [:index, :show, :destroy]
+
 	def index
 		@search = Job.search(params[:q])
 		if @search 

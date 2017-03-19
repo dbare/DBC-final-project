@@ -1,6 +1,7 @@
-<h1>All Job Postings</h1>
+<h1 class="text-center container col-md-8 col-lg-8">All Job Postings</h1>
 
-<div>
+<div class="text-center container col-md-8 col-lg-8">
+
 	<%= search_form_for @search do |f| %>
 		<%= f.condition_fields do |c| %>
 		<div>
@@ -11,21 +12,31 @@
 			<%= c.value_fields do |v| %>
 				<%= v.text_field :value %>
 			<% end %>
+		</div>
+<% end %>
+<div id="search-buttons">
+	<div><%= f.submit "Search"%> </div>
+	<% end %>
+	<%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %>
 	</div>
-<% end %>
-<div><%= f.submit "Search"%> </div>
-<% end %>
-<%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %>
 </div>
 
 
 
 <div>
 	<% @jobs.each do |job| %>
-		<h3> JobID: <%= link_to job.id, job_path(job) %> </h3>
-		<p>Position: <%=job.position%></p>
-		<p>Description: <%=job.description%></p><br>
+		<div class="text-center container col-lg-8 col-md-8" id="job-container">
+			<h3> JobID: <%= link_to job.id, job_path(job) %> </h3>
+			<p><h5>Position</h5><%=job.position%></p>
+			<p><h5>Description</h5><%=job.description%></p>
+		</div>
 	<% end %>
 </div>
 
-<%= link_to "Post a New Job", new_job_path %>
+
+<% if current_user.company_id != nil %>
+	<div class="text-center"><%= link_to "Post a New Job", new_job_path %></div>
+<% end %>
+
+
+
