@@ -1,6 +1,21 @@
 
-
 This is an index of **ONLY** bootcamp graduates.
+
+<%= search_form_for @search do |f| %>
+		<%= f.condition_fields do |c| %>
+		<div>
+			<%= c.predicate_select %>
+			<%= c.value_fields do |v| %>
+				<%= v.text_field :value %>
+			<% end %>
+		</div>
+<% end %>
+<div id="search-buttons">
+	<div><%= f.submit "Search"%> </div>
+	<% end %>
+	<%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %>
+	</div>
+</div>
 
 <br>
 <br>
