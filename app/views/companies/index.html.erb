@@ -1,7 +1,6 @@
 <h1>All Company Listings</h1>
-
-<ul>
-	<% @companies.each do |company| %>
-		<li><%= link_to "#{company.name}", company_path(company) %></li>
-	<% end %>
-</ul>
+<% @companies.each do |company| %>
+	<div class="text-center container col-lg-6 col-md-6" id="company-container">
+		<%= link_to "#{company.name}", company_path(company) %>
+	</div>
+<% end %>

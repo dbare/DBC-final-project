@@ -1,13 +1,20 @@
-<h3><%= @user.full_name %>'s Profile:</h3>
+<div class="text-center">	
+	<h3><%= @user.full_name %>'s Profile</h3>
 
-<!-- <br> -->
-<!-- <br> -->
+	<!-- <br> -->
+	<!-- <br> -->
 
-<strong>Contact:</strong>
-<%= @user.email %>
+	<strong>Contact:</strong>
+	<%= @user.email %>
+</div>	
 
 <br>
 <br>
+
+<div class="col-md-4 col-lg-4">	
+	<strong>Photo:</strong>
+	<%= image_tag @user.photo.avatar.url %>
+</div>
 
 
 <% if @user.photo? %>
@@ -20,24 +27,26 @@
 <%end%>
 
 
-	
-<% if @profile %>
-	<strong>About Me:</strong>
-	<ul>
-		<li>Location: <%= @profile.location %> </li>
-		<li>Objective: <%= @profile.objective %></li>
-		<li>Summary: <%= @profile.summary %></li>
-	</ul>
-<%else%>
-	
-	<%= link_to "Create 'About Me' Section", new_profile_path %>
 
-<% end %>
+
+<br>
+<br>
+<div id="user-about-me" class="text-center">
+	<h3>About Me</h3>
+	<br>	
+	<% if @profile%>
+		<h5>Location</h5><%= @profile.location %><br><br>
+		<h5>Objective</h5><%= @profile.objective %><br><br>
+		<h5>Summary</h5><%= @profile.summary %><br><br>
+	<% else %>
+		You dont have a profile
+	<% end %>
+</div>
+<br>
 
 
 	
 <br>
 <br>
-
 
 
