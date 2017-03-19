@@ -1,6 +1,6 @@
-<h1>All Freelance Projects</h1>
+<h1 class="text_center container col-md-8 col-lg-8">All Freelance Projects</h1>
 
-<div>
+<div id="search-buttons">
 	<%= search_form_for @search do |f| %>
 		<%= f.condition_fields do |c| %>
 		<div>
@@ -11,22 +11,23 @@
 			<%= c.value_fields do |v| %>
 				<%= v.text_field :value %>
 			<% end %>
-	</div>
-<% end %>
-<div><%= f.submit "Search"%> </div>
-<% end %>
+		</div>
+		<% end %>
+		<div><%= f.submit "Search"%> </div>
+	<% end %>
+	<%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %>
 </div>
 
 
-
-<%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %>
-
 <div>
 	<% @projects.each do |project| %>
-		<h3> ProjectID: <%= link_to project.id, project_path(project) %> </h3>
-		<p>Location: <%=project.location%></p>
-		<p>Description: <%=project.description%></p>
-		<p>Compensation: <%=project.compensation%></p><br>
+		<div class="text-center container col-lg-8 col-md-8" id="job-container">	
+			<h3> ProjectID: <%= link_to project.id, project_path(project) %> </h3>
+			<h4><%= link_to project.title, project_path(project) %></h4>
+			<p><h5>Location</h5> <%=project.location%></p>
+			<p><h5>Description</h5> <%=project.description%></p>
+			<p><h5>Compensation</h5> <%=project.compensation%></p>
+		</div>
 	<% end %>
 </div>
 
