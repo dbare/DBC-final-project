@@ -49,6 +49,7 @@
 
 <div class="text-center">
 	<h3>Links Section</h3>
+	<% if @user.links %>
 	<ul>
 
 	<% @links.each do |link| %>
@@ -66,6 +67,7 @@
 		</li>
 
 	<% end%>
+	<% end %>
 
 	</ul>
 	<br>
@@ -86,6 +88,17 @@
 
 	<% if @user == current_user%>
 		<h3><%= link_to "Upload Portfolio Image", new_user_upload_path(@user) %></h3>
+	<% end %>
+</div>
+
+<div class="text-center">
+	<h3>Resume</h3>
+		<% if @user.resume %>
+		<%= image_tag @resume.content.avatar.url %>
+		<% end %>
+
+	<% if @user == current_user%>
+		<h3><%= link_to "Upload Resume", new_user_resume_path(@user) %></h3>
 	<% end %>
 </div>
 

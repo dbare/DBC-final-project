@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 	resources :users do
 		resources :evaluations
     resources :uploads
+    resources :resumes
 	end
 
 	resources :profiles

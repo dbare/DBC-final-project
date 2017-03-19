@@ -43,6 +43,7 @@ class UsersController < ApplicationController
 		@links = @user.links
 		@profile = @user.profile
 		@uploads = @user.uploads
+		@resume = @user.resume
 
 	end
 
