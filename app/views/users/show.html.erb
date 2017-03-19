@@ -53,6 +53,18 @@
 </div>
 <br>
 
+<div>
+
+	<% if !@user.resume %>
+		<%= simple_form_for @resume do |file| %>
+			<%= f.file_field :resume, label: "Add Resume" %>
+			<%= f.button :submit %>		
+		<% end %>
+	<% else %>
+		<%= link_to "#{@user.first_name}'s Resume", user_resume_path(@user_resume) %>
+	<% end %>
+</div>
+
 
 	
 <br>
