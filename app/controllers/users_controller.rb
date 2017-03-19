@@ -33,10 +33,9 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@resume = Resume.new
 		@user = User.find(params[:id])
 		@profile = @user.profile
-		@user_resume = @user.resume
+		@resume = Resume.new
 	end
 
 	private

@@ -18,17 +18,6 @@
 	</div>
 <%end%>
 
-
-
-<% if @user.photo? %>
-	<strong>Photo:</strong>
-	<%= image_tag @user.photo.avatar.url %>
-
-
-	<br>
-	<br>
-<%end%>
-
 <br>
 <br>
 <div id="user-about-me" class="text-center">
@@ -57,15 +46,16 @@
 </div>
 <br>
 
-<div>
+<p><%= flash[:notice] %></p>
 
+<div>
 	<% if !@user.resume %>
-		<%= simple_form_for @resume do |file| %>
+		<%= simple_form_for [@user, @resume] do |f| %>
 			<%= f.file_field :resume, label: "Add Resume" %>
 			<%= f.button :submit %>		
 		<% end %>
 	<% else %>
-		<%= link_to "#{@user.first_name}'s Resume", user_resume_path(@user_resume) %>
+		<%= link_to "#{@user.first_name}'s Resume", user_resume_path(@user) %>
 	<% end %>
 </div>
 

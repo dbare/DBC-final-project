@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 	resources :jobs
 
 	resources :users do
-		resources :resume
+		resources :resumes
 	end
 
 	resources :users do 
