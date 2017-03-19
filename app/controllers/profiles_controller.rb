@@ -8,7 +8,6 @@ class ProfilesController < ApplicationController
 	end
 
 	def create
-		# @user = current_user
 		@profile = Profile.new(profile_params)
 		if @profile.save
 			@profile.update_attribute(:user_id, current_user.id)
@@ -19,6 +18,20 @@ class ProfilesController < ApplicationController
 			p "*" * 100
 			render 'new'
 		end
+	end
+
+	def edit
+		@profile = Profile.find(params[:id])
+	end
+
+	def update
+		@profile = Profile.find(params[:id])
+		if @profile.update(profile_params)
+			redirect_to user_path(@profile.user)
+		else
+			render 'edit'
+		end
+
 
 	end
 

@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 		resources :resume
 	end
 
+	resources :users do 
+		resources :evaluations
+	end
+
 	resources :profiles
 	resources :projects
 	resources :companies
