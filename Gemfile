@@ -51,6 +51,8 @@ gem 'shoulda-matchers'
 
 gem 'ckeditor', '4.1.3'
 
+gem 'tether-rails'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
