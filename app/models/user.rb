@@ -3,13 +3,14 @@ class User < ApplicationRecord
 	mount_uploader :photo, PhotoUploader
 
 	has_many :links
-	
+	has_many :uploads
+
 	has_one :token
 	has_one :profile
 	has_one :resume
 
-	has_many :evaluations 
-	
+	has_many :evaluations
+
 	belongs_to :company, required: false
 
 	validates :first_name, :last_name, :email, :password, presence: true

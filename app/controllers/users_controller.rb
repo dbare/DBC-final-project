@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	
+
 	before_action :require_valid_user, only: [:index]
 
 	def index
@@ -26,10 +26,11 @@ class UsersController < ApplicationController
 		p "BEFORE SAVE LINE"
 		if @token && @token.used? == false && @user.save
 			@token.update_attribute(:user_id, @user.id)
-			
+
 			if @token.admin_token
 				@user.update_attribute(:admin_status, true)
 			end
+
 			UserMailer.welcome_email(@user).deliver
 			p "AFTER EMAIL LINE"
 			login
@@ -44,6 +45,8 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@links = @user.links
 		@profile = @user.profile
+		@uploads = @user.uploads
+		@resume = @user.resume
 
 	end
 
