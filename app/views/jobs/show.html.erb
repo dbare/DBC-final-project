@@ -1,7 +1,10 @@
-<h1> Job ID: <%=@job.id%> </h1>
+<h1> Job ID: <%=@job.id%>  </h1>
 
 <div>
 	<p>Position: <%= @job.position %></p>
+	<% if @job.company%>
+		<p>Company: <%= @job.company.name %></p>
+	<% end %>
 	<p>Location: <%= @job.location %></p>
 	<p>Description: <%= @job.description %></p>
 </div>
