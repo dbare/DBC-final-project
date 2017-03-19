@@ -41,76 +41,42 @@ Company.create(name: "Considine-Abshire", email: "ca@mail.com", location: "124 D
 Company.create(name: "Bashirian-Rath", email: "br@mail.com" , location: "813 Crooks Mount, East Mckenzie, Tennessee 35401")
 
 
+
+
+
 # All sample jobs 
 
 # Jobs posted from company 1
-Job.create(position: "Immersive Conduct Commentator", location: "Klingburgh, Michigan", description: "Duties include syndicating sexy convergence and synthesizing e-business models", company_id: 1)
-Job.create(position: "Decisive Branding Reporter", location: "Klingburgh, Michigan", description: "Duties include empowering 24/7 bandwidth and integrating wearable paradigms", company_id: 1)
+Job.create(position: "Immersive Conduct Commentator", location: "Klingburgh, Michigan", description: "Duties include syndicating sexy convergence and synthesizing e-business models", company_id: 1, compensation: "some", job_type:"full-time")
+
+Job.create(position: "Decisive Branding Reporter", location: "Klingburgh, Michigan", description: "Duties include empowering 24/7 bandwidth and integrating wearable paradigms", company_id: 1, compensation: "tons", job_type:"internship")
 
 #Jobs posted from company 2
-Job.create(position: "Lead Infrastructure Engineer", location: "Cydneyport, Colorado", description: "Duties include implementing end-to-end synergies and strategizing real-time partnerships", company_id: 2)
-Job.create(position: "Legacy Empowerment Planner", location: "Cydneyport, Colorado", description: "Duties include synergizing global niches and empowering viral mindshare", company_id: 2)
-Job.create(position: "Systematic Diversity Analyst", location: "Cydneyport, Colorado", description: "Duties include benchmarking killer paradigms and reinventing real-time models", company_id: 2)
+Job.create(position: "Lead Infrastructure Engineer", location: "Cydneyport, Colorado", description: "Duties include implementing end-to-end synergies and strategizing real-time partnerships", company_id: 2, compensation: "none", job_type:"freelance")
+
+Job.create(position: "Legacy Empowerment Planner", location: "Cydneyport, Colorado", description: "Duties include synergizing global niches and empowering viral mindshare", company_id: 2, compensation: "billions", job_type:"part-time")
+
+Job.create(position: "Systematic Diversity Analyst", location: "Cydneyport, Colorado", description: "Duties include benchmarking killer paradigms and reinventing real-time models", company_id: 2, compensation: "billions", job_type:"part-time")
 
 # #Jobs posted from company 3
-Job.create(position: "Location-Aware Clickthrough Evangelist", location: "Hettingerville, Virginia", description: "Duties include evolving front-end web-readiness and incubating viral initiatives", company_id: 3)
+Job.create(position: "Location-Aware Clickthrough Evangelist", location: "Hettingerville, Virginia", description: "Duties include evolving front-end web-readiness and incubating viral initiatives", company_id: 3, compensation: "billions", job_type:"part-time")
 
 # #Jobs posted from company 4
-Job.create(position: "Real-Time Share Options Discoverer", location: "Rolandostad, Nevada", description: "Duties include grow dot-com convergence and enabling killer infrastructures", company_id: 4)
-Job.create(position: "Social Software Technician", location: "Rolandostad, Nevada", description: "Duties include integrating disintermediate 24/7 technologies and maximizing bleeding-edge platforms", company_id: 4)
+Job.create(position: "Real-Time Share Options Discoverer", location: "Rolandostad, Nevada", description: "Duties include grow dot-com convergence and enabling killer infrastructures", company_id: 4, compensation: "billions", job_type:"part-time")
+Job.create(position: "Social Software Technician", location: "Rolandostad, Nevada", description: "Duties include integrating disintermediate 24/7 technologies and maximizing bleeding-edge platforms", company_id: 4, compensation: "billions", job_type:"part-time")
 
 # #Jobs posted from company 6
-Job.create(position: "Lead Infrastructure Engineer", location: "San Francisco, California", description: "Duties include facilitating virtual e-tailers and incentivizing B2B communities", company_id: 6)
-Job.create(position: "Legacy Empowerment Planner", location: "San Francisco, California", description: "Duties include harnessing front-end vortals and reinventing granular technologies", company_id: 6)
-Job.create(position: "Systematic Diversity Analyst", location: "San Francisco, California", description: "Duties include syndicating frictionless e-markets and mesh viral relationships", company_id: 6)
+Job.create(position: "Lead Infrastructure Engineer", location: "San Francisco, California", description: "Duties include facilitating virtual e-tailers and incentivizing B2B communities", company_id: 6, compensation: "billions", job_type:"part-time")
+Job.create(position: "Legacy Empowerment Planner", location: "San Francisco, California", description: "Duties include harnessing front-end vortals and reinventing granular technologies", company_id: 6, compensation: "billions", job_type:"part-time")
+Job.create(position: "Systematic Diversity Analyst", location: "San Francisco, California", description: "Duties include syndicating frictionless e-markets and mesh viral relationships", company_id: 6, compensation: "billions", job_type:"part-time")
 
 # #Jobs posted from company 10
-Job.create(position: "Localized Paradigm Blogger", location: "East Mckenzie, Tennessee", description: "Duties include evolving value-added channels with an uncanny ability to orchestrate distributed functionalities", company_id: 10)
-Job.create(position: "Off Shore Module Guru", location: "East Mckenzie, Tennessee", description: "Duties include synthesizing efficient mindshare and targeting extensible partnerships", company_id: 10)
-Job.create(position: "Human Identity Discoverer", location: "East Mckenzie, Tennessee", description: "Duties include orchestrating sticky convergence and fulfilling the office ukelele supply", company_id: 10)
-Job.create(position: "Streamlined Tactics Orchestrator", location: "East Mckenzie, Tennessee", description: "Duties include aggregating wearable initiatives with clicks-and-mortar infomediaries", company_id: 10)
-Job.create(position: "Global Social Media Theorist", location: "East Mckenzie, Tennessee", description: "Duties include seizing and dominating dot-com supply-chains", company_id: 10)
-Job.create(position: "End User Synergy Instructor", location: "East Mckenzie, Tennessee", description: "Duties include maximizing dynamic hashtags and drinking coffee alone", company_id: 10)
-
-
-
-# All Sample Projects
-
-# Projects posted from company 3
-Project.create(title: "woooo", location: "Hettingerville, Virginia", description: "Need a developer to update the footer of my website", company_id: 3)
-Project.create(title: "do this", location: "Hettingerville, Virginia", description: "Need a developer to explain to me what a ruby is", company_id: 3)
-Project.create(title: "don't do that", location: "Hettingerville, Virginia", description: "Need a developer to help energize my team", company_id: 3)
-Project.create(title: "whoops", location: "Hettingerville, Virginia", description: "Need a developer to organize an internal hackathon", company_id: 3)
-Project.create(title: "floppy disks", location: "Hettingerville, Virginia", description: "Need a developer to DRY up my codebase", company_id: 3)
-
-# Projects posted from company 5
-Project.create(title: "2048", location: "Joeymouth, Wyoming", description: "Need a developer to optimize my algorithms", company_id: 5)
-
-# Projects posted from company 7
-Project.create(title: "seed file breh", location: "Ibrahimberg, Nebraska", description: "Need a developer to write a gem", company_id: 7)
-Project.create(title: "glory road app", location: "Ibrahimberg, Nebraska", description: "Need a developer to make our site dynamic", company_id: 7)
-
-# Projects posted from company 6
-Project.create(title: "blank for blank", location: "Trantowfort, Ohio", description: "Need a developer to fix a bug", company_id: 6)
-Project.create(title: "tinder clone", location: "Trantowfort, Ohio", description: "Need a developer to google it for me", company_id: 6)
-
-# Projects posted from company 8
-Project.create(title: "BAILA BAILA BAILA BAILA", location: "Trantowfort, Ohio", description: "Need a developer to mentor interns", company_id: 8)
-Project.create(title: "whut", location: "Trantowfort, Ohio", description: "Need a developer to promote diversity in the space", company_id: 8)
-
-
-# Projects posted from company 9
-Project.create(title: "delete stuff", location: "New Leslie, North Dakota", description: "Need a developer to illustrate a schema", company_id: 9)
-Project.create(title: "copy stuff", location: "New Leslie, North Dakota", description: "Need a developer to set up a server", company_id: 9)
-Project.create(title: "migrations", location: "New Leslie, North Dakota", description: "Need a developer to configure my app", company_id: 9)
-
-# All Sample Contracts 
-Contract.create(user_id: 1, project_id: 4)
-Contract.create(user_id: 2, project_id: 9)
-Contract.create(user_id: 2, project_id: 6)
-Contract.create(user_id: 3, project_id: 15)
-Contract.create(user_id: 4, project_id: 1)
-Contract.create(user_id: 5, project_id: 7)
+Job.create(position: "Localized Paradigm Blogger", location: "East Mckenzie, Tennessee", description: "Duties include evolving value-added channels with an uncanny ability to orchestrate distributed functionalities", company_id: 10, compensation: "billions", job_type:"part-time")
+Job.create(position: "Off Shore Module Guru", location: "East Mckenzie, Tennessee", description: "Duties include synthesizing efficient mindshare and targeting extensible partnerships", company_id: 10, compensation: "billions", job_type:"part-time")
+Job.create(position: "Human Identity Discoverer", location: "East Mckenzie, Tennessee", description: "Duties include orchestrating sticky convergence and fulfilling the office ukelele supply", company_id: 10, compensation: "billions", job_type:"part-time")
+Job.create(position: "Streamlined Tactics Orchestrator", location: "East Mckenzie, Tennessee", description: "Duties include aggregating wearable initiatives with clicks-and-mortar infomediaries", company_id: 10, compensation: "billions", job_type:"part-time")
+Job.create(position: "Global Social Media Theorist", location: "East Mckenzie, Tennessee", description: "Duties include seizing and dominating dot-com supply-chains", company_id: 10, compensation: "billions", job_type:"part-time")
+Job.create(position: "End User Synergy Instructor", location: "East Mckenzie, Tennessee", description: "Duties include maximizing dynamic hashtags and drinking coffee alone", company_id: 10, compensation: "billions", job_type:"part-time")
 
 
 
@@ -133,11 +99,11 @@ Link.create(link_type: "LinkedIn", url: "https://www.linkedin.com/in/brian-bernh
 
 
 #All Sample Evaluations
-Evaluation.create(review: "Exceeds expectations, brings unmatched enthusiasm to the project" , rating: 5,  contract_id: 1)
-Evaluation.create(review: "Excellent attention to detail with an eye for design", rating: 5,  contract_id: 2)
-Evaluation.create(review: "Compassionate, consistently brought 110 percent to every aspect of project", rating: 5,  contract_id: 4)
-Evaluation.create(review: "Thorough and logical, an exceptional problem solver", rating: 5,  contract_id: 5)
-Evaluation.create(review: "Has a big ol' beard", rating: 5,  contract_id: 6)
+Evaluation.create(review: "Exceeds expectations, brings unmatched enthusiasm to the project" , rating: 5, author_id: 1, subject_id: 2)
+Evaluation.create(review: "Excellent attention to detail with an eye for design", rating: 5, author_id: 1, subject_id: 3)
+Evaluation.create(review: "Compassionate, consistently brought 110 percent to every aspect of project", rating: 5, author_id: 2, subject_id: 2)
+Evaluation.create(review: "Thorough and logical, an exceptional problem solver", rating: 5, author_id: 4, subject_id: 2)
+Evaluation.create(review: "Has a big ol' beard", rating: 5, author_id: 1, subject_id: 4)
 
 
 # All sample tokens

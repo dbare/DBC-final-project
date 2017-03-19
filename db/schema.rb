@@ -9,7 +9,8 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-ActiveRecord::Schema.define(version: 20170318221642) do
+
+ActiveRecord::Schema.define(version: 20170319023521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,22 +24,13 @@ ActiveRecord::Schema.define(version: 20170318221642) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "contracts", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_contracts_on_project_id", using: :btree
-    t.index ["user_id"], name: "index_contracts_on_user_id", using: :btree
-  end
-
   create_table "evaluations", force: :cascade do |t|
     t.text     "review"
     t.integer  "rating"
-    t.integer  "contract_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["contract_id"], name: "index_evaluations_on_contract_id", using: :btree
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "author_id"
+    t.integer  "subject_id"
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -46,8 +38,10 @@ ActiveRecord::Schema.define(version: 20170318221642) do
     t.string   "location"
     t.text     "description"
     t.integer  "company_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "compensation"
+    t.string   "job_type"
     t.index ["company_id"], name: "index_jobs_on_company_id", using: :btree
   end
 
@@ -69,17 +63,6 @@ ActiveRecord::Schema.define(version: 20170318221642) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
-  end
-
-  create_table "projects", force: :cascade do |t|
-    t.text     "description"
-    t.string   "location"
-    t.string   "compensation"
-    t.integer  "company_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.string   "title"
-    t.index ["company_id"], name: "index_projects_on_company_id", using: :btree
   end
 
   create_table "resumes", force: :cascade do |t|
@@ -111,11 +94,8 @@ ActiveRecord::Schema.define(version: 20170318221642) do
     t.boolean  "admin_status",    default: false
   end
 
-  add_foreign_key "contracts", "projects"
-  add_foreign_key "contracts", "users"
   add_foreign_key "jobs", "companies"
   add_foreign_key "links", "users"
   add_foreign_key "profiles", "users"
-  add_foreign_key "projects", "companies"
   add_foreign_key "tokens", "users"
 end
