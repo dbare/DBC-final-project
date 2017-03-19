@@ -2,19 +2,22 @@
 <html>
   <head>
     <title>CodeConnect</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="navbar">
   	<nav>
 		<ul>
 			<% if current_user %>
 				<button><%= link_to "User Profile", user_path(current_user) %></button>
 				<button><%= link_to "Log Out", logout_path %></button>
 				<button><%= link_to "Home", root_path %></button>
+        <button><%= link_to "Search Grads", users_path %></button>
 			<% else %>
 				<button><%= link_to "Login", login_path %></button>
 				<button><%= link_to "Register", new_user_path %></button>
@@ -24,14 +27,14 @@
 	</nav>
     <div>
       <% flash.each do |key, value| %>
-        <div style="color:red; "class="alert <%= key %>"><%= value %></div>
+        <div style="color:red;" class="alert <%= key %>"><%= value %></div>
       <% end %>
     </div>
     <%= yield %>
-    <footer>
-    	<%= link_to "About", root_path %>
-    	<%= link_to "Contact", contact_path %>
-    	<%= link_to "Team", team_path %>
-    </footer>
+    <div class="text-center">
+      <center><div class="footer"><footer id="layout-footer" class="col-md-8 col-lg-8 text-center">
+        <%= link_to "About", root_path %>  |  <%= link_to "Contact", contact_path %>  |  <%= link_to "Team", team_path %>
+      </footer></div></center>
+    </div>
   </body>
 </html>

@@ -5,6 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
@@ -14,7 +18,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'bootstrap', '~> 4.0.0.alpha6'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -46,6 +50,12 @@ gem 'carrierwave'
 gem 'rubocop'
 
 gem 'shoulda-matchers'
+
+gem 'ckeditor', '4.1.3'
+
+gem 'tether-rails'
+
+gem 'figaro'
 
 
 # Use Capistrano for deployment

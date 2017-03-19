@@ -1,9 +1,14 @@
 class UsersController < ApplicationController
+	before_action :require_valid_user, only: [:index]
 
-	before_action :require_valid_user
-	
 	def index
-		@boots = User.where(company_id: nil)
+		@search = User.search(params[:q])
+		if @search
+			@search.build_condition
+			@boots = @search.result
+		else
+			@boots = User.where(company_id: nil)
+		end
 		render 'boots_index'
 	end
 
@@ -16,27 +21,32 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		@companies = Company.all
-
-		Profile.create(user_id: @user.id)
 		@token = Token.find_by(characters: params[:user][:unique_token])
-
+		p "BEFORE SAVE LINE"
 		if @token && @token.used? == false && @user.save
 			@token.update_attribute(:user_id, @user.id)
-			
+
 			if @token.admin_token
 				@user.update_attribute(:admin_status, true)
 			end
-			
+
+			UserMailer.welcome_email(@user).deliver
+			p "AFTER EMAIL LINE"
 			login
 			redirect_to @user
 		else
+			p "ELSE"
 			render 'new'
 		end
 	end
 
 	def show
 		@user = User.find(params[:id])
+		@links = @user.links
 		@profile = @user.profile
+		@uploads = @user.uploads
+		@resume = @user.resume
+
 	end
 
 	private

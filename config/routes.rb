@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
-  
+
 	root "application#index"
 
-	resources :jobs 
-	resources :users
+	resources :jobs
+	resources :users do
+		resources :evaluations
+    resources :uploads
+    resources :resumes
+	end
+
 	resources :profiles
-	
+	resources :links
+
 	resources :projects
 	resources :companies
 
