@@ -11,9 +11,6 @@ class User < ApplicationRecord
 	
 	belongs_to :company, required: false
 
-	has_many :evaluations, through: :contracts
-	has_many :projects, through: :contracts
-
 	validates :first_name, :last_name, :email, :password, presence: true
 	validates :email, uniqueness: true
 
@@ -21,6 +18,10 @@ class User < ApplicationRecord
 
 	def full_name
 		self.first_name + " " + self.last_name
+ 	end
+
+ 	def evaluations
+ 		Evaluation.where(subject_id: self.id)
  	end
 
 
