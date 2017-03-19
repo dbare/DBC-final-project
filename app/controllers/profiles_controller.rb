@@ -37,5 +37,5 @@ class ProfilesController < ApplicationController
 
 	def profile_params
 		params.require(:profile).permit(:location, :objective, :summary, :user_id)
-	ends
+	end
 end

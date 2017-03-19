@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>CodeConnect</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script> 
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -17,6 +17,7 @@
 				<button><%= link_to "User Profile", user_path(current_user) %></button>
 				<button><%= link_to "Log Out", logout_path %></button>
 				<button><%= link_to "Home", root_path %></button>
+        <button><%= link_to "Search Grads", users_path %></button>
 			<% else %>
 				<button><%= link_to "Login", login_path %></button>
 				<button><%= link_to "Register", new_user_path %></button>
