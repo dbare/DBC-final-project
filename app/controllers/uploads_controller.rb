@@ -1,4 +1,5 @@
 class UploadsController < ApplicationController
+	before_action :require_valid_user
 
 	def new
     @user = User.find(params[:user_id])
@@ -14,6 +15,27 @@ class UploadsController < ApplicationController
 		else
 			render 'users/show'
 		end
+	end
+
+	def edit
+		@user = User.find(params[:user_id])
+		@upload = Upload.find(params[:id])
+	end
+
+	def update
+		@upload = Upload.find(params[:id])
+		if @upload.update(upload_params)
+			redirect_to user_path(@upload.user)
+		else
+			render 'edit'
+		end
+	end
+
+	def destroy
+		@upload = Upload.find(params[:id])
+		@user = @upload.user
+		@upload.destroy
+		redirect_to user_path(@user)
 	end
 
 	private

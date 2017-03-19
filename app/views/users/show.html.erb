@@ -82,6 +82,11 @@
 	<% @uploads.each do |upload| %>
 		<li>
 			<%= image_tag upload.photo.avatar.url %>
+
+			<% if @user == current_user%>
+				<button><%= link_to "Edit", edit_user_upload_path(@user, upload) %></button>
+				<button><%= link_to "Delete", user_upload_path(@user, upload), method: :delete %></button>
+			<%end%>
 		</li>
 	<% end%>
 	</ul>
