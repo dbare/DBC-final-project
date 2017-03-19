@@ -39,6 +39,8 @@ gem 'rspec-rails'
 
 gem 'ransack'
 
+gem 'mini_magick'
+
 gem 'carrierwave'
 
 gem 'rubocop'
