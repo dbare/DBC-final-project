@@ -6,4 +6,8 @@
 	<p>Description: <%= @job.description %></p>
 </div>
 
-<%= link_to "Update this Listing", edit_job_path(@job) %>  |  <%= link_to "Delete this Listing", job_path(@job), method: :delete %>
+
+<% if current_user.company_id == @job.company_id %>
+	<%= link_to "Update this Listing", edit_job_path(@job) %> 
+	<%= link_to "Delete this Listing", job_path(@job), method: :delete %>
+<% end %>
