@@ -29,26 +29,22 @@
 	<br>
 <%end%>
 
-
-
-
 <br>
 <br>
 <div id="user-about-me" class="text-center">
-	<!-- <h3>About Me</h3> -->
-	<!-- <br>	 -->
 	<% if @profile%>
 
-			<h3>About Me</h3>
-	<br>
+		<h3>About Me</h3>
+		<br>
 
 		<h5>Location</h5><%= @profile.location %><br><br>
 		<h5>Objective</h5><%= @profile.objective %><br><br>
 		<h5>Summary</h5><%= @profile.summary %><br><br>
-	<% else %>
-		
-		<h3><%= link_to "Add 'About Me' Section", new_profile_path %></h3>
 
+		<br>
+		<h3><%= link_to "Edit 'About Me' Section", edit_profile_path(@profile) %></h3>
+	<% else %>
+		<h3><%= link_to "Add 'About Me' Section", new_profile_path %></h3>
 	<% end %>
 </div>
 <br>

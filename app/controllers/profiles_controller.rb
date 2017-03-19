@@ -19,6 +19,27 @@ class ProfilesController < ApplicationController
 			p "*" * 100
 			render 'new'
 		end
+	end
+
+	def edit
+		@profile = Profile.find(params[:id])
+	end
+
+	def update
+		@profile = Profile.find(params[:id])
+		if @profile.update(profile_params)
+			p "*" * 100
+			p "PRESERVED"
+			p "*" * 100
+
+			redirect_to user_path(@profile.user)
+		else
+			p "*" * 100
+			p "NOOOOOOOOO"
+			p "*" * 100
+			render 'edit'
+		end
+
 
 	end
 
