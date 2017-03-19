@@ -55,6 +55,8 @@ gem 'ckeditor', '4.1.3'
 
 gem 'tether-rails'
 
+gem 'figaro'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
