@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
 	
 	def index
 		@boots = User.where(company_id: nil)
