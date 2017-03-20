@@ -59,6 +59,8 @@ gem 'figaro'
 
 gem 'fog'
 
+gem 'font-awesome-rails'
+
 gem 'materialize-sass'
 
 # Use Capistrano for deployment
