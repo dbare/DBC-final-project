@@ -1,10 +1,10 @@
-<div>
-  <%= simple_form_for @job do |f| %>
-    <%= f.input :position, label: 'Position Title', error: 'Position is a required field' %>
-    <%= f.input :location, error: 'Location is a required field' %>
-    <%= f.input :description, label: 'Position Description', :as => :ckeditor, input_html: {:ckeditor => {:toolbar => 'FULL'}}, error: 'Description is a required field' %>
-    <%= f.input :compensation, label: 'Compensation' %>
-    <%= f.input :job_type, label: 'Listing Type', collection: ["full_time", "part-type", "internship", "freelance"] %>
-    <div class="btn btn-primary"><%= f.button :submit %></div>
-    <% end %>
-</div>
+<%= simple_form_for @job do |f| %>
+	<div class="center row" id= job-new-form>
+	    <div class="row"><%= f.input :position, label: 'Position Title', error: 'Position is a required field' %>
+	    <%= f.input :location, error: 'Location is a required field' %>
+	    <%= f.input :compensation, label: 'Compensation' %>
+	    <%= f.input :job_type, label: 'Listing Type', collection: ["full_time", "part-type", "internship", "freelance"] %></div>
+	    <%= f.input :description, label: 'Position Description', :as => :ckeditor, input_html: {:ckeditor => {:toolbar => 'FULL'}}, error: 'Description is a required field' %><br>
+	    <div><br><%= f.button :submit %></div>
+	</div>
+<% end %>

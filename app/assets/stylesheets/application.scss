@@ -110,6 +110,21 @@ ul {
 	}
 }
 
+#job-new-form {
+	border: solid;
+	border-radius: 15px;
+	margin-right: 1%;
+	margin-left: 1%;
+	padding-left: 100px;
+	padding-right: 100px;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	
+	#job-form-buttons {
+		margin-top: 5%;
+		}
+}
+
 #layout-footer {
 	width: 75%;
 	border-top: 2px solid;
