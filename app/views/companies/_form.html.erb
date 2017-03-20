@@ -1,8 +1,19 @@
 <%= simple_form_for @company do |f| %>
-	<%= f.error_notification %>
-	<%= f.input :name, label: "Company Name" %>
-	<%= f.input :location, label: "Location" %>
-	<%= f.input :email, label: "Contact email" %>
-	<%= f.file_field :photo, label: "Add a photo" %>
-	<%= f.button :submit %>		
+	<div class="center row" id="company-new-form" >
+		<div class="col-md-6">
+			<%= f.error_notification %>
+			<%= f.input :name, label: "Company Name" %>
+			<br>
+			<%= f.input :location, label: "Location" %>
+			<br>
+			<%= f.input :email, label: "Contact email" %>
+		</div>
+		<div id="company-form-buttons" class="col-md-6 col-lg-6">
+			<div><%= f.file_field :photo, label: "Add a photo" %>
+			<br>
+			<br>
+			<br>
+			<%= f.button :submit %>
+		</div>		
+	</div>
 <% end %>

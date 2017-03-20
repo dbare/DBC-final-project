@@ -2,65 +2,69 @@
 
 <br>
 
-<div>
-	<p>Location: <%= @company.location %></p>
-	<p>Email: <%= @company.email %></p>
-	<p>Logo:
+<div id="company-info-container" class="text-center ">
+	<p>Logo
 		<% if @company.photo?%>
 			<%= image_tag @company.photo.avatar.url %>
 		<% else %>
-			<img src="https://i.ytimg.com/vi/x9Jr9JKpsX8/maxresdefault.jpg" height="70" width="100">
+			<div>
+				<img src="https://i.ytimg.com/vi/x9Jr9JKpsX8/maxresdefault.jpg" height="70" width="100">
+			</div>
 		<% end%>
 	</p>
+	<p><strong>Location</strong><br><small><%= @company.location %></small></p>
+	<p><strong>Email</strong> <br><small><%= @company.email %></small></p>
 </div>
 
 <br>
 
-<h4>Openings:</h4>
-
-<ul>
-	<%if @full_time_jobs.any?%>
-		<strong>Full-Time Positons</strong>
-		<div>
-			<ul>
+<center><h4>Openings</h4></center>
+<br>
+<div id="company-show-job-types" class="container">
+	<ul>
+		<%if @full_time_jobs.any?%>
+			<div id="company-show-job-lists" class="col-md-3 text-center">
+			<strong>Full-Time Positons</strong>	
+			<br><br>	
 				<% @full_time_jobs.each do |job| %>
-					<li><%= link_to job.position, job_path(job) %></li>
+					<li><%= link_to job.position, job_path(job) %></li><br>
 				<% end %>
-			</ul>
-		</div>
-	<%end%>
+			</div>
+		<%end%>
+		
 
-	<%if @part_time_jobs.any?%>
-		<strong>Part-Time Positons</strong>
-		<div>
-			<ul>
-				<% @part_time_jobs.each do |job| %>
-					<li><%= link_to "#{job.position}", job_path(job) %></li>
-				<% end %>
-			</ul>
-		</div>
-	<% end %>
+		<!-- Cant get these list items to center -->
+		<%if @part_time_jobs.any?%>
+			<div id="company-show-job-lists" class="col-md-3 text-center">
+			<strong>Part-Time Positons</strong>
+			<br><br>
+				<ul>
+					<% @part_time_jobs.each do |job| %>
+						<div><li><%= link_to "#{job.position}", job_path(job) %></li><div><br>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
 
-	<%if @internships.any?%>
-		<strong>Internship Positons</strong>
-		<div>
-			<ul>
+		<%if @internships.any?%>
+			<div id="company-show-job-lists" class="col-md-3 text-center">
+			<strong>Internship Positons</strong>
+			<br><br>
 				<% @internships.each do |job| %>
-					<li><%= link_to "#{job.position}", job_path(job) %></li>
+					<div><li><%= link_to "#{job.position}", job_path(job) %></li></div><br>
+					
 				<% end %>
-			</ul>
-		</div>
-	<% end %>
+			</div>
+		<% end %>
 
-	<%if @freelance_jobs.any?%>
-		<strong>Freelance Positions</strong>
-		<div>
-			<ul>
+		<%if @freelance_jobs.any?%>
+			<div id="company-show-job-lists" class="col-md-3 text-center">
+			<strong>Freelance Positions</strong>
+			<br><br>
 				<% @freelance_jobs.each do |job| %>
-					<li><%= link_to "#{job.position}", job_path(job) %></li>
+					<div><li><%= link_to "#{job.position}", job_path(job) %></li></div><br>
 				<% end %>
-			</ul>
-		</div>
-	<% end %>
-
-</ul>
+			</div>
+		<% end %>
+	</ul>
+</div>

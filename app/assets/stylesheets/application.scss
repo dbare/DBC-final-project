@@ -10,37 +10,123 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
 
 
 @import "bootstrap";
 
+
+a:hover {
+	text-decoration: none;
+	color: #00FF00;
+}
+
+body{
+	margin-bottom: 2%;
+}
+
 h1 {
 	text-align: center;
 }
+
 ul {
 	list-style: none;
 }
 
-#job-container {
-	border: solid;
-	border-radius: 10px;
-	margin-bottom: 15px;
+#company-info-container {
+
+	border-top: solid;
+	border-bottom: solid;
+	border-width: .5px;
+	margin-left: 25%;
+	margin-right: 25%;
+
+
+	p {
+		font-size: 17px;
+		}
+	
 }
 
-#company-container {
+#company-link {
 	border: solid;
 	border-radius: 10px;
 	margin-bottom: 15px;
 	padding-top: 15px;
 	padding-bottom: 15px;
+	margin-left: 25%;
+	margin-right: 25%;
 }
 
-#search-buttons {
-	margin-bottom: 10px;
-	text-align: center;
+#company-link:hover {
+	background-color: black;
+	font-family: Monaco;
+
+	a {
+	color: #00FF00;
+	}
+}
+
+#company-new-form {
+	border: solid;
+	border-radius: 15px;
+	margin-right: 25%;
+	margin-left: 25%;
+	padding: 25px;
+	
+	#company-form-buttons {
+		margin-top: 5%;
+		}
+}
+
+#company-show-job-types {
+
+	#company-show-job-lists {
+		float: left;
+		border-right: solid;
+		border-bottom: solid;
+		border-color: lightgrey;
+		border-style: outset outset none none;
+		border-radius: 15px;
+		padding: 10px
+	}
+}
+
+#job-link {
+	border: solid;
+	border-radius: 10px;
+	color: black;
+	margin-bottom: 15px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+#job-link:hover {
+	background-color: black;
+	font-family: Monaco;
+	border-color: black;
+	color: #00FF00;
+
+	a {
+	color: lightgrey;
+	}
+}
+
+#job-new-form {
+	border: solid;
+	border-radius: 15px;
+	margin-right: 1%;
+	margin-left: 1%;
+	padding-left: 100px;
+	padding-right: 100px;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	
+	#job-form-buttons {
+		margin-top: 5%;
+		}
 }
 
 #layout-footer {
@@ -51,17 +137,48 @@ ul {
 	padding-top: 5px;
 }
 
+#search-buttons {
+	margin-bottom: 10px;
+	text-align: center;
+}
+
 #user-about-me {
 	position: center;
 }
 
-.layout-footer {
-	position: relative;
- 	margin-top: -150px;
- 	height: 150px;
- 	clear:both;
- 	padding-top:20px;
+#layout-footer {
+	position:fixed;
+  height:50px;
+  background-color:lightgrey;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  margin-bottom:0px;	
+  width: 100%;
+  border-color: white;
 }
+
+.btn {
+	border-color: black;
+	background-color: white;
+	text-color:black;
+}
+
+.btn:hover {
+	background-color: black;
+	font-family: Monaco;
+	text-color: #00FF00;
+}
+
+.create-company btn:hover{
+	background-color: black;
+		text-color: #00FF00;
+}
+
+
+
+
+
 
 
 
