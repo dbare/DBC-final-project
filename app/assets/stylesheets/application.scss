@@ -15,9 +15,10 @@
 
 @import "bootstrap";
 
+
 a:hover {
 	text-decoration: none;
-	color: darkgrey;
+	color: #00FF00;
 }
 
 body{
@@ -59,10 +60,10 @@ ul {
 
 #company-link:hover {
 	background-color: black;
-	color: lightgrey;
+	font-family: Monaco;
 
 	a {
-	color: lightgrey;
+	color: #00FF00;
 	}
 }
 
@@ -94,16 +95,19 @@ ul {
 #job-link {
 	border: solid;
 	border-radius: 10px;
+	color: black;
 	margin-bottom: 15px;
 	padding-top: 15px;
 	padding-bottom: 15px;
-	margin-left: 25%;
-	margin-right: 25%;
+	margin-left: 10%;
+	margin-right: 10%;
 }
 
 #job-link:hover {
 	background-color: black;
-	color: lightgrey;
+	font-family: Monaco;
+	border-color: black;
+	color: #00FF00;
 
 	a {
 	color: lightgrey;
@@ -152,6 +156,21 @@ ul {
   margin-bottom:0px;	
   width: 100%;
   border-color: white;
+}
+
+.btn {
+	border-color: black;
+	background-color: white;
+	text-color:black;
+}
+
+.btn:hover {
+	background-color: black;
+	color: lightgrey;
+}
+
+.btn create-company {
+	margin-left: 15px;
 }
 
 .nav-bar-button {
