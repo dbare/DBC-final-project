@@ -59,6 +59,8 @@ gem 'figaro'
 
 gem 'fog'
 
+gem 'pry-byebug'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
