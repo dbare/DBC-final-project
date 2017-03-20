@@ -10,6 +10,7 @@ class User < ApplicationRecord
 	has_one :resume
 	has_many :evaluations
 	belongs_to :company, required: false
+	has_many :favorites
 
 	validates :first_name, :last_name, :email, :password, presence: true
 	validates :email, uniqueness: true
