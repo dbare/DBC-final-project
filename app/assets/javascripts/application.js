@@ -12,8 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require materialize-sprokets
 //= require tether
 //= require turbolinks
 //= require ckeditor/init
+//= require materialize-sprockets
+//= require materialize/extras/nouislider
 //= require_tree .
