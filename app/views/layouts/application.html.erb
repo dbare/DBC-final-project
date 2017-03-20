@@ -2,14 +2,13 @@
 <html>
   <head>
     <title>CodeConnect</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script> 
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
   	<nav class="nav nav-tabs" style="background-color: black;">
       <div>
@@ -27,7 +26,11 @@
           <% else %>
             <div> 
               <button><%= link_to "Login", login_path %></button>
+            </div>
+            <div>
               <button><%= link_to "Register", new_user_path %></button>
+            </div>
+            <div>
               <button><%= link_to "Home", root_path %></button>
             </div>
           <%end%>
