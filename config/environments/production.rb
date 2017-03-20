@@ -1,6 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # binding.pry
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -55,7 +56,7 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "code_connect_#{Rails.env}"
-  config.action.mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
