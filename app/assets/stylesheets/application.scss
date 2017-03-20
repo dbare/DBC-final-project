@@ -166,11 +166,12 @@ ul {
 
 .btn:hover {
 	background-color: black;
-	color: lightgrey;
+	font-family: Monaco;
 }
 
-.btn create-company {
-	margin-left: 15px;
+.btn create-company:hover {
+	background-color: black;
+	
 }
 
 .nav-bar-button {
