@@ -23,6 +23,20 @@ ul {
 	list-style: none;
 }
 
+#company-info-container {
+
+	border-top: solid;
+	border-bottom: solid;
+	border-width: .5px;
+	margin-left: 25%;
+	margin-right: 25%;
+
+
+	p {
+		font-size: 17px;
+		}
+	
+}
 
 #company-link {
 	border: solid;
@@ -43,6 +57,21 @@ ul {
 	}
 }
 
+#company-new-form {
+	border: solid;
+	border-radius: 15px;
+	margin-right: 25%;
+	margin-left: 25%;
+	padding: 25px;
+	
+	#company-form-buttons {
+		margin-top: 5%;
+		}
+}
+
+#company-show-job-list {
+	
+}
 
 #job-link {
 	border: solid;
@@ -62,26 +91,6 @@ ul {
 	color: lightgrey;
 	}
 }
-
-#company-new-form {
-	border: solid;
-	border-radius: 15px;
-	margin-left: 25%;
-	margin-right: 25%;
-	padding: 20px;
-	
-	#company-form-buttons {
-		margin-top: 5%;
-		}
-}
-
-
-
-
-
-
-
-
 
 #layout-footer {
 	width: 75%;

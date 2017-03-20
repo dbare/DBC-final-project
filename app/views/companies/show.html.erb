@@ -2,10 +2,8 @@
 
 <br>
 
-<div>
-	<p>Location: <%= @company.location %></p>
-	<p>Email: <%= @company.email %></p>
-	<p>Logo:
+<div id="company-info-container" class="text-center ">
+	<p>Logo
 		<% if @company.photo?%>
 			<%= image_tag @company.photo.avatar.url %>
 		<% else %>
@@ -14,6 +12,8 @@
 			</div>
 		<% end%>
 	</p>
+	<p><strong>Location</strong><br><small><%= @company.location %></small></p>
+	<p><strong>Email</strong> <br><small><%= @company.email %></small></p>
 </div>
 
 <br>
@@ -32,7 +32,6 @@
 				</ul>
 			</div>
 		<%end%>
-
 		<%if @part_time_jobs.any?%>
 			<strong>Part-Time Positons</strong>
 			<div>
