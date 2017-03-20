@@ -1,4 +1,4 @@
-<div class="container col-md-8 col-lg-8">
+<!-- <div class="container col-md-8 col-lg-8"> -->
 	<h1>Register</h1>
 
 	<%= form_for @user, :html => { multipart: true, :class => "form-signin"} do |f| %>
@@ -11,18 +11,15 @@
 		<%= f.label :last_name %>
 		<%= f.text_field :last_name,  class: "form-control" %>
 	</div>
-
-	<div>
+		
 		<label>Company (if applicable)</label>
-		<select name="user[company_id]">
-			<option value=nil>N/A</option>>
-			<% @companies.each do |company| %>
-			<option value=<%=company.id%>><%=company.name%></option>
-			<%end%>
-		</select>
-
-	</div>
-
+			<select name="user[company_id]">
+				<option value=nil>N/A</option>>
+				<% @companies.each do |company| %>
+					<option value=<%=company.id%>><%=company.name%></option>
+				<%end%>
+			</select>
+	
 	<div>
 		<%= f.label :email %>
 		<%= f.text_field :email, class: "form-control" %>
@@ -43,7 +40,8 @@
 		<%= f.file_field :photo, class: "form-control" %>
 	</div>
 
-	<%= submit_tag "Register", :class => "btn btn-lg btn-primary"  %>
+	<div>
+		<%= submit_tag "Register", :class => "btn btn-lg btn-primary"  %>
+	</div>
 
 	<% end %>
-</div>
