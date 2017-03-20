@@ -9,7 +9,9 @@
 		<% if @company.photo?%>
 			<%= image_tag @company.photo.avatar.url %>
 		<% else %>
-			<img src="https://i.ytimg.com/vi/x9Jr9JKpsX8/maxresdefault.jpg" height="70" width="100">
+			<div>
+				<img src="https://i.ytimg.com/vi/x9Jr9JKpsX8/maxresdefault.jpg" height="70" width="100">
+			</div>
 		<% end%>
 	</p>
 </div>
@@ -18,49 +20,50 @@
 
 <h4>Openings:</h4>
 
-<ul>
-	<%if @full_time_jobs.any?%>
-		<strong>Full-Time Positons</strong>
-		<div>
-			<ul>
-				<% @full_time_jobs.each do |job| %>
-					<li><%= link_to job.position, job_path(job) %></li>
-				<% end %>
-			</ul>
-		</div>
-	<%end%>
+<div>
+	<ul>
+		<%if @full_time_jobs.any?%>
+			<strong>Full-Time Positons</strong>
+			<div>
+				<ul>
+					<% @full_time_jobs.each do |job| %>
+						<li><%= link_to job.position, job_path(job) %></li>
+					<% end %>
+				</ul>
+			</div>
+		<%end%>
 
-	<%if @part_time_jobs.any?%>
-		<strong>Part-Time Positons</strong>
-		<div>
-			<ul>
-				<% @part_time_jobs.each do |job| %>
-					<li><%= link_to "#{job.position}", job_path(job) %></li>
-				<% end %>
-			</ul>
-		</div>
-	<% end %>
+		<%if @part_time_jobs.any?%>
+			<strong>Part-Time Positons</strong>
+			<div>
+				<ul>
+					<% @part_time_jobs.each do |job| %>
+						<div><li><%= link_to "#{job.position}", job_path(job) %></li></div>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
 
-	<%if @internships.any?%>
-		<strong>Internship Positons</strong>
-		<div>
-			<ul>
-				<% @internships.each do |job| %>
-					<li><%= link_to "#{job.position}", job_path(job) %></li>
-				<% end %>
-			</ul>
-		</div>
-	<% end %>
+		<%if @internships.any?%>
+			<strong>Internship Positons</strong>
+			<div>
+				<ul>
+					<% @internships.each do |job| %>
+						<div><li><%= link_to "#{job.position}", job_path(job) %></li></div>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
 
-	<%if @freelance_jobs.any?%>
-		<strong>Freelance Positions</strong>
-		<div>
-			<ul>
-				<% @freelance_jobs.each do |job| %>
-					<li><%= link_to "#{job.position}", job_path(job) %></li>
-				<% end %>
-			</ul>
-		</div>
-	<% end %>
-
-</ul>
+		<%if @freelance_jobs.any?%>
+			<strong>Freelance Positions</strong>
+			<div>
+				<ul>
+					<% @freelance_jobs.each do |job| %>
+						<div><li><%= link_to "#{job.position}", job_path(job) %></li></div>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+	</ul>
+</div>

@@ -2,7 +2,9 @@
 
 <% if current_user %>
 	<!-- Add admin only validation -->
-	<h3><%= link_to "Create New Company", new_company_path %></h3>
+	<div>
+		<h3><%= link_to "Create New Company", new_company_path %></h3>
+	</div>
 <% end %>
 
 <% @companies.each do |company| %>

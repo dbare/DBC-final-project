@@ -10,24 +10,17 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
 
 
 @import "bootstrap";
+@import "bootstrap-theme";
 
 h1 {
 	text-align: center;
 }
 ul {
 	list-style: none;
-}
-
-#job-container {
-	border: solid;
-	border-radius: 10px;
-	margin-bottom: 15px;
 }
 
 #company-container {
@@ -38,10 +31,13 @@ ul {
 	padding-bottom: 15px;
 }
 
-#search-buttons {
-	margin-bottom: 10px;
-	text-align: center;
+#job-container {
+	border: solid;
+	border-radius: 10px;
+	margin-bottom: 15px;
 }
+
+
 
 #layout-footer {
 	width: 75%;
@@ -49,6 +45,11 @@ ul {
 	margin-top: 25px;
 	margin-bottom: 15px;
 	padding-top: 5px;
+}
+
+#search-buttons {
+	margin-bottom: 10px;
+	text-align: center;
 }
 
 #user-about-me {
@@ -59,8 +60,13 @@ ul {
 	position: relative;
  	margin-top: -150px;
  	height: 150px;
- 	clear:both;
- 	padding-top:20px;
+ 	
+ 	padding-top: 20px;
+}
+
+.nav-bar-button {
+	color:while;
+	background-color: black;
 }
 
 

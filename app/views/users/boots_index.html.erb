@@ -8,7 +8,6 @@ This is an index of **ONLY** bootcamp graduates.
 	<%= search_form_for @search do |f| %>
 		<%= f.condition_fields do |c| %>
 		<div>
-
 			<%= c.attribute_fields do |a| %>
 				<%= a.attribute_select %>
 			<% end %>
@@ -21,7 +20,7 @@ This is an index of **ONLY** bootcamp graduates.
 <div id="search-buttons">
 	<div><%= f.submit "Search"%> </div>
 	<% end %>
-	<%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %>
+	<div><%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %></div>
 	</div>
 </div>
 
@@ -29,9 +28,10 @@ This is an index of **ONLY** bootcamp graduates.
 <br>
 
 Bootcamp Graduates:
-<ul>
-	<% @boots.each do |boot| %>
-		<li><%= link_to boot.full_name, user_path(boot) %></li>
-	<%end%>
-
-</ul>
+<div>
+	<ul>
+		<% @boots.each do |boot| %>
+			<div><li><%= link_to boot.full_name, user_path(boot) %></li></div>
+		<%end%>
+	</ul>
+</div>

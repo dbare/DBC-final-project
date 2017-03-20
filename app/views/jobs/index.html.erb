@@ -16,9 +16,9 @@
 <% end %>
 
 <div id="search-buttons">
-	<div><%= f.submit "Search"%> </div>
+	<div class="btn btn-primary"><%= f.submit "Search"%> </div>
 	<% end %>
-	<%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %>
+	<div class="btn btn-primary"><%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %></div>
 	</div>
 </div>
 
