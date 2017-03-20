@@ -1,5 +1,5 @@
 class Resume < ApplicationRecord
-	mount_uploader :content, PhotoUploader
+	mount_uploader :content, ContentUploader
 
 	belongs_to :user, required: false
 end
