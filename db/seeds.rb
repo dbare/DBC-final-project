@@ -1,11 +1,10 @@
 # Company.destroy_all
 # User.destroy_all
 # Job.destroy_all
-# Project.destroy_all
 # Profile.destroy_all
-# Contract.destroy_all
 # Link.destroy_all
 # Evaluation.destroy_all
+# Token.destroy_all
 
 
 # All sample candidates
@@ -72,9 +71,9 @@ Job.create(position: "Systematic Diversity Analyst", location: "San Francisco, C
 
 # #Jobs posted from company 10
 Job.create(position: "Localized Paradigm Blogger", location: "East Mckenzie, Tennessee", description: "Duties include evolving value-added channels with an uncanny ability to orchestrate distributed functionalities", company_id: 10, compensation: "billions", job_type:"part-time")
-Job.create(position: "Off Shore Module Guru", location: "East Mckenzie, Tennessee", description: "Duties include synthesizing efficient mindshare and targeting extensible partnerships", company_id: 10, compensation: "billions", job_type:"part-time")
-Job.create(position: "Human Identity Discoverer", location: "East Mckenzie, Tennessee", description: "Duties include orchestrating sticky convergence and fulfilling the office ukelele supply", company_id: 10, compensation: "billions", job_type:"part-time")
-Job.create(position: "Streamlined Tactics Orchestrator", location: "East Mckenzie, Tennessee", description: "Duties include aggregating wearable initiatives with clicks-and-mortar infomediaries", company_id: 10, compensation: "billions", job_type:"part-time")
+Job.create(position: "Off Shore Module Guru", location: "East Mckenzie, Tennessee", description: "Duties include synthesizing efficient mindshare and targeting extensible partnerships", company_id: 10, compensation: "billions", job_type:"freelance")
+Job.create(position: "Human Identity Discoverer", location: "East Mckenzie, Tennessee", description: "Duties include orchestrating sticky convergence and fulfilling the office ukelele supply", company_id: 10, compensation: "billions", job_type:"full-time")
+Job.create(position: "Streamlined Tactics Orchestrator", location: "East Mckenzie, Tennessee", description: "Duties include aggregating wearable initiatives with clicks-and-mortar infomediaries", company_id: 10, compensation: "billions", job_type:"internship")
 Job.create(position: "Global Social Media Theorist", location: "East Mckenzie, Tennessee", description: "Duties include seizing and dominating dot-com supply-chains", company_id: 10, compensation: "billions", job_type:"part-time")
 Job.create(position: "End User Synergy Instructor", location: "East Mckenzie, Tennessee", description: "Duties include maximizing dynamic hashtags and drinking coffee alone", company_id: 10, compensation: "billions", job_type:"part-time")
 

@@ -20,15 +20,12 @@ We are a five-member team, completing our final group project together at Dev Bo
 * Can view job and freelance boards
 * Can upload their resume
 * Can view and search for other grads
-* Can view their contracts with companies/employers
 * Can upload a portfolio
 * Can add links to their social media accounts
-* Have access to their reviews from companies they have contracts with
+* Have access to testimonials left by other users
 
 ### Registered Companies/Employers
 * Can post and view their job listings
 * Can post and view their freelance listings
-* Can pick registered bootcamp grad to complete freelance project
 * Can view and search for grads
-* Can view their contracts with grads
-* Can review grads they have contracts with
+* Can leave testimonials on a grad's page
