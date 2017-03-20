@@ -5,8 +5,8 @@ Rails.application.routes.draw do
 	resources :jobs
 	resources :users do
 		resources :evaluations
-    resources :uploads
-    resources :resumes
+    	resources :uploads
+    	resources :resumes
 	end
 
 	resources :profiles
