@@ -1,6 +1,6 @@
 gmail_username: 'codeconnectgroup@gmail.com'
 gmail_password: 'chillkim'
 
-AWS_ACCESS_KEY: "AKIAIINAEEZVT3AZR2MA"
-AWS_SECRET_KEY: "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"
+AWS_ACCESS_KEY: ""
+AWS_SECRET_KEY: ""
 AWS_BUCKET: "code-connect"
