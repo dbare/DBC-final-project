@@ -1,14 +1,13 @@
-<h1> Job ID: <%=@job.id%>  </h1>
+<h1> Job ID: <%=@job.id%>  </h1><br>
 
-<div>
-	<p>Position: <%= @job.position %></p>
+<div class="text-center">
+	<p><h4>Position</h4> <small><%= @job.position %></small></p><br>
 	<% if @job.company%>
-		<p>Company: <%= @job.company.name %></p>
+		<p><h4>Company</h4> <small><%= @job.company.name %></small></p><br>
 	<% end %>
-	<p>Location: <%= @job.location %></p>
-	<p>Description: <%= @job.description %></p>
+	<p><h4>Location</h4> <small><%= @job.location %></small></p><br>
+	<p><h4>Description</h4> <small><%= @job.description %></small></p><br>
 </div>
-
 
 <% if current_user.company_id == @job.company_id %>
 	<%= link_to "Update this Listing", edit_job_path(@job) %> 

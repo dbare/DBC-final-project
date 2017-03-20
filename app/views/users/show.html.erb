@@ -55,31 +55,37 @@
 			<li>
 				<%= link_to link.description, link.url %>
 				<% if @user == current_user%>
-					<button><%= link_to "Edit", edit_link_path(link) %></button>
-					<button><%= link_to "Delete", link_path(link), method: :delete %></button>
-					<%end%>
-				</li>
-			<% end%>
+					<div>
+						<button><%= link_to "Edit", edit_link_path(link) %></button>
+					</div>
+					<div>
+						<button><%= link_to "Delete", link_path(link), method: :delete %></button>
+					</div>	
+				<% end%>
+			</li>
 		<% end %>
 		</ul>
+	<% end %>
 
 	<br>
 	<% if @user == current_user%>
 	<h3><%= link_to "Add New Link", new_link_path %></h3>
 	<% end %>
-	<div>
-
 		<div class="text-center">
 			<h3>Portfolio</h3>
 			<ul>
 				<% @uploads.each do |upload| %>
-				<li>
-					<%= image_tag upload.photo.avatar.url %>
-					<% if @user == current_user%>
-						<button><%= link_to "Edit", edit_user_upload_path(@user, upload) %></button>
-						<button><%= link_to "Delete", user_upload_path(@user, upload), method: :delete %></button>
-					<%end%>
-				</li>
+					<li>
+						<%= image_tag upload.photo.avatar.url %>
+						<% if @user == current_user%>
+							<div>
+								<button><%= link_to "Edit", edit_user_upload_path(@user, upload) %></button>
+							</div>
+							<div>
+								<button><%= link_to "Delete", user_upload_path(@user, upload), method: :delete %></button>
+							</div>
+						<%end%>
+					</li>
 				<% end%>
 			</ul>
 
