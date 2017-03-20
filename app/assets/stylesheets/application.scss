@@ -15,9 +15,15 @@
 
 @import "bootstrap";
 
+a:hover {
+	text-decoration: none;
+	color: darkgrey;
+}
+
 body{
 	margin-bottom: 2%;
 }
+
 h1 {
 	text-align: center;
 }
@@ -76,6 +82,12 @@ ul {
 
 	#company-show-job-lists {
 		float: left;
+		border-right: solid;
+		border-bottom: solid;
+		border-color: lightgrey;
+		border-style: outset outset none none;
+		border-radius: 15px;
+		padding: 10px
 	}
 }
 
@@ -124,12 +136,14 @@ ul {
   right:0px;
   margin-bottom:0px;	
   width: 100%;
+  border-color: white;
 }
 
 .nav-bar-button {
 	color:white;
 	background-color: black;
 	height: 45px;
+
 }
 
 

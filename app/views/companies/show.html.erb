@@ -19,49 +19,51 @@
 <br>
 
 <center><h4>Openings</h4></center>
-
-<div id="company-show-job-types">
+<br>
+<div id="company-show-job-types" class="container">
 	<ul>
 		<%if @full_time_jobs.any?%>
-			<div id="company-show-job-lists" class="col-md-3">
-			<strong>Full-Time Positons</strong>
-				<ul>
-					<% @full_time_jobs.each do |job| %>
-						<li><%= link_to job.position, job_path(job) %></li>
-					<% end %>
-				</ul>
+			<div id="company-show-job-lists" class="col-md-3 text-center">
+			<strong>Full-Time Positons</strong>	
+			<br><br>	
+				<% @full_time_jobs.each do |job| %>
+					<li><%= link_to job.position, job_path(job) %></li><br>
+				<% end %>
 			</div>
 		<%end%>
+		
+
+		<!-- Cant get these list items to center -->
 		<%if @part_time_jobs.any?%>
-			<div id="company-show-job-lists" class="col-md-3">
+			<div id="company-show-job-lists" class="col-md-3 text-center">
 			<strong>Part-Time Positons</strong>
+			<br><br>
 				<ul>
 					<% @part_time_jobs.each do |job| %>
-						<div><li><%= link_to "#{job.position}", job_path(job) %></li></div>
+						<div><li><%= link_to "#{job.position}", job_path(job) %></li><div><br>
 					<% end %>
 				</ul>
 			</div>
 		<% end %>
 
 		<%if @internships.any?%>
-			<div id="company-show-job-lists" class="col-md-3">
+			<div id="company-show-job-lists" class="col-md-3 text-center">
 			<strong>Internship Positons</strong>
-				<ul>
-					<% @internships.each do |job| %>
-						<div><li><%= link_to "#{job.position}", job_path(job) %></li></div>
-					<% end %>
-				</ul>
+			<br><br>
+				<% @internships.each do |job| %>
+					<div><li><%= link_to "#{job.position}", job_path(job) %></li></div><br>
+					
+				<% end %>
 			</div>
 		<% end %>
 
 		<%if @freelance_jobs.any?%>
-			<div id="company-show-job-lists" class="col-md-3">
+			<div id="company-show-job-lists" class="col-md-3 text-center">
 			<strong>Freelance Positions</strong>
-				<ul>
-					<% @freelance_jobs.each do |job| %>
-						<div><li><%= link_to "#{job.position}", job_path(job) %></li></div>
-					<% end %>
-				</ul>
+			<br><br>
+				<% @freelance_jobs.each do |job| %>
+					<div><li><%= link_to "#{job.position}", job_path(job) %></li></div><br>
+				<% end %>
 			</div>
 		<% end %>
 	</ul>
