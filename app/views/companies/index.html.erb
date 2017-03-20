@@ -7,8 +7,10 @@
 	</div>
 <% end %>
 
-<% @companies.each do |company| %>
-	<div class="text-center container col-lg-6 col-md-6" id="company-container">
-		<%= link_to "#{company.name}", company_path(company) %>
-	</div>
-<% end %>
+<div id="company-container">
+	<% @companies.each do |company| %>
+		<div class="text-center" id="company-link">
+			<%= link_to "#{company.name}", company_path(company) %>
+		</div>
+	<% end %>
+</div>>

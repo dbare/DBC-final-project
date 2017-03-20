@@ -14,28 +14,62 @@
 
 
 @import "bootstrap";
-@import "bootstrap-theme";
 
 h1 {
 	text-align: center;
 }
+
 ul {
 	list-style: none;
 }
 
-#company-container {
+
+#company-link {
 	border: solid;
 	border-radius: 10px;
 	margin-bottom: 15px;
 	padding-top: 15px;
 	padding-bottom: 15px;
+	margin-left: 25%;
+	margin-right: 25%;
 }
 
-#job-container {
+#company-link:hover {
+	background-color: black;
+	color: lightgrey;
+
+	a {
+	color: lightgrey;
+	}
+}
+
+
+#job-link {
 	border: solid;
 	border-radius: 10px;
 	margin-bottom: 15px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-left: 25%;
+	margin-right: 25%;
 }
+
+#job-link:hover {
+	background-color: black;
+	color: lightgrey;
+
+	a {
+	color: lightgrey;
+	}
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -60,13 +94,13 @@ ul {
 	position: relative;
  	margin-top: -150px;
  	height: 150px;
- 	
  	padding-top: 20px;
 }
 
 .nav-bar-button {
-	color:while;
+	color:white;
 	background-color: black;
+	height: 45px;
 }
 
 

@@ -22,9 +22,9 @@
 	</div>
 </div>
 
-<div>
+<div id="job-container">
 	<% @jobs.each do |job| %>
-		<div class="text-center container col-lg-8 col-md-8" id="job-container">
+		<div class="text-center" id="job-">
 			<h3> JobID: <%= link_to job.id, job_path(job) %> </h3>
 			<p><h5>Position</h5><%=job.position%></p>
 			<p><h5>Description</h5><%=job.description%></p>
