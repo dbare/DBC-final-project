@@ -18,13 +18,13 @@
 
 <br>
 
-<h4>Openings:</h4>
+<center><h4>Openings</h4></center>
 
-<div>
+<div id="company-show-job-types">
 	<ul>
 		<%if @full_time_jobs.any?%>
+			<div id="company-show-job-lists" class="col-md-3">
 			<strong>Full-Time Positons</strong>
-			<div>
 				<ul>
 					<% @full_time_jobs.each do |job| %>
 						<li><%= link_to job.position, job_path(job) %></li>
@@ -33,8 +33,8 @@
 			</div>
 		<%end%>
 		<%if @part_time_jobs.any?%>
+			<div id="company-show-job-lists" class="col-md-3">
 			<strong>Part-Time Positons</strong>
-			<div>
 				<ul>
 					<% @part_time_jobs.each do |job| %>
 						<div><li><%= link_to "#{job.position}", job_path(job) %></li></div>
@@ -44,8 +44,8 @@
 		<% end %>
 
 		<%if @internships.any?%>
+			<div id="company-show-job-lists" class="col-md-3">
 			<strong>Internship Positons</strong>
-			<div>
 				<ul>
 					<% @internships.each do |job| %>
 						<div><li><%= link_to "#{job.position}", job_path(job) %></li></div>
@@ -55,8 +55,8 @@
 		<% end %>
 
 		<%if @freelance_jobs.any?%>
+			<div id="company-show-job-lists" class="col-md-3">
 			<strong>Freelance Positions</strong>
-			<div>
 				<ul>
 					<% @freelance_jobs.each do |job| %>
 						<div><li><%= link_to "#{job.position}", job_path(job) %></li></div>

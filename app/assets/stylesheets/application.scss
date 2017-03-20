@@ -15,6 +15,9 @@
 
 @import "bootstrap";
 
+body{
+	margin-bottom: 2%;
+}
 h1 {
 	text-align: center;
 }
@@ -69,8 +72,11 @@ ul {
 		}
 }
 
-#company-show-job-list {
-	
+#company-show-job-types {
+
+	#company-show-job-lists {
+		float: left;
+	}
 }
 
 #job-link {
@@ -109,11 +115,15 @@ ul {
 	position: center;
 }
 
-.layout-footer {
-	position: relative;
- 	margin-top: -150px;
- 	height: 150px;
- 	padding-top: 20px;
+#layout-footer {
+	position:fixed;
+  height:50px;
+  background-color:lightgrey;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  margin-bottom:0px;	
+  width: 100%;
 }
 
 .nav-bar-button {
