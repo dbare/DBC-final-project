@@ -59,6 +59,8 @@ gem 'figaro'
 
 gem 'fog'
 
+gem 'materialize-sass'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
