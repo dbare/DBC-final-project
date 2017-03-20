@@ -159,15 +159,21 @@ ul {
 }
 
 .btn {
+	background-color: black;
+	color: lightgrey;
+
+	:hover{
+	font-family: Monaco;
 	border-color: black;
-	background-color: white;
-	text-color:black;
+	color: #00FF00;
+	}
 }
 
 .btn:hover {
 	background-color: black;
 	font-family: Monaco;
 	text-color: #00FF00;
+
 }
 
 .create-company btn:hover{
