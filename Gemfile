@@ -57,6 +57,8 @@ gem 'tether-rails'
 
 gem 'figaro'
 
+gem 'fog'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
