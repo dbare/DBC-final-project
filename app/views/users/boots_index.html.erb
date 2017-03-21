@@ -29,16 +29,17 @@
 <br>
 
 <span class="center-align"><h3>Bootcamp Graduates</h3></span>
+<br>
 
 <div class="row">
 	<% @boots.each do |boot| %>
 		<div class="col m4" >
 			<div class="card blue-grey darken-4 z-depth-5">
 				<div class="card-image">
-					<img src="">
-					<span class="card-title black-text">Card title</span>
+						<img src="<%= boot.photo %>">
+					<span class="card-title black-text"><%= link_to boot.full_name, user_path(boot) %></span>
 				</div>
-				<div class="card-content center-align" id="boot-index-container"><%= link_to boot.full_name, user_path(boot) %></div>	
+				<div class="card-content center-align" id="boot-index-container"></div>	
 				<br>	
 			</div>
 		</div>
