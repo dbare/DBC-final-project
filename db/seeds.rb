@@ -114,6 +114,7 @@ end
 	Token.create(characters: number, admin_token: true)
 end
 
+Favorite.create(user_id: 1, job_id: 1)
 
 
 
