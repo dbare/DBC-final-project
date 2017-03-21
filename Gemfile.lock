@@ -221,6 +221,7 @@ GEM
     geocoder (1.4.3)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    gmaps4rails (2.1.2)
     i18n (0.8.1)
     impressionist (1.5.2)
       nokogiri (~> 1.6)
@@ -394,6 +395,7 @@ DEPENDENCIES
   fog
   font-awesome-rails
   geocoder
+  gmaps4rails
   impressionist
   jbuilder (~> 2.5)
   jquery-rails
