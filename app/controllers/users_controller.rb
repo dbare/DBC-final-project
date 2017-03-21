@@ -35,7 +35,8 @@ class UsersController < ApplicationController
 			login
 			redirect_to @user
 		else
-			p "ELSE"
+			p "*" * 100
+			p "ELSE WE FUCKED UP"
 			render 'new'
 		end
 	end
@@ -52,7 +53,7 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-		params.require(:user).permit(:first_name, :last_name, :username, :email, :password, :photo, :company_id)
+		params.require(:user).permit(:first_name, :last_name, :username, :email, :password, :photo, :company_id, :unique_token)
 	end
 
 end
