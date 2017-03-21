@@ -48,6 +48,7 @@
 <br>
 
 <div>
+	<h3>Resume</h3>
 	<% if !@user.resume %>
 		<%= render 'resumes/form' %>
 	<% else %>
@@ -104,17 +105,6 @@
 			<% end %>
 		</div>
 
-		<div class="text-center">
-			<h3>Resume</h3>
-			<% if @user.resume %>
-				<%= image_tag @user.resume.content.url %>
-			<% end %>
-
-			<% if @user == current_user%>
-				<h3><%= link_to "Upload Resume", new_user_resume_path(@user) %></h3>
-			<% end %>
-		</div>
-
 		<br>
 		<br>
 
@@ -128,3 +118,19 @@
 				<% end %>
 			<% end %>
 		</div>
+
+
+		<% if current_user == @user && @user.favorite_jobs.any?%>
+			<div class="text-center">
+			<h3>Favorite Jobs:</h3>
+				<% @user.favorite_jobs.each do |job| %>
+					<%= link_to "#{job.company.name} - #{job.position}" , job_path(job) %>
+				<% end %>				
+			</div>
+		</div>
+
+		<% end %>
+
+		<br>
+		<br>
+

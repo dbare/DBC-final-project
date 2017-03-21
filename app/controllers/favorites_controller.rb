@@ -1,22 +1,31 @@
 class FavoritesController < ApplicationController
 	
 	def new
+		@favorite = Favorite.new
 	end
 
 	def create
-		@user = User.find(params[:user_id])
-		@evaluation = Evaluation.new(evaluation_params)
-		if @evaluation.save
-			@evaluation.update_attributes(author_id: current_user.id, subject_id: @user.id )
-			redirect_to @user
+		@job = Job.find(params[:favorite][:job_id])
+		@user = User.find(params[:favorite][:user_id])
+		@favorite = Favorite.new(favorite_params)
+		if @favorite.save
+			redirect_to @job
 		else
-			render 'users/show'
+			redirect_to @job
 		end
+	end
+
+	def destroy
+		@favorite = Favorite.find(params[:id])
+		@job = @favorite.job
+		@favorite.destroy
+		redirect_to job_path(@job)
 	end
 
 	private
 
 	def favorite_params
-		params.require(:evaluation).permit()
+		params.require(:favorite).permit(:user_id, :job_id)
 	end
+
 end

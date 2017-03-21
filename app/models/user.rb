@@ -12,6 +12,8 @@ class User < ApplicationRecord
 	belongs_to :company, required: false
 	has_many :favorites
 
+	has_many :favorite_jobs, through: :favorites, source: :job
+
 	validates :first_name, :last_name, :email, :password, presence: true
 	validates :email, uniqueness: true
 

@@ -171,3 +171,6 @@ end
 (1..9).to_a.each do |number|
 	Token.create(characters: number, admin_token: true)
 end
+
+# Favorite sample
+Favorite.create(user_id: 1, job_id: 1)

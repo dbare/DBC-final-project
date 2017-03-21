@@ -13,7 +13,7 @@ class ResumesController < ApplicationController
 			render 'show'
 		else
 			@errors = @resume.errors.full_messages
-			flash[:notice] = "Unsuccesful submit"
+			flash[:notice] = "Unsupported file type, please use one of the following file types: jpg jpeg gif png pdf txt docx"
 			render 'new'
 		end
 	end

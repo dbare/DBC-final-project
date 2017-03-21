@@ -32,6 +32,13 @@ class JobsController < ApplicationController
 
 	def show
 		@job = Job.find(params[:id])
+		@user = current_user
+		@favorite = Favorite.new
+
+		@favorited = current_user.favorite_jobs.include?(@job)
+		@user_favorite = current_user.favorites.find_by(job_id: @job.id)
+
+
 	end
 
 	def update
