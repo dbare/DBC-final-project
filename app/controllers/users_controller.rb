@@ -47,7 +47,6 @@ class UsersController < ApplicationController
 		@profile = @user.profile
 		@uploads = @user.uploads
 		@resume = Resume.new
-
 	end
 
 	private
