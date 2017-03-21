@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 	attr_accessor :unique_token
+	is_impressionable
 
 	mount_uploader :photo, PhotoUploader
 

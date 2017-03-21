@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	before_action :require_valid_user, only: [:index]
+	impressionist actions: [:show] #, unique: [:user_id]
 
 	def index
 		@search = User.search(params[:q])
@@ -47,6 +48,11 @@ class UsersController < ApplicationController
 		@uploads = @user.uploads
 		@resume = Resume.new
 
+		p "*" * 50
+		p current_user.id
+		p "*" * 50
+		p @user.id
+		p "*" * 50
 	end
 
 	private

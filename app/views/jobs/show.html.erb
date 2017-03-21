@@ -9,6 +9,10 @@
 	<p><h4>Description</h4> <small><%= @job.description %></small></p><br>
 </div>
 
+<h4>
+	<%= "This listing has been viewed: #{@job.impressionist_count} times" %>
+</h4>
+
 <% if current_user.company_id == @job.company_id %>
 	<%= link_to "Update this Listing", edit_job_path(@job) %> 
 	<%= link_to "Delete this Listing", job_path(@job), method: :delete %>
