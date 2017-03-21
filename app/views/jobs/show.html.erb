@@ -9,16 +9,23 @@
 	<p><h4>Description</h4> <small><%= @job.description %></small></p><br>
 </div>
 
+<% if @user_favorite %>
+	<button class="btn"><%= link_to "Unfavorite", favorite_path(@user_favorite), method: :delete %></button>
+<% else %>
+	<%= render 'favorites/form' %>
+<% end %> 
+
+<br>
+<br>
+<br>
+
 <% if current_user.company_id == @job.company_id %>
-	<%= link_to "Update this Listing", edit_job_path(@job) %> 
-	<%= link_to "Delete this Listing", job_path(@job), method: :delete %>
+	<p><h4>Job Post Admin (HR)</h4></p>
+	<button><%= link_to "Update this Listing", edit_job_path(@job) %></button>
+	<button><%= link_to "Delete this Listing", job_path(@job), method: :delete %></button>
 <% end %>
 
 <br>
 <br>
 
-<% if @user_favorite %>
-	<button class="btn btn-lg btn-primary"><%= link_to "Unfavorite", favorite_path(@user_favorite), method: :delete %></button>
-<% else %>
-	<%= render 'favorites/form' %>
-<% end %> 
+
