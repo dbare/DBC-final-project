@@ -1,37 +1,67 @@
-This is an index of **ONLY** bootcamp graduates.
+<div id="index-banner" class="parallax-container z-depth-5">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center teal-text text-lighten-2">Boot Index</h1>
+      <div class="row center">
+        <h5 class="header col s12 light white-text">Search for Boots</h5>
+      </div>
+      <div class="row center">
+        
+      </div>
+      <br><br>
 
-<br>
-<br>
+    </div>
+  </div>
+  <div class="parallax"><%= image_tag("boots.jpg", :alt => "Unsplashed boots img", width: 100, height: 100) %></div>
+</div>
+	<div class="container ">
 
-<div class="text-center container col-md-8 col-lg-8">
-
-	<%= search_form_for @search do |f| %>
-		<%= f.condition_fields do |c| %>
-		<div>
-			<%= c.attribute_fields do |a| %>
-				<%= a.attribute_select %>
-			<% end %>
-			<%= c.predicate_select %>
-			<%= c.value_fields do |v| %>
-				<%= v.text_field :value %>
-			<% end %>
+		<%= search_form_for @search do |f| %>
+			<%= f.condition_fields do |c| %>
+			<div class="row">
+				<div class="col s12 m4 l2">
+					<i class="fa fa-search" aria-hidden="true"></i>
+				</div>
+				<div class="col s12 m4 l8">
+						<%= c.attribute_fields do |a| %>
+				</div>
+							<%= a.attribute_select %>
+						<% end %>
+						<%= c.predicate_select %>
+						<%= c.value_fields do |v| %>
+							<%= v.text_field :value %>
+						<% end %>
+			</div>
+		<% end %>
+		<div class="center-align">
+			<div><%= f.submit "Search"%></div>
+		<% end %>
+			<div><%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %></div>
 		</div>
-<% end %>
-<div id="search-buttons">
-	<div><%= f.submit "Search"%> </div>
-	<% end %>
-	<div><%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %></div>
 	</div>
-</div>
 
 <br>
 <br>
 
-Bootcamp Graduates:
-<div>
-	<ul>
-		<% @boots.each do |boot| %>
-			<div><li><%= link_to boot.full_name, user_path(boot) %></li></div>
-		<%end%>
-	</ul>
+<span class="center-align"><h3>Bootcamp Graduates</h3></span>
+<br>
+
+<div class="row">
+	<% @boots.each do |boot| %>
+		<div class="col m4" >
+			<div class="card hoverable light-grey z-depth-5">
+				<div class="card-image">
+						<img src="<%= boot.photo %>">
+					<span class="card-title black-text"><%= boot.full_name %></span>
+					<a href="<%= user_path(boot)%>" class="btn-floating halfway-fab waves-effect z-depth-5"><i class="fa fa-user" aria-hidden="true"></i></a>
+				</div>
+				<div class="card-content">
+              		<p><%= boot.profile %></p>
+        		</div>	
+			</div>
+		</div>
+	<%end%>
 </div>
+
+
