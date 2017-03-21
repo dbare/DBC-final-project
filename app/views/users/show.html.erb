@@ -5,14 +5,23 @@
 	</div>
 </div>
 
-
 <div class="row" id="border">
+				<h4>
+					<% if current_user.id == @user.id %>
+						<%= "Profile Views: #{@user.impressionist_count}" %>
+					<% end %>
+				</h4>
 	<% if @user.photo? %>
 		<div class="col s5">
 			<div class="center-align" id="profile-pic">
 				<%= image_tag @user.photo.avatar.url %><br>
 				<strong>Contact</strong><br>
-				<small><%= @user.email %></small>
+				<small><%= @user.email %></small><br>
+
+			<div class="btn link"><%= link_to 'Message me!', user_conversations_path(@user, sender_id: current_user.id, recipient_id: @user.id), method: 'post'%></div>
+
+
+
 			</div>
 			<br>
 			<div class="center-align">
@@ -51,29 +60,10 @@
 </div>
 
 
-<div>
-	<h4>
-		<% if current_user.id == @user.id %>
-			<%= "Profile Views: #{@user.impressionist_count}" %>
-		<% end %>
-	</h4>
-</div>
+
 
 <br>
 <br>
-
-<% if @user.photo? %>
-	<div class="col-md-4 col-lg-4">
-		<strong>Photo:</strong>
-		<%= image_tag @user.photo.avatar.url %>
-	</div>
-<%end%>
-
-<%= link_to 'Message me!', user_conversations_path(@user, sender_id: current_user.id, recipient_id: @user.id), method: 'post'%>
-
-<br>
-<br>
-
 
 
 
@@ -112,35 +102,8 @@
 <!-- Everthing above this comment is in the right position -->
 
 
-<div>
-	<p><%= flash[:notice] %></p>
-	<h3>Resume</h3>
-	<% if !@user.resume %>
-		<%= render 'resumes/form' %>
-	<% else %>
-		<%= link_to "#{@user.first_name}'s Resume", user_resume_path(@user) %>
-	<% end %>
-</div>
 
-<div class="text-center">
-	<h3>Links Section</h3>
-	<% if @user.links %>
-		<ul>
-		<% @links.each do |link| %>
-			<li>
-				<%= link_to link.description, link.url %>
-				<% if @user == current_user%>
-					<div>
-						<button><%= link_to "Edit", edit_link_path(link) %></button>
-					</div>
-					<div>
-						<button><%= link_to "Delete", link_path(link), method: :delete %></button>
-					</div>
-				<% end%>
-			</li>
-		<% end %>
-		</ul>
-	<% end %>
+
 
 
 <div>
@@ -177,44 +140,32 @@
 			<div class="col s6 valign" ><div class="btn link"><a href=" <%=new_link_path %>">Add New Link</a></div></div>
 			<% end %>
 
+						<div>
+								<br>
+								<br>
+								<% if current_user == @user && @user.favorite_jobs.any?%>
+							<div class="text-center">
+							<h3>Favorite Jobs:</h3>
+								<% @user.favorite_jobs.each do |job| %>
+									<%= link_to "#{job.company.name} - #{job.position}" , job_path(job) %>
+								<% end %>
+							</div>
+						</div>
 
-<div>
-
-				<br>
-				<br>
-
-		<% if current_user == @user && @user.favorite_jobs.any?%>
-			<div class="text-center">
-			<h3>Favorite Jobs:</h3>
-				<% @user.favorite_jobs.each do |job| %>
-					<%= link_to "#{job.company.name} - #{job.position}" , job_path(job) %>
-				<% end %>
-			</div>
-		</div>
-
-
-				<div>
-					<% if current_user.id != @user.id %>
-						<h4>Evaluate this Dev:</h4>
-						<%= simple_form_for :evaluation, url: user_evaluations_path(@user) do |f|%>
-							<%= f.input :rating, label: 'Rating', collection: [1, 2, 3, 4, 5] %>
-							<%= f.input :review, label: 'Review', as: :text %>
-							<%= f.button :submit %>
-						<% end %>
-					<% end %>
-				</div>
-
-
-				<% if current_user == @user && @user.favorite_jobs.any?%>
-					<div>
-					<h3>Favorite Jobs:</h3>
-						<% @user.favorite_jobs.each do |job| %>
-							<%= link_to "#{job.company.name} - #{job.position}" , job_path(job) %>
-						<% end %>				
-					</div>
+						<div>
+							<% if current_user.id != @user.id %>
+								<h4>Evaluate this Dev:</h4>
+								<%= simple_form_for :evaluation, url: user_evaluations_path(@user) do |f|%>
+									<%= f.input :rating, label: 'Rating', collection: [1, 2, 3, 4, 5] %>
+									<%= f.input :review, label: 'Review', as: :text %>
+									<%= f.button :submit %>
+								<% end %>
+							<% end %>
+						</div>
+					
 				</div>
 			<% end %>
 	</div>
-</div>
-		<br>
+</div><br>
+
 
