@@ -48,6 +48,7 @@
 <br>
 
 <div>
+	<h3>Resume</h3>
 	<% if !@user.resume %>
 		<%= render 'resumes/form' %>
 	<% else %>
@@ -102,20 +103,6 @@
 			<% if @user == current_user%>
 				<h3><%= link_to "Upload Portfolio Image", new_user_upload_path(@user) %></h3>
 			<% end %>
-		</div>
-
-		<div class="text-center">
-			<h3>Resume</h3>
-
-			<p><%= flash[:notice] %></p>
-			
-			<div>
-				<% if !@user.resume %>
-					<%= render 'resumes/form' %>
-				<% else %>
-					<%= link_to "#{@user.first_name}'s Resume", user_resume_path(@user) %>
-				<% end %>
-			</div>
 		</div>
 
 		<br>
