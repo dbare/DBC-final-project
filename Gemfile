@@ -67,6 +67,9 @@ gem 'pry-byebug'
 
 gem 'geocoder'
 
+gem 'impressionist'
+
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

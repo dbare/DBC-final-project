@@ -5,15 +5,28 @@
 	<%= @user.email %>
 </div>
 
+<div>
+	<h4>
+		<% if current_user.id == @user.id %>
+			<%= "Profile Views: #{@user.impressionist_count}" %>
+		<% end %>
+	</h4>
+</div>
+
 <br>
 <br>
 
 <% if @user.photo? %>
-<div class="col-md-4 col-lg-4">
-	<strong>Photo:</strong>
-	<%= image_tag @user.photo.avatar.url %>
-</div>
+	<div class="col-md-4 col-lg-4">
+		<strong>Photo:</strong>
+		<%= image_tag @user.photo.avatar.url %>
+	</div>
 <%end%>
+
+<%= link_to 'Message me!', user_conversations_path(@user, sender_id: current_user.id, recipient_id: @user.id), method: 'post'%>
+
+<br>
+<br>
 
 <br>
 <br>
@@ -48,6 +61,7 @@
 <br>
 
 <div>
+	<p><%= flash[:notice] %></p>
 	<h3>Resume</h3>
 	<% if !@user.resume %>
 		<%= render 'resumes/form' %>
@@ -71,7 +85,7 @@
 					</div>
 					<div>
 						<button><%= link_to "Delete", link_path(link), method: :delete %></button>
-					</div>	
+					</div>
 				<% end%>
 			</li>
 		<% end %>
@@ -105,6 +119,7 @@
 			<% end %>
 		</div>
 
+<div>
 		<br>
 		<br>
 
@@ -125,7 +140,7 @@
 			<h3>Favorite Jobs:</h3>
 				<% @user.favorite_jobs.each do |job| %>
 					<%= link_to "#{job.company.name} - #{job.position}" , job_path(job) %>
-				<% end %>				
+				<% end %>
 			</div>
 		</div>
 
@@ -133,4 +148,3 @@
 
 		<br>
 		<br>
-
