@@ -50,14 +50,14 @@
 <div class="row">
 	<% @boots.each do |boot| %>
 		<div class="col m4" >
-			<div class="card light-grey z-depth-5">
+			<div class="card hoverable light-grey z-depth-5">
 				<div class="card-image">
 						<img src="<%= boot.photo %>">
 					<span class="card-title black-text"><%= boot.full_name %></span>
 					<a href="<%= user_path(boot)%>" class="btn-floating halfway-fab waves-effect z-depth-5"><i class="fa fa-user" aria-hidden="true"></i></a>
 				</div>
 				<div class="card-content">
-              <p> Boot location goes here</p>
+              <p><%= boot.profile %></p>
         </div>	
 			</div>
 		</div>

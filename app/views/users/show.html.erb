@@ -5,7 +5,7 @@
 	</div>
 </div>
 
-<div class="row">
+<div class="row" id="border">
 	<% if @user.photo? %>
 		<div class="col s5">
 			<div class="center-align" id="profile-pic">
@@ -15,6 +15,8 @@
 			</div>
 			<br>
 			<div class="center-align">
+				<strong>Resume</strong>
+				<p><%= flash[:notice] %></p>
 				<% if !@user.resume %>
 					<%= render 'resumes/form' %>
 				<% else %>
@@ -24,7 +26,7 @@
 		</div>
 	<%end%>
 
-	<div class="col s6 center" id="about-me">
+	<div class="col s6 center" id="border">
 		<% if @profile%>
 		<div class="row">
 			<div >
@@ -47,6 +49,52 @@
 	</div>
 </div>
 
+
+
+
+<!-- Everthing about this comment is in the right position -->
+
+
+
+
+<div class="container center">
+	<h4>Portfolio</h4>
+	<ul>
+		<div class="carousel">
+			<% @uploads.each do |upload| %>
+				<li>
+					<div class="carousel-item card"><img src="<%=upload.photo.avatar.url %>"></div>
+						<div>
+							<% if @user == current_user%>
+								<div class="">
+									<div class="">
+										<button><%= link_to "Edit", edit_user_upload_path(@user, upload) %></button>
+										<button><%= link_to "Delete", user_upload_path(@user, upload), method: :delete %></button>
+									</div>
+								</div>
+						</div>
+						<%end%>
+				</li>
+			<% end%>
+		</div>
+	</ul>
+
+	<% if @user == current_user%>
+		<div class="btn link"><%= link_to "Upload Portfolio Image", new_user_upload_path(@user) %></div>
+	<% end %>
+</div>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 
@@ -89,43 +137,8 @@
 	<% if @user == current_user%>
 	<h3><%= link_to "Add New Link", new_link_path %></h3>
 	<% end %>
-		<div>
-			<h3>Portfolio</h3>
-			<ul>
-				<% @uploads.each do |upload| %>
-					<li>
-						<%= image_tag upload.photo.avatar.url %>
-						<% if @user == current_user%>
-							<div>
-								<button><%= link_to "Edit", edit_user_upload_path(@user, upload) %></button>
-							</div>
-							<div>
-								<button><%= link_to "Delete", user_upload_path(@user, upload), method: :delete %></button>
-							</div>
-						<%end%>
-					</li>
-				<% end%>
-			</ul>
-
-			<% if @user == current_user%>
-				<h3><%= link_to "Upload Portfolio Image", new_user_upload_path(@user) %></h3>
-			<% end %>
-		</div>
 
 
-		<div>
-			<h3>Resume</h3>
-
-			<p><%= flash[:notice] %></p>
-			
-			<div>
-				<% if !@user.resume %>
-					<%= render 'resumes/form' %>
-				<% else %>
-					<%= link_to "#{@user.first_name}'s Resume", user_resume_path(@user) %>
-				<% end %>
-			</div>
-		</div>
 
 
 		<br>
