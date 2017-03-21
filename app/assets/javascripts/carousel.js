@@ -3,7 +3,5 @@ $(document).ready(function(){
           dist:0,
           shift:0,
           padding:20,
-
     });
-
- });
+});
