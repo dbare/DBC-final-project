@@ -65,6 +65,8 @@ gem 'materialize-sass'
 
 gem 'pry-byebug'
 
+gem 'geocoder'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
