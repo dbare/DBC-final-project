@@ -9,6 +9,10 @@
 	<p><h4>Description</h4> <small><%= @job.description %></small></p><br>
 </div>
 
+<h4>
+	<%= "This listing has been viewed: #{@job.impressionist_count} times" %>
+</h4>
+
 <% if @user_favorite %>
 	<button class="btn"><%= link_to "Unfavorite", favorite_path(@user_favorite), method: :delete %></button>
 <% else %>

@@ -1,4 +1,6 @@
 class Job < ApplicationRecord
+	is_impressionable
+	
 	belongs_to :company, required: false
 	has_many :favorites
 
