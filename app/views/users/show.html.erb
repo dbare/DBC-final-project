@@ -104,20 +104,6 @@
 			<% end %>
 		</div>
 
-		<div class="text-center">
-			<h3>Resume</h3>
-
-			<p><%= flash[:notice] %></p>
-			
-			<div>
-				<% if !@user.resume %>
-					<%= render 'resumes/form' %>
-				<% else %>
-					<%= link_to "#{@user.first_name}'s Resume", user_resume_path(@user) %>
-				<% end %>
-			</div>
-		</div>
-
 		<br>
 		<br>
 
