@@ -56,6 +56,8 @@
 <br>
 
 <div>
+	<p><%= flash[:notice] %></p>
+	<h3>Resume</h3>
 	<% if !@user.resume %>
 		<%= render 'resumes/form' %>
 	<% else %>
@@ -112,20 +114,7 @@
 			<% end %>
 		</div>
 
-		<div class="text-center">
-			<h3>Resume</h3>
-
-			<p><%= flash[:notice] %></p>
-
-			<div>
-				<% if !@user.resume %>
-					<%= render 'resumes/form' %>
-				<% else %>
-					<%= link_to "#{@user.first_name}'s Resume", user_resume_path(@user) %>
-				<% end %>
-			</div>
-		</div>
-
+<div>
 		<br>
 		<br>
 
@@ -139,3 +128,19 @@
 				<% end %>
 			<% end %>
 		</div>
+
+
+		<% if current_user == @user && @user.favorite_jobs.any?%>
+			<div class="text-center">
+			<h3>Favorite Jobs:</h3>
+				<% @user.favorite_jobs.each do |job| %>
+					<%= link_to "#{job.company.name} - #{job.position}" , job_path(job) %>
+				<% end %>				
+			</div>
+		</div>
+
+		<% end %>
+
+		<br>
+		<br>
+
