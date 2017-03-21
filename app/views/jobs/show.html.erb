@@ -14,12 +14,11 @@
 	<%= link_to "Delete this Listing", job_path(@job), method: :delete %>
 <% end %>
 
+<br>
+<br>
+
 <% if @user_favorite %>
 	<button class="btn btn-lg btn-primary"><%= link_to "Unfavorite", favorite_path(@user_favorite), method: :delete %></button>
 <% else %>
-	<%= form_for @favorite do |f| %>
-			<%= f.hidden_field :job_id , :value => @job.id%>
-			<%= f.hidden_field :user_id , :value => @user.id%>
-			<%= submit_tag "Favorite", :class => "btn btn-lg btn-primary"  %>
-	<% end %>
+	<%= render 'favorites/form' %>
 <% end %> 

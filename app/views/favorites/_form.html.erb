@@ -1,0 +1,5 @@
+<%= form_for @favorite do |f| %>
+		<%= f.hidden_field :job_id , :value => @job.id%>
+		<%= f.hidden_field :user_id , :value => @user.id%>
+		<%= submit_tag "Favorite", :class => "btn btn-lg btn-primary"  %>
+<% end %>
