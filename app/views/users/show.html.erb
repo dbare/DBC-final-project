@@ -58,14 +58,16 @@
 
 
 <div class="center" id="border">
-	<h4>Portfolio</h4>
 	<ul>
-		<div class="carousel">
+		<div class="carousel hoverable">
+		<h2>Portfolio</h2>
 			<% @uploads.each do |upload| %>
 				<li>
-					<div class="carousel-item card  z-depth-5">
+					<div class="carousel-item card z-depth-5">
 
-							<div class="card-image hoverable"><img src="<%=upload.photo.avatar.url %>" height="250" ></div>
+							<div class="card-image hoverable"><img src="<%=upload.photo.avatar.url %>" height="250" >
+							 <span class="black-text"><%= upload.title %></span>
+							</div>
 								<div>
 
 									<% if @user == current_user%>
