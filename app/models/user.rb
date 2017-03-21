@@ -15,6 +15,8 @@ class User < ApplicationRecord
 
 	has_many :favorite_jobs, through: :favorites, source: :job
 
+	has_many :conversations, :foreign_key => :sender_id
+
 	validates :first_name, :last_name, :email, :password, presence: true
 	validates :email, uniqueness: true
 

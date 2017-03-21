@@ -23,6 +23,11 @@
 	</div>
 <%end%>
 
+<%= link_to 'Message me!', user_conversations_path(@user, sender_id: current_user.id, recipient_id: @user.id), method: 'post'%>
+
+<br>
+<br>
+
 <br>
 <br>
 
@@ -80,7 +85,7 @@
 					</div>
 					<div>
 						<button><%= link_to "Delete", link_path(link), method: :delete %></button>
-					</div>	
+					</div>
 				<% end%>
 			</li>
 		<% end %>
@@ -135,7 +140,7 @@
 			<h3>Favorite Jobs:</h3>
 				<% @user.favorite_jobs.each do |job| %>
 					<%= link_to "#{job.company.name} - #{job.position}" , job_path(job) %>
-				<% end %>				
+				<% end %>
 			</div>
 		</div>
 
@@ -143,4 +148,3 @@
 
 		<br>
 		<br>
-
