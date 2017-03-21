@@ -35,7 +35,8 @@ class UsersController < ApplicationController
 			login
 			redirect_to @user
 		else
-			p "ELSE"
+			p "*" * 100
+			p "ELSE WE FUCKED UP"
 			render 'new'
 		end
 	end

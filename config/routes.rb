@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 	root "application#index"
 
 	resources :jobs
+
+	resources :favorites
+
+
 	resources :users do
 		resources :evaluations
     	resources :uploads
