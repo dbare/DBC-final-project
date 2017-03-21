@@ -1,5 +1,6 @@
 class Job < ApplicationRecord
 	belongs_to :company, required: false
+	has_many :favorites
 
 	private
 

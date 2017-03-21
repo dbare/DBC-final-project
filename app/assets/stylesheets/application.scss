@@ -13,173 +13,52 @@
  */
 
 
-@import "bootstrap";
+@charset "UTF-8";
 
+@import "font-awesome";
 
-a:hover {
-	text-decoration: none;
-	color: #00FF00;
-}
+// Mixins
+// @import "materialize/components/prefixer";
+@import "materialize/components/mixins";
+@import "materialize/components/color";
 
-body{
-	margin-bottom: 2%;
-}
+// Variables;
+@import "materialize/components/variables";
 
-h1 {
-	text-align: center;
-}
+// Reset
+@import "materialize/components/normalize";
 
-ul {
-	list-style: none;
-}
-
-#company-info-container {
-
-	border-top: solid;
-	border-bottom: solid;
-	border-width: .5px;
-	margin-left: 25%;
-	margin-right: 25%;
-
-
-	p {
-		font-size: 17px;
-		}
-	
-}
-
-#company-link {
-	border: solid;
-	border-radius: 10px;
-	margin-bottom: 15px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	margin-left: 25%;
-	margin-right: 25%;
-}
-
-#company-link:hover {
-	background-color: black;
-	font-family: Monaco;
-
-	a {
-	color: #00FF00;
-	}
-}
-
-#company-new-form {
-	border: solid;
-	border-radius: 15px;
-	margin-right: 25%;
-	margin-left: 25%;
-	padding: 25px;
-	
-	#company-form-buttons {
-		margin-top: 5%;
-		}
-}
-
-#company-show-job-types {
-
-	#company-show-job-lists {
-		float: left;
-		border-right: solid;
-		border-bottom: solid;
-		border-color: lightgrey;
-		border-style: outset outset none none;
-		border-radius: 15px;
-		padding: 10px
-	}
-}
-
-#job-link {
-	border: solid;
-	border-radius: 10px;
-	color: black;
-	margin-bottom: 15px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	margin-left: 10%;
-	margin-right: 10%;
-}
-
-#job-link:hover {
-	background-color: black;
-	font-family: Monaco;
-	border-color: black;
-	color: #00FF00;
-
-	a {
-	color: lightgrey;
-	}
-}
-
-#job-new-form {
-	border: solid;
-	border-radius: 15px;
-	margin-right: 1%;
-	margin-left: 1%;
-	padding-left: 100px;
-	padding-right: 100px;
-	padding-top: 15px;
-	padding-bottom: 10px;
-	
-	#job-form-buttons {
-		margin-top: 5%;
-		}
-}
-
-#layout-footer {
-	width: 75%;
-	border-top: 2px solid;
-	margin-top: 25px;
-	margin-bottom: 15px;
-	padding-top: 5px;
-}
-
-#search-buttons {
-	margin-bottom: 10px;
-	text-align: center;
-}
-
-#user-about-me {
-	position: center;
-}
-
-#layout-footer {
-	position:fixed;
-  height:50px;
-  background-color:lightgrey;
-  bottom:0px;
-  left:0px;
-  right:0px;
-  margin-bottom:0px;	
-  width: 100%;
-  border-color: white;
-}
-
-.btn {
-	background-color: black;
-	color: lightgrey;
-
-	:hover{
-	font-family: Monaco;
-	border-color: black;
-	color: #00FF00;
-	}
-}
-
-.btn:hover {
-	background-color: black;
-	font-family: Monaco;
-	text-color: #00FF00;
-
-}
-
-.create-company btn:hover{
-	background-color: black;
-		text-color: #00FF00;
-}
+// materialize/components
+@import "materialize/components/global";
+@import "materialize/components/badges";
+@import "materialize/components/icons-material-design";
+@import "materialize/components/grid";
+@import "materialize/components/navbar";
+@import "materialize/components/roboto";
+@import "materialize/components/typography";
+@import "materialize/components/transitions";
+@import "materialize/components/cards";
+@import "materialize/components/toast";
+@import "materialize/components/tabs";
+@import "materialize/components/tooltip";
+@import "materialize/components/buttons";
+@import "materialize/components/dropdown";
+@import "materialize/components/waves";
+@import "materialize/components/modal";
+@import "materialize/components/collapsible";
+@import "materialize/components/chips";
+@import "materialize/components/materialbox";
+@import "materialize/components/forms/forms";
+@import "materialize/components/table_of_contents";
+@import "materialize/components/sideNav";
+@import "materialize/components/preloader";
+@import "materialize/components/slider";
+@import "materialize/components/carousel";
+@import "materialize/components/date_picker/default";
+@import "materialize/components/date_picker/default.date";
+@import "materialize/components/date_picker/default.time";
+@import "materialize/extras/nouislider";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
 
 

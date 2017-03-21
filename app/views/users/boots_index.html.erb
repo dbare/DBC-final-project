@@ -1,9 +1,10 @@
-This is an index of **ONLY** bootcamp graduates.
+<div class="center-align">
+	<h1>Boot Index</h1>
+</div>
 
 <br>
 <br>
-
-<div class="text-center container col-md-8 col-lg-8">
+<div class="container">
 
 	<%= search_form_for @search do |f| %>
 		<%= f.condition_fields do |c| %>
@@ -16,22 +17,32 @@ This is an index of **ONLY** bootcamp graduates.
 				<%= v.text_field :value %>
 			<% end %>
 		</div>
-<% end %>
-<div id="search-buttons">
-	<div><%= f.submit "Search"%> </div>
 	<% end %>
-	<div><%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %></div>
+	<div class="center-align">
+		<div><%= f.submit "Search"%></div>
+	<% end %>
+		<div><%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %></div>
 	</div>
 </div>
 
 <br>
 <br>
 
-Bootcamp Graduates:
-<div>
-	<ul>
-		<% @boots.each do |boot| %>
-			<div><li><%= link_to boot.full_name, user_path(boot) %></li></div>
-		<%end%>
-	</ul>
+<span class="center-align"><h3>Bootcamp Graduates</h3></span>
+
+<div class="row">
+	<% @boots.each do |boot| %>
+		<div class="col m4" >
+			<div class="card blue-grey darken-4 z-depth-5">
+				<div class="card-image">
+					<img src="">
+					<span class="card-title black-text">Card title</span>
+				</div>
+				<div class="card-content center-align" id="boot-index-container"><%= link_to boot.full_name, user_path(boot) %></div>	
+				<br>	
+			</div>
+		</div>
+	<%end%>
 </div>
+
+

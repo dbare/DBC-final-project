@@ -59,6 +59,12 @@ gem 'figaro'
 
 gem 'fog'
 
+gem 'font-awesome-rails'
+
+gem 'materialize-sass'
+
+gem 'pry-byebug'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

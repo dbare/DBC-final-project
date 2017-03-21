@@ -47,6 +47,16 @@
 
 <br>
 
+<div>
+	<% if !@user.resume %>
+		<%= render 'resumes/form' %>
+	<% else %>
+		<%= link_to "#{@user.first_name}'s Resume", user_resume_path(@user) %>
+	<% end %>
+</div>
+
+<br>
+
 <div class="text-center">
 	<h3>Links Section</h3>
 	<% if @user.links %>
@@ -97,7 +107,7 @@
 		<div class="text-center">
 			<h3>Resume</h3>
 			<% if @user.resume %>
-				<%= image_tag @resume.content.avatar.url %>
+				<%= image_tag @user.resume.content.url %>
 			<% end %>
 
 			<% if @user == current_user%>
