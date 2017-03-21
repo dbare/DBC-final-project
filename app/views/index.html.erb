@@ -102,6 +102,14 @@
               zoom: 12
             });
 
+            var myLatLng = {lat: -34.397, lng: 150.644};
+
+            var marker = new google.maps.Marker({
+              position: myLatLng,
+              map: map,
+              title: 'Hello World!'
+            });
+
             var infoWindow = new google.maps.InfoWindow({map: map});
 
         // Try HTML5 geolocation.
