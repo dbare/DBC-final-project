@@ -99,7 +99,7 @@
 			<% end %>
 		</div>
 		<div class="col s6 valign-wrapper" id="border">
-			<h3>Links Section</h3>
+			<div class="center"><h3><small>Links Section</small></h3></div>
 			<% if @user.links %>
 				<ul>
 				<% @links.each do |link| %>
@@ -120,7 +120,7 @@
 
 			<br>
 			<% if @user == current_user%>
-			<div class="col s6 valign center-align" id="border"><%= link_to "Add New Link", new_link_path %></div>
+			<div class="col s6 valign" ><div class="btn link"><a href=" <%=new_link_path %>">Add New Link</a></div></div>
 			<% end %>
 
 
