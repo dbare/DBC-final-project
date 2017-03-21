@@ -1,6 +1,6 @@
-<!-- <div class="container col-md-8 col-lg-8"> -->
+<div class= "container">
 	<h1>Register</h1>
-
+<div>
 	<%= form_for @user, :html => { multipart: true, :class => "form-signin"} do |f| %>
 	<div>
 		<%= f.label :first_name %>
@@ -11,14 +11,16 @@
 		<%= f.label :last_name %>
 		<%= f.text_field :last_name,  class: "form-control" %>
 	</div>
-		
-		<label>Company (if applicable)</label>
-			<select name="user[company_id]">
-				<option value=nil>N/A</option>>
-				<% @companies.each do |company| %>
-					<option value=<%=company.id%>><%=company.name%></option>
-				<%end%>
-			</select>
+
+  <div class="input-field col s12">
+    <select name="user[company_id]">
+      <option value="">Company</option>
+      <option value="nil">NA</option>
+      <% @companies.each do |company| %>
+      	<option value=<%=company.id%>><%=company.name%></option>
+      <%end%>
+    </select>
+  </div>
 	
 	<div>
 		<%= f.label :email %>
@@ -47,3 +49,6 @@
 	</center>
 
 	<% end %>
+
+</div>
+</div>
