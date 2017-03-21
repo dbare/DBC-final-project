@@ -5,14 +5,22 @@
 	<%= @user.email %>
 </div>
 
+<div>
+	<h4>
+		<% if current_user.id == @user.id %>
+			<%= "Profile Views: #{@user.impressionist_count}" %>
+		<% end %>
+	</h4>
+</div>
+
 <br>
 <br>
 
 <% if @user.photo? %>
-<div class="col-md-4 col-lg-4">
-	<strong>Photo:</strong>
-	<%= image_tag @user.photo.avatar.url %>
-</div>
+	<div class="col-md-4 col-lg-4">
+		<strong>Photo:</strong>
+		<%= image_tag @user.photo.avatar.url %>
+	</div>
 <%end%>
 
 <%= link_to 'Message me!', user_conversations_path(@user, sender_id: current_user.id, recipient_id: @user.id), method: 'post'%>
@@ -53,6 +61,7 @@
 <br>
 
 <div>
+	<p><%= flash[:notice] %></p>
 	<h3>Resume</h3>
 	<% if !@user.resume %>
 		<%= render 'resumes/form' %>
@@ -110,6 +119,7 @@
 			<% end %>
 		</div>
 
+<div>
 		<br>
 		<br>
 

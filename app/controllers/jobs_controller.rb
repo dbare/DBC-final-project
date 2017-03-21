@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
 	before_action :require_valid_user
 	before_action :require_company_rep, except: [:index, :show, :destroy]
+	impressionist actions: [:show] #, unique: [:session_hash]
 
 	def index
 		@search = Job.search(params[:q])
@@ -32,13 +33,11 @@ class JobsController < ApplicationController
 
 	def show
 		@job = Job.find(params[:id])
+		@company = Company.find(params[:id])
 		@user = current_user
 		@favorite = Favorite.new
-
 		@favorited = current_user.favorite_jobs.include?(@job)
 		@user_favorite = current_user.favorites.find_by(job_id: @job.id)
-
-
 	end
 
 	def update
