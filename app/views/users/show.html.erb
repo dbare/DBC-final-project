@@ -106,13 +106,16 @@
 
 		<div class="text-center">
 			<h3>Resume</h3>
-			<% if @user.resume %>
-				<%= image_tag @user.resume.content.url %>
-			<% end %>
 
-			<% if @user == current_user%>
-				<h3><%= link_to "Upload Resume", new_user_resume_path(@user) %></h3>
-			<% end %>
+			<p><%= flash[:notice] %></p>
+			
+			<div>
+				<% if !@user.resume %>
+					<%= render 'resumes/form' %>
+				<% else %>
+					<%= link_to "#{@user.first_name}'s Resume", user_resume_path(@user) %>
+				<% end %>
+			</div>
 		</div>
 
 		<br>
