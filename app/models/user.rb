@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 	attr_accessor :unique_token
+	is_impressionable
 
 	mount_uploader :photo, PhotoUploader
 
@@ -13,6 +14,8 @@ class User < ApplicationRecord
 	has_many :favorites
 
 	has_many :favorite_jobs, through: :favorites, source: :job
+
+	has_many :conversations, :foreign_key => :sender_id
 
 	validates :first_name, :last_name, :email, :password, presence: true
 	validates :email, uniqueness: true
