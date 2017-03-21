@@ -18,3 +18,7 @@
 //= require materialize-sprockets
 //= require materialize/extras/nouislider
 //= require_tree .
+
+$(document).ready(function(){
+  $('.parallax').parallax();
+});
