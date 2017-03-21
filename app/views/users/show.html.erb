@@ -30,7 +30,7 @@
 		<% if @profile%>
 		<div class="row">
 			<div >
-				<h4>About Me</h5>
+				<h4><small>About Me</small></h4>
 			</div>
 		</div>
 			<br>
@@ -48,11 +48,6 @@
 		<% end %>
 	</div>
 </div>
-
-
-
-
-<!-- Everthing about this comment is in the right position -->
 
 
 
@@ -81,96 +76,82 @@
 				</li>
 			<% end%>
 		</div>
-	</ul>
-
+		<br>
 	<% if @user == current_user%>
 		<div class="btn link"><%= link_to "Upload Portfolio Image", new_user_upload_path(@user) %></div>
 	<% end %>
+	</ul>
 </div>
 
 
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
+<!-- Everthing above this comment is in the right position -->
 
 
 
 
 <div>
-	<h3>Testimonials</h3>
-	<% @user.evaluations.each do |eval|%>
-	<p><%= eval.review %></p>
-	<p><%= eval.author.full_name %></p>
-	<% end %>
-</div>
-
-<br>
-
-
-<br>
-
-<div>
-	<h3>Links Section</h3>
-	<% if @user.links %>
-		<ul>
-		<% @links.each do |link| %>
-			<li>
-				<%= link_to link.description, link.url %>
-				<% if @user == current_user%>
-					<div>
-						<button><%= link_to "Edit", edit_link_path(link) %></button>
-					</div>
-					<div>
-						<button><%= link_to "Delete", link_path(link), method: :delete %></button>
-					</div>	
-				<% end%>
-			</li>
-		<% end %>
-		</ul>
-	<% end %>
-
-	<br>
-	<% if @user == current_user%>
-	<h3><%= link_to "Add New Link", new_link_path %></h3>
-	<% end %>
-
-
-
-
-		<br>
-		<br>
-
-		<div>
-			<% if current_user.id != @user.id %>
-				<h4>Evaluate this Dev:</h4>
-				<%= simple_form_for :evaluation, url: user_evaluations_path(@user) do |f|%>
-					<%= f.input :rating, label: 'Rating', collection: [1, 2, 3, 4, 5] %>
-					<%= f.input :review, label: 'Review', as: :text %>
-					<%= f.button :submit %>
-				<% end %>
+	<div class="row" id="border">
+		<div class="col s6 center-align" id="border">
+			<h3>Testimonials</h3>
+			<% @user.evaluations.each do |eval|%>
+			<p><%= eval.review %></p>
+			<p><%= eval.author.full_name %></p>
 			<% end %>
 		</div>
+		<div class="col s6 valign-wrapper" id="border">
+			<h3>Links Section</h3>
+			<% if @user.links %>
+				<ul>
+				<% @links.each do |link| %>
+					<li>
+						<%= link_to link.description, link.url %>
+						<% if @user == current_user%>
+							<div>
+								<button><%= link_to "Edit", edit_link_path(link) %></button>
+							</div>
+							<div>
+								<button><%= link_to "Delete", link_path(link), method: :delete %></button>
+							</div>	
+						<% end%>
+					</li>
+				<% end %>
+				</ul>
+			<% end %>
+
+			<br>
+			<% if @user == current_user%>
+			<div class="col s6 valign center-align" id="border"><%= link_to "Add New Link", new_link_path %></div>
+			<% end %>
 
 
-		<% if current_user == @user && @user.favorite_jobs.any?%>
-			<div>
-			<h3>Favorite Jobs:</h3>
-				<% @user.favorite_jobs.each do |job| %>
-					<%= link_to "#{job.company.name} - #{job.position}" , job_path(job) %>
-				<% end %>				
-			</div>
-		</div>
 
-		<% end %>
 
+				<br>
+				<br>
+
+				<div>
+					<% if current_user.id != @user.id %>
+						<h4>Evaluate this Dev:</h4>
+						<%= simple_form_for :evaluation, url: user_evaluations_path(@user) do |f|%>
+							<%= f.input :rating, label: 'Rating', collection: [1, 2, 3, 4, 5] %>
+							<%= f.input :review, label: 'Review', as: :text %>
+							<%= f.button :submit %>
+						<% end %>
+					<% end %>
+				</div>
+
+
+				<% if current_user == @user && @user.favorite_jobs.any?%>
+					<div>
+					<h3>Favorite Jobs:</h3>
+						<% @user.favorite_jobs.each do |job| %>
+							<%= link_to "#{job.company.name} - #{job.position}" , job_path(job) %>
+						<% end %>				
+					</div>
+				</div>
+			<% end %>
+	</div>
+</div>
 		<br>
-		<br>
+	
 
