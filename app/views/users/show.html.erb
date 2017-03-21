@@ -1,24 +1,26 @@
-<div class="text-center">
-	<h3><%= @user.full_name %>'s Profile</h3>
+<div class="row">
+	<% if @user.photo? %>
+	<div class=" col s3">
+		<div id="profile-pic">
+			<%= image_tag @user.photo.avatar.url %>
+		</div>
+	</div>
+	<%end%>
+	<div class="center-align col s6">
+		<h1><%= @user.full_name.capitalize %>'s Profile</h1>
 
-	<strong>Contact:</strong>
-	<%= @user.email %>
+		<strong>Contact</strong><br>
+		<small><%= @user.email %></small>
+	</div>
+	<br>
+	<br>
 </div>
-
 <br>
 <br>
 
-<% if @user.photo? %>
-<div class="col-md-4 col-lg-4">
-	<strong>Photo:</strong>
-	<%= image_tag @user.photo.avatar.url %>
-</div>
-<%end%>
 
-<br>
-<br>
 
-<div id="user-about-me" class="text-center">
+<div>
 	<% if @profile%>
 
 	<h3>About Me</h3>
@@ -37,7 +39,7 @@
 	<% end %>
 </div>
 
-<div class="text-center">
+<div>
 	<h3>Testimonials</h3>
 	<% @user.evaluations.each do |eval|%>
 	<p><%= eval.review %></p>
@@ -57,7 +59,7 @@
 
 <br>
 
-<div class="text-center">
+<div>
 	<h3>Links Section</h3>
 	<% if @user.links %>
 		<ul>
@@ -81,7 +83,7 @@
 	<% if @user == current_user%>
 	<h3><%= link_to "Add New Link", new_link_path %></h3>
 	<% end %>
-		<div class="text-center">
+		<div>
 			<h3>Portfolio</h3>
 			<ul>
 				<% @uploads.each do |upload| %>
@@ -104,7 +106,7 @@
 			<% end %>
 		</div>
 
-		<div class="text-center">
+		<div>
 			<h3>Resume</h3>
 
 			<p><%= flash[:notice] %></p>
@@ -121,7 +123,7 @@
 		<br>
 		<br>
 
-		<div class="text-center">
+		<div>
 			<% if current_user.id != @user.id %>
 				<h4>Evaluate this Dev:</h4>
 				<%= simple_form_for :evaluation, url: user_evaluations_path(@user) do |f|%>
@@ -134,7 +136,7 @@
 
 
 		<% if current_user == @user && @user.favorite_jobs.any?%>
-			<div class="text-center">
+			<div>
 			<h3>Favorite Jobs:</h3>
 				<% @user.favorite_jobs.each do |job| %>
 					<%= link_to "#{job.company.name} - #{job.position}" , job_path(job) %>
