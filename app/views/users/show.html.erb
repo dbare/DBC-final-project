@@ -63,16 +63,16 @@
 		<div class="carousel">
 			<% @uploads.each do |upload| %>
 				<li>
-					<div class="carousel-item card z-depth-5">
+					<div class="carousel-item card  z-depth-5">
 
 							<div class="card-image hoverable"><img src="<%=upload.photo.avatar.url %>" height="250" ></div>
 								<div>
 
 									<% if @user == current_user%>
 										<div class="row">	
-											<div class="col s6"><a href="<%= edit_user_upload_path(@user, upload) %>" class="btn-floating halfway-fab left z-depth-5" ><i class="fa fa-pencil" aria-hidden="true"></i></a></div>
+											<div class="col s6 small"><a href="<%= edit_user_upload_path(@user, upload) %>" class="btn-floating halfway-fab left z-depth-5" ><i class="fa fa-pencil" aria-hidden="true"></i></a></div>
 
-											<div class="col s6"><a href="<%= edit_user_upload_path(@user, upload) %>" class="btn-floating halfway-fab z-depth-5" ><i class="fa fa-trash" aria-hidden="true"></i></a></div>
+											<div class="col s6"><a data-method="delete" href="<%= user_upload_path(@user, upload) %>" class="btn-floating halfway-fab z-depth-5" ><i class="fa fa-trash" aria-hidden="true"></i></a></div>
 										</div>
 								</div>
 						<%end%>
