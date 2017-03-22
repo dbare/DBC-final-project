@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	before_action :require_valid_user, only: [:index]
+	impressionist actions: [:show] #, unique: [:user_id]
 
 	def index
 		@search = User.search(params[:q])
@@ -35,7 +36,8 @@ class UsersController < ApplicationController
 			login
 			redirect_to @user
 		else
-			p "ELSE"
+			p "*" * 100
+			p "ELSE WE FUCKED UP"
 			render 'new'
 		end
 	end
@@ -47,12 +49,17 @@ class UsersController < ApplicationController
 		@uploads = @user.uploads
 		@resume = Resume.new
 
+		p "*" * 50
+		p current_user.id
+		p "*" * 50
+		p @user.id
+		p "*" * 50
 	end
 
 	private
 
 	def user_params
-		params.require(:user).permit(:first_name, :last_name, :username, :email, :password, :photo, :company_id)
+		params.require(:user).permit(:first_name, :last_name, :email, :password, :photo, :company_id)
 	end
 
 end

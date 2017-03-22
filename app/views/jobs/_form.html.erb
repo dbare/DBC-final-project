@@ -1,10 +1,36 @@
-<%= simple_form_for @job do |f| %>
+<%= form_for @job do |f| %>
 	<div class="center row" id= job-new-form>
-	    <div class="row"><%= f.input :position, label: 'Position Title', error: 'Position is a required field' %>
-	    <%= f.input :location, error: 'Location is a required field' %>
-	    <%= f.input :compensation, label: 'Compensation' %>
-	    <%= f.input :job_type, label: 'Listing Type', collection: ["full_time", "part-type", "internship", "freelance"] %></div>
-	    <%= f.input :description, label: 'Position Description', :as => :ckeditor, input_html: {:ckeditor => {:toolbar => 'FULL'}}, error: 'Description is a required field' %><br>
-	    <div><br><%= f.button :submit %></div>
+	    <div class="row">
+	    <div>
+	    	<%= f.label :position %>
+	    	<%= f.text_field :position %>
+	    </div>
+
+	    <div>
+	    	<%= f.label :location %>
+	    	<%= f.text_field :location %>
+	    </div>
+
+	    <div>
+	    	<%= f.label :compensation %>
+	    	<%= f.text_field :compensation %>
+	    </div>
+
+	    <div class="input-field col s12">
+    		<select name="job[job_type]">
+    		  	<option value="full-time">Full Time</option>
+    		  	<option value="part-time">Part Time</option>
+    		  	<option value="internship">Internship</option>
+    		  	<option value="freelance">Freelance</option>
+    		</select>
+  		</div>
+
+  		 <div>
+	    	<%= f.label :description %>
+	    	<%= f.text_field :description %>
+	    </div>
 	</div>
 <% end %>
+
+
+

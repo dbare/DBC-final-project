@@ -1,6 +1,12 @@
 class Job < ApplicationRecord
+	is_impressionable
+	
 	belongs_to :company, required: false
 	has_many :favorites
+
+
+	geocoded_by :location
+	after_validation :geocode
 
 	private
 
