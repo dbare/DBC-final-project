@@ -170,7 +170,7 @@ end
 
 # Super tokens for admin privs
 (1..9).to_a.each do |number|
-	Token.create(characters: number, admin_token: true)
+	Token.create(characters: number, admin_status: true)
 end
 
 # HR rep tokens for specific companies
