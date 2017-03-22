@@ -25,27 +25,44 @@
 		</div>
 	</div>
 </div>
-
-<table class="bordered centered highlight responsive-table">
-	<thead>	
-		<tr>
-			<th>Position</th>
-			<th>Company</th>
-			<th>Location</th>
-		</tr>
-	</thead>
-	
-		<% @jobs.each do |job| %>
-	<tbody>
-		<tr>
-			<!-- <td><a href=""></a></td> -->
-			<td><%=job.position%></td>
-			<td><%= job.company.name%></td>
-			<td><%=job.location%></td>
-		</tr>
-		<% end %>
-	</tbody>
-</table>
+<div>
+	<table class="container bordered highlight responsive-table z-depth-2" id="jobs-table">
+		<thead class="centered">	
+			<tr>
+				<th class="center">Company</th>
+				<th class="center">Location</th>
+				<th class="center">Position</th>
+				<th class="center">Description</th>
+			</tr>
+		</thead>
+		
+			<% @jobs.each do |job| %>
+		<tbody >
+			<tr class="hoverable" style="margin: 5px;">
+				<td class="center"><%= job.company.name%></td>
+				<td class="center"><%=job.location%></td>
+				<td class="center"><a href="<%=job_path(job)%>"><%=job.position%></td>
+				<%if job.description.split('').count  >= 150%>
+					<td class="center">
+						<div>
+							<%= job.description[0...150] %>....
+						</div>
+					</td>
+				<% else %>
+					<td>
+						<div>
+							<%= job.description %>
+						</div>
+					</td>
+				<% end  %>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+<br>
+<br>
+<br>
 
 <% if current_user.company_id != nil %>
 	<div>
