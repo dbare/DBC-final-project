@@ -1,27 +1,30 @@
 <div class="row center">
-
-		<div class=" col s1 center-align">
-				<% if current_user.id == @user.id %>
-					<%= "Profile Views #{@user.impressionist_count}" %>
-				<% end %>
-		</div>
-	<div class="col s10 center"><h1><%= @user.full_name.capitalize %>'s Profile</h1></div>
-
+	<div class=" col s1 center-align">
+		<% if current_user.id == @user.id %>
+			<%= "Profile Views #{@user.impressionist_count}" %>
+		<% end %>
+	</div>
+	<div class="col s10 center">
+		<h1><%= @user.full_name.capitalize %>'s Profile</h1>
+	</div>
 </div>
 
 <div class="row z-depth-1 hoverable" id="user-evals">
-
-
-	<% if @user.photo? %>
-		<div class="col s5">
-			<div class="center-align" id="profile-pic">
-				<div><%= image_tag @user.photo.avatar.url %></div><br>
-				<strong>Contact</strong><br>
-				<small><%= @user.email %></small><br>
-
-
+	<div class="col s5">
+		<div class="center-align" id="profile-pic">
+			<div>
+				<% if @user.photo? %>
+					<%= image_tag @user.photo.avatar.url %>
+					<% else %>
+					<img src="https://www.soundstream.tv/assets/default_profile-e08597880fc222202f22984a4f1966a29b108e856a3fb935072bfbbc302a4b73.png" height=300 width=300>
+					<% end %>
 			</div>
-
+			<br>
+			<strong>Contact</strong>
+			<br>
+			<small><%= @user.email %></small>
+			<br>
+		</div>
 
 			<br>
 			<div class="center-align">
@@ -34,7 +37,6 @@
 				<% end %>
 			</div>
 		</div>
-	<%end%>
 
 		<% if @user != current_user%>
 			<div class="btn link">
@@ -201,4 +203,3 @@
 		<%= line_chart @impressions.group_by_day(:created_at, format: "%B %d, %Y").count, discrete: false %>
 	<% end %>
 </div>
-

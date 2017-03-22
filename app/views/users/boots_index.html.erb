@@ -5,8 +5,8 @@
       	<div class="header center teal-text text-lighten-2">
 	      	<h3>Boot Index</h3>
 		</div>
-      
-   
+
+
       <br><br>
 
     </div>
@@ -57,17 +57,19 @@
 		<div class="col m4" >
 			<div class="card hoverable light-grey z-depth-5">
 				<div class="card-image">
+          <% if boot.photo? %>
 						<img src="<%= boot.photo %>">
+            <% else %>
+            <img src="https://www.soundstream.tv/assets/default_profile-e08597880fc222202f22984a4f1966a29b108e856a3fb935072bfbbc302a4b73.png" height=300 max-width=300>
+            <% end %>
 					<div class="card-title black-text"><%= boot.full_name %></div>
 					<a href="<%= user_path(boot)%>" class="btn-floating halfway-fab waves-effect z-depth-5"><i class="fa fa-user" aria-hidden="true"></i></a>
 				</div>
 				<div class="card-content">
               		<p><i class="fa fa-map-marker" aria-hidden="true"></i> <%= boot.profile.location %></p>
-        		</div>	
+        		</div>
 			</div>
 		</div>
 	<%end%>
 
 </div>
-
-
