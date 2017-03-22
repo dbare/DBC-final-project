@@ -1,17 +1,17 @@
 <div class="row center">
-		
+
 		<div class=" col s1 center-align">
 				<% if current_user.id == @user.id %>
 					<%= "Profile Views #{@user.impressionist_count}" %>
 				<% end %>
 		</div>
 	<div class="col s10 center"><h1><%= @user.full_name.capitalize %>'s Profile</h1></div>
-		
+
 </div>
 
 <div class="row z-depth-1 hoverable" id="user-evals">
-			
-				
+
+
 	<% if @user.photo? %>
 		<div class="col s5">
 			<div class="center-align" id="profile-pic">
@@ -19,11 +19,10 @@
 				<strong>Contact</strong><br>
 				<small><%= @user.email %></small><br>
 
-			<div class="btn link"><%= link_to 'Message me!', user_conversations_path(@user, sender_id: current_user.id, recipient_id: @user.id), method: 'post'%></div>
-
-
 
 			</div>
+
+
 			<br>
 			<div class="center-align">
 				<strong>Resume</strong>
@@ -37,6 +36,8 @@
 		</div>
 	<%end%>
 
+		<div class="btn link"><%= link_to 'Message me!', user_conversations_path(@user, sender_id: current_user.id, recipient_id: @user.id), method: 'post'%></div>
+
 	<div class="col s6 center" >
 		<% if @profile%>
 		<div class="row">
@@ -45,7 +46,7 @@
 			</div>
 		</div>
 			<br>
-				
+
 		<div class="row center-align">
 			<div class="col s4"><h5>Location</h5><em><%= @profile.location %></em><br></div>
 			<div class="col s4"><h5>Objective</h5><em><%= @profile.objective %></em><br></div>
@@ -78,7 +79,7 @@
 								<div>
 
 									<% if @user == current_user%>
-										<div class="row">	
+										<div class="row">
 											<div class="col s6 small"><a href="<%= edit_user_upload_path(@user, upload) %>" class="btn-floating halfway-fab left z-depth-5" ><i class="fa fa-pencil" aria-hidden="true"></i></a></div>
 
 											<div class="col s6"><a data-method="delete" href="<%= user_upload_path(@user, upload) %>" class="btn-floating halfway-fab z-depth-5" ><i class="fa fa-trash" aria-hidden="true"></i></a></div>
@@ -124,7 +125,7 @@
 					<div class="col s12" ><div class="btn link "><a href=" <%=new_link_path %>">Add New Link</a></div></div><br>
 					<% end %>
 				<br>
-		
+
 
 				<% if @user.links %>
 					<ul>
@@ -134,16 +135,16 @@
 							<div>
 								<div class="btn link" id="media-link"><%= link_to link.description, link.url %></div>
 								<% if @user == current_user%>
-									<div>	
+									<div>
 										<div class="btn link">
 											<%= link_to "Edit", edit_link_path(link) %>
 										</div>
 										<div class="btn link ">
 											<%= link_to "Delete", link_path(link), method: :delete %>
-										</div>	
+										</div>
 									</div>
 								<% end%>
-							</div>	
+							</div>
 							</li>
 								<% end %>
 						</ul>
@@ -151,12 +152,13 @@
 				</div>
 			</div>
 		</div>
-	
+
 
 
 
 
 </div>
+
 	<div>
 		<br>
 		<br>
@@ -169,6 +171,7 @@
 		<% end %>
 			</div>
 		</div>
+
 		<div>
 			<% if current_user.id != @user.id %>
 				<h4>Evaluate this Dev:</h4>
@@ -181,9 +184,14 @@
 		</div>
 </div>
 
+
+
+<h4>Track Your Profile Views</h4>
+
 <div>
 	<% if current_user.id == @user.id %>
 		<h4>Track Your Profile Views</h4>
 		<%= line_chart @impressions.group_by_day(:created_at, format: "%B %d, %Y").count, discrete: false %>
 	<% end %>
 </div>
+

@@ -20,23 +20,17 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_params)
-		@companies = Company.all
 		@token = Token.find_by(characters: params[:user][:unique_token])
-		p "BEFORE SAVE LINE"
 		if @token && @token.used? == false && @user.save
+			@user.update_attributes(:company_id => @token.company_id, :admin_status => @token.admin_status)
 			@token.update_attribute(:user_id, @user.id)
-			@user.update_attribute(:company_id, @token.company_id)
-			if @token.admin_token
-				@user.update_attribute(:admin_status, true)
-			end
-
 			UserMailer.welcome_email(@user).deliver
-			p "AFTER EMAIL LINE"
 			login
 			redirect_to @user
 		else
-			p "*" * 100
-			p "ELSE WE FUCKED UP"
+			flash[:user_notice_1] = "User has attempted to register an email already in use." if User.find_by(email: params[:user][:email]) != nil
+			flash[:user_notice_2] = "User has entered an invalid token." if @token == nil
+			flash[:user_notice_3] = "User has entered an expired token (already in use)." if @token && @token.used? == true
 			render 'new'
 		end
 	end
@@ -48,12 +42,6 @@ class UsersController < ApplicationController
 		@uploads = @user.uploads
 		@resume = Resume.new
 		@impressions = Impression.where(user_id: current_user.id)
-
-		p "*" * 50
-		p current_user.id
-		p "*" * 50
-		p @user.id
-		p "*" * 50
 	end
 
 	private

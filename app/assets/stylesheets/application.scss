@@ -22,6 +22,9 @@
 @import "materialize/components/mixins";
 @import "materialize/components/color";
 
+
+
+
 // Variables;
 @import "materialize/components/variables";
 
@@ -62,7 +65,6 @@
 
 
 
-
 .btn.link a {
 	color: white;
 }
@@ -70,6 +72,13 @@
 #border {
 	border: solid;
 }
+
+#head1 {
+	font-size: 75px;
+	text-shadow: 3px 3px 3px #000;
+}
+
+
 
 #jobs-table {
 	border-radius: 15px;
@@ -82,6 +91,7 @@
 	height: 450px;
 	margin: 0;
 	padding: 15px;
+	position: absolute;
 }
 
 #media-link {
@@ -111,6 +121,7 @@ table {
 		height: 25px;
 	}
 }
+
 
 
 

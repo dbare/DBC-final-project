@@ -3,8 +3,13 @@
 	<div class="section no-pad-bot">
 	  <div class="container">
 	    <br><br>
-	    	<h1 class="header center teal-text text-lighten-2">Job Postings</h1>
+	    	<div class="center text-lighten-2 teal-text" id="head1">
+	    		Job Postings
+	    	</div>
 	    <br><br>
+	    	<div>
+	    		
+	    	</div>
 		</div>
 	</div>
 <div class="parallax"><%= image_tag("workspace2.jpg", :alt => "Unsplashed workspace2 img") %></div>
@@ -54,9 +59,10 @@
 		
 		<tbody>
 			<% @jobs.each do |job| %>
+
 			<tr class="hoverable">
 				<div>
-					<td class="center"><%= job.company.name %></td>
+					<td class="center" style=""><%= job.company.name %></td>
 					<td class="center"><%=job.location%></td>
 					<td class="center"><a href="<%=job_path(job)%>"><%=job.position%></td>
 					<div>
@@ -75,6 +81,7 @@
 						<% end  %>
 					</div>	
 				</div>
+
 			</tr>
 			<% end %>
 		</tbody>
