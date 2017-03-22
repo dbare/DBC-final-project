@@ -181,3 +181,35 @@ end
 
 # Favorite sample
 Favorite.create(user_id: 1, job_id: 1)
+
+# Add impression views for profile
+
+6.times do |id|
+	Impression.create(user_id: (id + 1), created_at: Time.now - 1.day)
+	Impression.create(user_id: (id + 1), created_at: Time.now - 1.day)
+	Impression.create(user_id: (id + 1), created_at: Time.now + 1.day)
+	Impression.create(user_id: (id + 1), created_at: Time.now - 7.day)
+	Impression.create(user_id: (id + 1), created_at: Time.now - 7.day)
+	Impression.create(user_id: (id + 1), created_at: Time.now - 5.day)
+	Impression.create(user_id: (id + 1), created_at: Time.now - 2.day)
+	Impression.create(user_id: (id + 1), created_at: Time.now - 1.day)
+	Impression.create(user_id: (id + 1), created_at: Time.now - 8.day)
+	Impression.create(user_id: (id + 1), created_at: Time.now + 3.day)
+	Impression.create(user_id: (id + 1), created_at: Time.now - 1.day)
+	Impression.create(user_id: (id + 1), created_at: Time.now + 4.day)
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
