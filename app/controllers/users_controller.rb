@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 		p "BEFORE SAVE LINE"
 		if @token && @token.used? == false && @user.save
 			@token.update_attribute(:user_id, @user.id)
-
+			@user.update_attribute(:company_id, @token.company_id)
 			if @token.admin_token
 				@user.update_attribute(:admin_status, true)
 			end

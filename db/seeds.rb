@@ -163,14 +163,21 @@ Evaluation.create(review: "Thorough and logical, an exceptional problem solver",
 Evaluation.create(review: "Has a big ol' beard", rating: 5, author_id: 1, subject_id: 4)
 
 
-# All sample tokens
+# Generic tokens for boots
 ("a".."z").to_a.each do |letter|
 	Token.create(characters: letter)
 end
 
+# Super tokens for admin privs
 (1..9).to_a.each do |number|
 	Token.create(characters: number, admin_token: true)
 end
+
+# HR rep tokens for specific companies
+(1..10).to_a.each do |number|
+	Token.create(characters: "hello" + number.to_s, company_id: number)
+end
+
 
 # Favorite sample
 Favorite.create(user_id: 1, job_id: 1)
