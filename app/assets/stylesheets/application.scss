@@ -73,6 +73,13 @@
 	border: solid;
 }
 
+#head1 {
+	font-size: 75px;
+	text-shadow: 3px 3px 3px #000;
+}
+
+
+
 #jobs-table {
 	border-radius: 15px;
 	padding: 10px;
@@ -102,9 +109,18 @@
 	padding: 10px;
 }
 
+#padding {
+	padding: 10px;
+}
 
+table {
 
+	width: 90%;
 
+	td{
+		height: 25px;
+	}
+}
 
 
 

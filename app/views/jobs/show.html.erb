@@ -2,12 +2,11 @@
   <div class="section no-pad-bot">
     <div class="container">
       	<br><br>
-      	<div>
-	      	<h3 style="color: white;
-    text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;" class="header center text-lighten-2">
+      	<div class="header center text-teal text-lighten-2" id="head1">
+	      	
 	      	<%= @job.position %><br>
 			<small>at</small><br>
-			<%= @job.company.name%></h3>
+			<%= @job.company.name%>
 		</div>
       <div class="row center">
         <h5 style="color: white;
@@ -52,12 +51,12 @@
 				<% end %>
 				<!-- if statement ends here -->
 			</div>
-			<div class="col s2">		
-				<p>Location<br> <small><%= @job.location %></small></p>
-			</div>
+				<div class="col s2">		
+					<p>Location<br> <small><%= @job.location %></small></p>
+				</div>
 			<br>
 				<% if @user_favorite %>
-					<div class="btnr"><%= link_to "Unfavorite", favorite_path(@user_favorite), method: :delete %></div>
+					<div class="btn"><%= link_to "Unfavorite", favorite_path(@user_favorite), method: :delete %></div>
 				<% else %>
 					<%= render 'favorites/form' %>
 				<% end %> 

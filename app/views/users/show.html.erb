@@ -66,11 +66,9 @@
 			<div class="col s4"><h5>Objective</h5><em><%= @profile.objective %></em><br></div>
 			<div class="col s4"><h5>Summary</h5><em><%= @profile.summary %></em><br></div>
 		</div>
-
 			<br>
-
 			<% if @user == current_user%>
-				<div class="btn link"><a href="<%=edit_profile_path(@profile) %>" ><i class="fa fa-pencil" aria-hidden="true"></i>Edit 'About Me'</a></div>
+				<div class="btn link"><a href="<%=edit_profile_path(@profile) %>" > <i class="fa fa-pencil" aria-hidden="true"></i> Edit 'About Me'</a></div>
 			<% end %>
 		<% else %>
 			<div class="btn link"><%= link_to "Add 'About Me'", new_profile_path %></div>
@@ -89,7 +87,7 @@
 				<li>
 					<div class="carousel-item card z-depth-5">
 
-							<div class="card-image hoverable"><img src="<%=upload.photo.avatar.url %>" height="250" >
+							<div class="card-image hoverable"><img src="<%= upload.photo.avatar.url %>" height="250" >
 							 <span class="black-text"><%= upload.title %></span>
 							</div>
 								<div>
@@ -107,7 +105,7 @@
 		</div>
 		<br>
 	<% if @user == current_user%>
-		<div class="btn link"><%= link_to "Upload Portfolio Image", new_user_upload_path(@user) %></div>
+		<div class="btn link"><%= link_to "Upload Portfolio Image", new_user_upload_path(@user) %><br></div>
 	<% end %>
 	</ul>
 
