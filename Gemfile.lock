@@ -395,7 +395,6 @@ DEPENDENCIES
   figaro
   fog
   font-awesome-rails
-  travis
   geocoder
   gmaps4rails
   impressionist
