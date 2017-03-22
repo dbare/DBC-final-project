@@ -1,5 +1,5 @@
 
-  <div id="index-banner" class="parallax-container">
+    <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
@@ -18,15 +18,34 @@
   </div>
 
 
-  <div class="container">
+<div class="container">
     <div class="section">
 
+      <!--   Icon Section   -->
       <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4> How It Works </h4>
+      <h2 class="center header center teal-text text-lighten-2">How it Works</h4>
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h5 class="center"> Step 1 </h5>
+            <h2 class="center brown-text"><i class="large material-icons">vpn_key</i></h2>
+            <p class="light center"> Obtain Your Unique Token </p>
+          </div>
+        </div>
 
-          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h5 class="center"> Step 2 </h5>
+            <h2 class="center brown-text"><i class="large material-icons">person_pin</i></h2>
+            <p class="light center"> Create and Customize Your Account </p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h5 class="center"> Step 3 </h5>
+            <h2 class="center brown-text"><i class="large material-icons">offline_pin</i></h2>
+            <p class="light center"> Get Hired! </p>
+          </div>
         </div>
       </div>
 
@@ -51,6 +70,7 @@
 
       <!--   Icon Section   -->
       <div class="row">
+      <h2 class="center header center teal-text text-lighten-2">What We Offer</h4>
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
@@ -93,9 +113,7 @@
         </div>
       </div>
     </div>
-    <div id="map">
-      <!-- <h5 class="header col s12 light black-text z-depth-5">Find Jobs in Your Area</h5> -->
-    </div>
+    <div id="map"><h5 class="header col s12 light black-text z-depth-5">Find Jobs in Your Area</h5></div>
       <div class="parallax">
         <script>
           function initMap() {
@@ -104,9 +122,7 @@
               zoom: 15,
               scrollwheel: false
             });
-
             var infoWindow = new google.maps.InfoWindow({map: map});
-
         // Try HTML5 geolocation.
             if (navigator.geolocation) {
               navigator.geolocation.getCurrentPosition(function(position) {
@@ -114,13 +130,11 @@
                   lat: position.coords.latitude,
                   lng: position.coords.longitude
                 };
-
                    var marker = new google.maps.Marker({
                     position: pos,
                     map: map,
                     title: 'Hello World!'
                   });
-
   
                 map.setCenter(pos);
               }, function() {
@@ -131,7 +145,6 @@
               handleLocationError(false, infoWindow, map.getCenter());
             }
           }   
-
           function handleLocationError(browserHasGeolocation, infoWindow, pos) {
             infoWindow.setPosition(pos);
             infoWindow.setContent(browserHasGeolocation ?
