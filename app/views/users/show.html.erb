@@ -5,7 +5,16 @@
 					<%= "Profile Views #{@user.impressionist_count}" %>
 				<% end %>
 		</div>
-	<div class="col s10 center"><h1><%= @user.full_name.capitalize %>'s Profile</h1></div>
+	<div class="col s10 center">
+		
+	<% if @user == current_user %>
+		<h1>Welcome back, <%= @user.full_name.capitalize %>!</h1>
+	<% else %>
+		<h1><%= @user.full_name.capitalize %>'s Profile</h1>
+	<% end %>
+
+		
+	</div>
 
 </div>
 
