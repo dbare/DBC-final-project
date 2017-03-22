@@ -52,7 +52,10 @@
 		</div>
 
 			<br>
-			<div class="btn link"><a href="<%=edit_profile_path(@profile) %>" ><i class="fa fa-pencil" aria-hidden="true"></i>Edit 'About Me'</a></div>
+
+			<% if @user == current_user%>
+				<div class="btn link"><a href="<%=edit_profile_path(@profile) %>" ><i class="fa fa-pencil" aria-hidden="true"></i>Edit 'About Me'</a></div>
+			<% end %>
 		<% else %>
 			<div class="btn link"><%= link_to "Add 'About Me'", new_profile_path %></div>
 		<% end %>
