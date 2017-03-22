@@ -1,12 +1,19 @@
 <div class="row center">
-	<div class=" col s1 center-align">
-		<% if current_user.id == @user.id %>
-			<%= "Profile Views #{@user.impressionist_count}" %>
+
+		<div class=" col s1 center-align">
+				<% if current_user.id == @user.id %>
+					<%= "Profile Views #{@user.impressionist_count}" %>
+				<% end %>
+		</div>
+	<div class="col s10 center">
+		<% if @user == current_user %>
+			<h1>Welcome back, <%= @user.full_name.capitalize %>!</h1>
+		<% else %>
+			<h1><%= @user.full_name.capitalize %>'s Profile</h1>
 		<% end %>
 	</div>
-	<div class="col s10 center">
-		<h1><%= @user.full_name.capitalize %>'s Profile</h1>
-	</div>
+
+
 </div>
 
 <div class="row z-depth-1 hoverable" id="user-evals">
