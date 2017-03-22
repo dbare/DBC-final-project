@@ -69,7 +69,12 @@ gem 'geocoder'
 
 gem 'impressionist'
 
+gem 'gmaps4rails'
+
+gem 'underscore-rails'
+
 gem 'travis-ci'
+
 
 
 
