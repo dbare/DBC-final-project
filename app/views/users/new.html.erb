@@ -11,16 +11,6 @@
 		<%= f.label :last_name %>
 		<%= f.text_field :last_name,  class: "form-control" %>
 	</div>
-
-  <div class="input-field col s12">
-    <select name="user[company_id]">
-      <option value="">Company</option>
-      <option value="nil">NA</option>
-      <% @companies.each do |company| %>
-      	<option value=<%=company.id%>><%=company.name%></option>
-      <%end%>
-    </select>
-  </div>
 	
 	<div>
 		<%= f.label :email %>
@@ -54,3 +44,5 @@
 
 </div>
 </div>
+<br>
+<br>
