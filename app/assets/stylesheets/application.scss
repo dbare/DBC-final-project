@@ -22,6 +22,9 @@
 @import "materialize/components/mixins";
 @import "materialize/components/color";
 
+
+
+
 // Variables;
 @import "materialize/components/variables";
 
@@ -81,6 +84,7 @@
 	height: 450px;
 	margin: 0;
 	padding: 15px;
+	position: absolute;
 }
 
 #media-link {
