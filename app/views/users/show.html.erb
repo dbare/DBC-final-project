@@ -126,8 +126,8 @@
 			<h4><small>Testimonials</small></h3>
 			<% @user.evaluations.each do |eval|%>
 			<div class="z-depth-2 hoverable" id="user-evals">
-			<p><em>"<%= eval.review %>"</em>"</p>
-			<p><small><%= eval.author.full_name %></small></p>
+			<p><em>"<%= eval.review %>"</em></p>
+			<p><small>-<%= eval.author.full_name %></small></p>
 			</div>
 			<br>
 			<% end %>
