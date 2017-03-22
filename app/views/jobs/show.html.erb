@@ -57,7 +57,7 @@
 			</div>
 			<br>
 				<% if @user_favorite %>
-					<button class="btn"><%= link_to "Unfavorite", favorite_path(@user_favorite), method: :delete %></button>
+					<div class="btnr"><%= link_to "Unfavorite", favorite_path(@user_favorite), method: :delete %></div>
 				<% else %>
 					<%= render 'favorites/form' %>
 				<% end %> 
