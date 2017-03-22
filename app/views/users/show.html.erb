@@ -69,10 +69,10 @@
 			<div class="col s4"><h5>Summary</h5><em><%= @profile.summary %></em><br></div>
 		</div>
 			<br>
-			<% if @user == current_user%>
+			<% if @user == current_user && @user.profile %>
 				<div class="btn link"><a href="<%=edit_profile_path(@profile) %>" > <i class="fa fa-pencil" aria-hidden="true"></i> Edit 'About Me'</a></div>
 			<% end %>
-		<% else %>
+		<% elsif @user == current_user && @user.profile == nil%>
 			<div class="btn link"><%= link_to "Add 'About Me'", new_profile_path %></div>
 		<% end %>
 	</div>
