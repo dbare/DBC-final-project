@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		@token = Token.find_by(characters: params[:user][:unique_token])
 		if @token && @token.used? == false && @user.save
-			@user.update_attributes(:company_id => @token.company_id, :admin_status => @token.admin_token)
+			@user.update_attributes(:company_id => @token.company_id, :admin_status => @token.admin_status)
 			@token.update_attribute(:user_id, @user.id)
 			UserMailer.welcome_email(@user).deliver
 			login
