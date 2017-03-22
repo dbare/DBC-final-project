@@ -186,7 +186,9 @@
 		</div>
 </div>
 
-<h4>Track Your Profile Views</h4>
 <div>
-	<%= line_chart @impressions.group_by_day(:created_at, format: "%B %d, %Y").count, discrete: false %>
+	<% if current_user.id == @user.id %>
+		<h4>Track Your Profile Views</h4>
+		<%= line_chart @impressions.group_by_day(:created_at, format: "%B %d, %Y").count, discrete: false %>
+	<% end %>
 </div>
