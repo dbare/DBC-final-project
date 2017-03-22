@@ -48,6 +48,7 @@ class UsersController < ApplicationController
 		@profile = @user.profile
 		@uploads = @user.uploads
 		@resume = Resume.new
+		@impressions = Impression.where(user_id: current_user.id)
 
 		p "*" * 50
 		p current_user.id

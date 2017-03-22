@@ -144,3 +144,6 @@
 		<br>
 		<br>
 
+<%= line_chart @impressions.group_by_day(:created_at, format: "%B %d, %Y").count, discrete: false %>
+
+
