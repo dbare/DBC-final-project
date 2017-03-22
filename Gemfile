@@ -67,6 +67,8 @@ gem 'pry-byebug'
 
 gem 'impressionist'
 
+gem 'travis-ci'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
