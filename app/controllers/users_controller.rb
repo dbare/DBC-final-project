@@ -3,12 +3,11 @@ class UsersController < ApplicationController
 	impressionist actions: [:show] #, unique: [:user_id]
 
 	def index
-		@search = User.search(params[:q])
+		@boots = User.where(company_id: nil)
+		@search = @boots.search(params[:q])
 		if @search
 			@search.build_condition
 			@boots = @search.result
-		else
-			@boots = User.where(company_id: nil)
 		end
 		render 'boots_index'
 	end

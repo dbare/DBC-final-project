@@ -1,16 +1,18 @@
-<h1>All Company Listings</h1>
+<div>
+	<h1>All Company Listings</h1>
+</div>
 
 <% if current_user %>
 	<!-- Add admin only validation -->
-	<div class="btn col-md-2" id="company-link">
+	<div class="btn" id="company-link">
 		<%= link_to "Create New Company", new_company_path %>
 	</div>
 <% end %>
 
-<div id="company-container">
+<div id=">
 	<% @companies.each do |company| %>
 		<div class="text-center" id="company-link">
 			<%= link_to "#{company.name}", company_path(company) %>
 		</div>
 	<% end %>
-</div>>
+</div>
