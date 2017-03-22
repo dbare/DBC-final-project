@@ -31,7 +31,19 @@ Bootcamp Graduates:
 <div>
 	<ul>
 		<% @boots.each do |boot| %>
-			<div><li><%= link_to boot.full_name, user_path(boot) %></li></div>
+			<div>
+				<li>
+					<%= link_to boot.full_name, user_path(boot)%> 
+
+					Location:
+					<% if boot.profile %>
+						<%= boot.profile.location %>
+					<% else %>
+						TBD
+					<% end %>
+			
+				</li>
+			</div>
 		<%end%>
 	</ul>
 </div>
