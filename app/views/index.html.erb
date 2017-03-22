@@ -8,7 +8,7 @@
           <h5 class="header col s12 light white-text">A platform to connect technical bootcamp graduates to success.</h5>
         </div>
         <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+          <a href="/users/new" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
         </div>
         <br><br>
 
@@ -135,7 +135,7 @@
                     map: map,
                     title: 'Hello World!'
                   });
-  
+
                 map.setCenter(pos);
               }, function() {
                 handleLocationError(true, infoWindow, map.getCenter());
@@ -144,7 +144,7 @@
               // Browser doesn't support Geolocation
               handleLocationError(false, infoWindow, map.getCenter());
             }
-          }   
+          }
           function handleLocationError(browserHasGeolocation, infoWindow, pos) {
             infoWindow.setPosition(pos);
             infoWindow.setContent(browserHasGeolocation ?
