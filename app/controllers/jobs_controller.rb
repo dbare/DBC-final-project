@@ -33,7 +33,7 @@ class JobsController < ApplicationController
 
 	def show
 		@job = Job.find(params[:id])
-		@company = Company.find(params[:id])
+		@company = @job.company
 		@user = current_user
 		@favorite = Favorite.new
 		@favorited = current_user.favorite_jobs.include?(@job)

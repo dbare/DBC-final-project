@@ -65,7 +65,10 @@ gem 'materialize-sass'
 
 gem 'pry-byebug'
 
+gem 'geocoder'
+
 gem 'impressionist'
+
 
 
 # Use Capistrano for deployment
