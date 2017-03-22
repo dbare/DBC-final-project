@@ -393,6 +393,7 @@ DEPENDENCIES
   figaro
   fog
   font-awesome-rails
+  travis
   geocoder
   impressionist
   jbuilder (~> 2.5)

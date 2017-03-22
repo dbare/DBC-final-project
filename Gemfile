@@ -69,6 +69,8 @@ gem 'geocoder'
 
 gem 'impressionist'
 
+gem 'travis-ci'
+
 
 
 # Use Capistrano for deployment
