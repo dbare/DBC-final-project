@@ -61,16 +61,27 @@
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
 
+
+.btn.link a {
+	color: white;
+}
+
+#border {
+	border: solid;
+}
+
 #map {
 	width: 100%; 
-  height: 450px;
+	height: 450px;
 	margin: 0;
 	padding: 15px;
 }
 
-
-
-
+#media-link {
+	background-color: red;
+	margin-bottom: 10px;
+	margin-top: 30px;
+}
 
 
 
