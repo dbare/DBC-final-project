@@ -64,7 +64,6 @@
 		
 		<tbody>
 			<% @jobs.each do |job| %>
-
 			<tr class="hoverable">
 				<div>
 					<td class="center" style=""><%= job.company.name %></td>
@@ -84,9 +83,6 @@
 						<% end %>
 					</td>
 
-					
-
-					<!-- <td class="center"><%=job.job_type%></td> -->
 					<div>
 						<%if job.description.length  >= 150%>
 							<td>
