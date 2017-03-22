@@ -1,37 +1,54 @@
-<h1 class="text-center container col-md-8 col-lg-8">All Job Postings</h1>
+<h1 class="center">All Job Postings</h1>
+<div class="row">
+	<div class="container">
+		<%= search_form_for @search do |f| %>
+			<%= f.condition_fields do |c| %>
+			<div>
+				<%= c.attribute_fields do |a| %>
+					<%= a.attribute_select associations: [:company] %>
+				<% end %>
+				<%= c.predicate_select %>
+				<%= c.value_fields do |v| %>
+					<%= v.text_field :value %>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
 
-<div class="text-center container col-md-8 col-lg-8">
-
-	<%= search_form_for @search do |f| %>
-		<%= f.condition_fields do |c| %>
+	<div class="center">
 		<div>
-			<%= c.attribute_fields do |a| %>
-				<%= a.attribute_select associations: [:company] %>
-			<% end %>
-			<%= c.predicate_select %>
-			<%= c.value_fields do |v| %>
-				<%= v.text_field :value %>
-			<% end %>
+			<%= f.submit "Search"%>
 		</div>
-<% end %>
-
-<div id="search-buttons">
-	<div><%= f.submit "Search"%> </div>
-	<% end %>
-	<div><%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %></div>
+			<% end %>
+		<div>
+			<%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %>		
+		</div>
 	</div>
 </div>
 
-<div id="job-container">
-	<% @jobs.each do |job| %>
-		<div class="text-center" id="job-link">
-			<h3> JobID: <%= link_to job.id, job_path(job) %></h3>
-			<p><h4>Position</h4><%=job.position%></p>
-			<p><h4>Description</h4><%=job.description%></p>
-		</div>
-	<% end %>
-</div>
+<table class="bordered centered highlight responsive-table">
+	<thead>	
+		<tr>
+			<th>Position</th>
+			<th>Company</th>
+			<th>Location</th>
+		</tr>
+	</thead>
+	
+		<% @jobs.each do |job| %>
+	<tbody>
+		<tr>
+			<!-- <td><a href=""></a></td> -->
+			<td><%=job.position%></td>
+			<td><%= job.company.name%></td>
+			<td><%=job.location%></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
 
 <% if current_user.company_id != nil %>
-	<div class="text-center"><%= link_to "Post a New Job", new_job_path %></div>
+	<div>
+		<%= link_to "Post a New Job", new_job_path %>
+	</div>
 <% end %>
