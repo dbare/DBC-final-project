@@ -69,7 +69,9 @@ gem 'geocoder'
 
 gem 'impressionist'
 
+gem 'gmaps4rails'
 
+gem 'underscore-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

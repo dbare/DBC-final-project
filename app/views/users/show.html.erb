@@ -1,129 +1,177 @@
-<div class="text-center">
-	<h3><%= @user.full_name %>'s Profile</h3>
-
-	<strong>Contact:</strong>
-	<%= @user.email %>
-</div>
-
-<div>
-	<h4>
-		<% if current_user.id == @user.id %>
-			<%= "Profile Views: #{@user.impressionist_count}" %>
-		<% end %>
-	</h4>
-</div>
-
-<br>
-<br>
-
-<% if @user.photo? %>
-	<div class="col-md-4 col-lg-4">
-		<strong>Photo:</strong>
-		<%= image_tag @user.photo.avatar.url %>
+<div class="center-align">
+	
+	<div class=" col s6">
+		<h1><%= @user.full_name.capitalize %>'s Profile</h1>
 	</div>
-<%end%>
-
-<%= link_to 'Message me!', user_conversations_path(@user, sender_id: current_user.id, recipient_id: @user.id), method: 'post'%>
-
-<br>
-<br>
-
-<br>
-<br>
-
-<div id="user-about-me" class="text-center">
-	<% if @profile%>
-
-	<h3>About Me</h3>
-
-	<br>
-
-	<h5>Location</h5><%= @profile.location %><br><br>
-	<h5>Objective</h5><%= @profile.objective %><br><br>
-	<h5>Summary</h5><%= @profile.summary %><br><br>
-
-	<br>
-
-	<h3><%= link_to "Edit 'About Me' Section", edit_profile_path(@profile) %></h3>
-	<% else %>
-	<h3><%= link_to "Add 'About Me' Section", new_profile_path %></h3>
-	<% end %>
 </div>
 
-<div class="text-center">
-	<h3>Testimonials</h3>
-	<% @user.evaluations.each do |eval|%>
-	<p><%= eval.review %></p>
-	<p><%= eval.author.full_name %></p>
-	<% end %>
-</div>
+<div class="row" id="border">
+				<h4>
+					<% if current_user.id == @user.id %>
+						<%= "Profile Views: #{@user.impressionist_count}" %>
+					<% end %>
+				</h4>
+	<% if @user.photo? %>
+		<div class="col s5">
+			<div class="center-align" id="profile-pic">
+				<%= image_tag @user.photo.avatar.url %><br>
+				<strong>Contact</strong><br>
+				<small><%= @user.email %></small><br>
 
-<br>
+			<div class="btn link"><%= link_to 'Message me!', user_conversations_path(@user, sender_id: current_user.id, recipient_id: @user.id), method: 'post'%></div>
 
-<div>
-	<p><%= flash[:notice] %></p>
-	<h3>Resume</h3>
-	<% if !@user.resume %>
-		<%= render 'resumes/form' %>
-	<% else %>
-		<%= link_to "#{@user.first_name}'s Resume", user_resume_path(@user) %>
-	<% end %>
-</div>
 
-<br>
 
-<div class="text-center">
-	<h3>Links Section</h3>
-	<% if @user.links %>
-		<ul>
-		<% @links.each do |link| %>
-			<li>
-				<%= link_to link.description, link.url %>
-				<% if @user == current_user%>
-					<div>
-						<button><%= link_to "Edit", edit_link_path(link) %></button>
-					</div>
-					<div>
-						<button><%= link_to "Delete", link_path(link), method: :delete %></button>
-					</div>
-				<% end%>
-			</li>
+			</div>
+			<br>
+			<div class="center-align">
+				<strong>Resume</strong>
+				<p><%= flash[:notice] %></p>
+				<% if !@user.resume %>
+					<%= render 'resumes/form' %>
+				<% else %>
+					<%= link_to "#{@user.first_name}'s Resume", user_resume_path(@user) %>
+				<% end %>
+			</div>
+		</div>
+	<%end%>
+
+	<div class="col s6 center" id="border">
+		<% if @profile%>
+		<div class="row">
+			<div >
+				<h4><small>About Me</small></h4>
+			</div>
+		</div>
+			<br>
+				
+		<div class="row center-align">
+			<div class="col s4"><h5>Location</h5><%= @profile.location %><br></div>
+			<div class="col s4"><h5>Objective</h5><%= @profile.objective %><br></div>
+			<div class="col s4"><h5>Summary</h5><%= @profile.summary %><br></div>
+		</div>
+
+			<br>
+			<div class="btn link"><a href="<%=edit_profile_path(@profile) %>" ><i class="fa fa-pencil" aria-hidden="true"></i>Edit 'About Me'</a></div>
+		<% else %>
+			<div class="btn link"><%= link_to "Add 'About Me'", new_profile_path %></div>
 		<% end %>
-		</ul>
-	<% end %>
+	</div>
+</div>
 
-	<br>
-	<% if @user == current_user%>
-	<h3><%= link_to "Add New Link", new_link_path %></h3>
-	<% end %>
-		<div class="text-center">
-			<h3>Portfolio</h3>
-			<ul>
-				<% @uploads.each do |upload| %>
-					<li>
-						<%= image_tag upload.photo.avatar.url %>
-						<% if @user == current_user%>
-							<div>
-								<button><%= link_to "Edit", edit_user_upload_path(@user, upload) %></button>
+
+<% if current_user != @user %>
+	<%= link_to 'Message me!', user_conversations_path(@user, sender_id: current_user.id, recipient_id: @user.id), method: 'post'%>
+<% end %>
+
+
+
+<br>
+<br>
+
+
+
+<div class="center" id="border">
+	<ul>
+		<div class="carousel hoverable">
+		<h2>Portfolio</h2>
+			<% @uploads.each do |upload| %>
+				<li>
+					<div class="carousel-item card z-depth-5">
+
+							<div class="card-image hoverable"><img src="<%=upload.photo.avatar.url %>" height="250" >
+							 <span class="black-text"><%= upload.title %></span>
 							</div>
-							<div>
-								<button><%= link_to "Delete", user_upload_path(@user, upload), method: :delete %></button>
-							</div>
+								<div>
+
+									<% if @user == current_user%>
+										<div class="row">	
+											<div class="col s6 small"><a href="<%= edit_user_upload_path(@user, upload) %>" class="btn-floating halfway-fab left z-depth-5" ><i class="fa fa-pencil" aria-hidden="true"></i></a></div>
+
+											<div class="col s6"><a data-method="delete" href="<%= user_upload_path(@user, upload) %>" class="btn-floating halfway-fab z-depth-5" ><i class="fa fa-trash" aria-hidden="true"></i></a></div>
+										</div>
+								</div>
 						<%end%>
-					</li>
-				<% end%>
-			</ul>
+				</li>
+			<% end%>
+		</div>
+		<br>
+	<% if @user == current_user%>
+		<div class="btn link"><%= link_to "Upload Portfolio Image", new_user_upload_path(@user) %></div>
+	<% end %>
+	</ul>
 
-			<% if @user == current_user%>
-				<h3><%= link_to "Upload Portfolio Image", new_user_upload_path(@user) %></h3>
+
+
+<!-- Everthing above this comment is in the right position -->
+
+
+
+
+
+
+<div >
+	<div class="row" id="border">
+		<div class="col s6 center-align" id="border">
+			<h3><small>Testimonials</small></h3>
+			<% @user.evaluations.each do |eval|%>
+			<p><%= eval.review %></p>
+			<p><%= eval.author.full_name %></p>
 			<% end %>
 		</div>
 
-<div>
-		<br>
-		<br>
+		<div class="col s6 " id="border">
+			<div class="center"><h3><small>Media Links</small></h3></div>
+					<% if @user == current_user%>
+					<div id="border" class="col s12" ><div class="btn link "><a href=" <%=new_link_path %>">Add New Link</a></div></div><br>
+					<% end %>
+				<br>
+		
 
-		<div class="text-center">
+			<div class="row">
+				<% if @user.links %>
+					<ul>
+						<div>
+						<% @links.each do |link| %>
+							<li>
+							<div>
+								<div class="btn link" id="media-link"><%= link_to link.description, link.url %></div>
+								<% if @user == current_user%>
+									<div>	
+										<div class="btn link btn">
+											<%= link_to "Edit", edit_link_path(link) %>
+										</div>
+										<div class="btn link btn">
+											<%= link_to "Delete", link_path(link), method: :delete %>
+										</div>	
+									</div>
+								<% end%>
+							</div>	
+							</li>
+								<% end %>
+						</ul>
+						<% end %>
+			</div>
+		</div>
+	</div>
+
+
+
+
+</div>
+		<div>
+				<br>
+				<br>
+				<% if current_user == @user && @user.favorite_jobs.any?%>
+			<div class="text-center">
+			<h3>Favorite Jobs:</h3>
+				<% @user.favorite_jobs.each do |job| %>
+					<%= link_to "#{job.company.name} - #{job.position}" , job_path(job) %>
+				<% end %>
+			</div>
+		</div>
+
+		<div>
 			<% if current_user.id != @user.id %>
 				<h4>Evaluate this Dev:</h4>
 				<%= simple_form_for :evaluation, url: user_evaluations_path(@user) do |f|%>
@@ -133,18 +181,6 @@
 				<% end %>
 			<% end %>
 		</div>
-
-
-		<% if current_user == @user && @user.favorite_jobs.any?%>
-			<div class="text-center">
-			<h3>Favorite Jobs:</h3>
-				<% @user.favorite_jobs.each do |job| %>
-					<%= link_to "#{job.company.name} - #{job.position}" , job_path(job) %>
-				<% end %>
-			</div>
-		</div>
-
-		<% end %>
-
-		<br>
-		<br>
+	
+</div>
+<% end %>
