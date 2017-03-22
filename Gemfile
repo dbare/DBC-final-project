@@ -73,6 +73,10 @@ gem 'gmaps4rails'
 
 gem 'underscore-rails'
 
+gem 'travis-ci'
+
+
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
