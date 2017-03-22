@@ -11,7 +11,7 @@
           <% else %>
             <% recipient = User.find(conversation.sender_id) %>
           <% end %>
-          <li><%= link_to recipient.full_name, user_conversation_messages_path(@user, conversation)%></li>
+          <li><img src="<%= recipient.photo.thumb.url %>"><%= link_to recipient.full_name, user_conversation_messages_path(@user, conversation)%></li>
         <% end %>
       <% end %>
     </ul>
