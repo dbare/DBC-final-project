@@ -9,10 +9,19 @@
 	</div>
 <% end %>
 
-<div id=">
+<div id="row">
 	<% @companies.each do |company| %>
-		<div class="text-center" id="company-link">
-			<%= link_to "#{company.name}", company_path(company) %>
+		<div class="col m4">
+			<div class="card hoverable light-grey z-depth-5">
+				<div class="card-image">
+					<img src="<% company.photo %>">
+					<span class="card-title black-text"><%= company.name %></span>
+					<a href="<% company_path(company)%>" class="btn-floating halfway-fab waves-effect z-depth-5"><i class="fa fa-user" aria-hidden="true"></i></a>
+				</div>
+				<div class="card-content">
+					<p><%= company.location %></p>
+				</div>
+			</div>
 		</div>
 	<% end %>
 </div>
