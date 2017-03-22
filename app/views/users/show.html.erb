@@ -60,6 +60,10 @@
 </div>
 
 
+<% if current_user != @user %>
+	<%= link_to 'Message me!', user_conversations_path(@user, sender_id: current_user.id, recipient_id: @user.id), method: 'post'%>
+<% end %>
+
 
 
 <br>
