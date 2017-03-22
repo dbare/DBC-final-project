@@ -2,7 +2,7 @@
   <div class="section no-pad-bot">
     <div class="container">
       	<br><br>
-      	<div class="z-depth-5" id="user-evals">
+      	<div>
 	      	<h3 style="color: white;
     text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;" class="header center text-lighten-2">
 	      	<%= @job.position %><br>
@@ -10,7 +10,8 @@
 			<%= @job.company.name%></h3>
 		</div>
       <div class="row center">
-        <h5 class="header col s12 light white-text"><%= "Job Views | #{@job.impressionist_count}" %></h5>
+        <h5 style="color: white;
+    text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;" class="header col s12 light "><%= "Job Views | #{@job.impressionist_count}" %></h5>
       </div>
       <div class="row center">
         
@@ -23,21 +24,8 @@
 </div>
 
 
-<!-- parallax -->
 
 
-<div class="center">
-
-	<h3><%= @job.position %><br>
-	<small>at</small><br>
-	<%= @job.company.name%></h3>
-	<br>
-
-	<div>
-		<%= "Job Views | #{@job.impressionist_count}" %>
-	</div>
-
-</div>
 <br>
 <br>
 
