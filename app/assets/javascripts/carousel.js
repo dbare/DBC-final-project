@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
     $('.carousel').carousel({
           dist:0,
           shift:0,

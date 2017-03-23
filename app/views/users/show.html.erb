@@ -77,41 +77,34 @@
 </div>
 
 <br>
-<br>
 
-<div class="center" >
+
+<!-- carousel begins here -->
+
+<div class="center">
 	<ul>
 		<div class="carousel hoverable">
-		<h2 style="font-family: Monaco">Portfolio</h2>
+		<h2>Portfolio</h2>
+				
 			<% @uploads.each do |upload| %>
-				<li>
-					<div class="carousel-item card z-depth-5">
-
-							<div class="card-image hoverable"><img src="<%= upload.photo.avatar.url %>" height="250" >
-							 <span class="black-text"><%= upload.title %></span>
-							</div>
-								<div>
-
-									<% if @user == current_user%>
-										<div class="row">
-											<div class="col s6 small"><a href="<%= edit_user_upload_path(@user, upload) %>" class="btn-floating halfway-fab left z-depth-5" ><i class="fa fa-pencil" aria-hidden="true"></i></a></div>
-
-											<div class="col s6"><a data-method="delete" href="<%= user_upload_path(@user, upload) %>" class="btn-floating halfway-fab z-depth-5" ><i class="fa fa-trash" aria-hidden="true"></i></a></div>
-										</div>
-								</div>
-						<%end%>
-				</li>
-			<% end%>
+				<div class="carousel-item card hoverable">
+					<div class="card-image">
+						<img src="<%= upload.photo.avatar.url%>">
+					</div>
+					<div class="card-content">
+						
+					</div>
+				</div>	
+			<% end%>	
 		</div>
-		<br>
-	<% if @user == current_user%>
-		<div class="btn link"><%= link_to "Upload Portfolio Image", new_user_upload_path(@user) %><br></div>
-	<% end %>
 	</ul>
 
+	<% if @user == current_user%>
+		<div class="btn link"><%= link_to "Upload Portfolio Image", new_user_upload_path(@user) %></div>
+	<% end %>
+</div>
 
-
-<!-- Everthing above this comment is in the right position -->
+<!-- carousel ends here -->
 
 
 
@@ -147,7 +140,7 @@
 						<% @links.each do |link| %>
 							<li>
 							<div>
-								<div class="btn link" id="media-link"><%= link_to link.description, link.url %></div>
+								<div class="btn link center" id="media-link"><%= link_to link.description, link.url %></div>
 								<% if @user == current_user%>
 									<div>
 										<div class="btn link">
@@ -192,11 +185,14 @@
 				<%= simple_form_for :evaluation, url: user_evaluations_path(@user) do |f|%>
 					<%= f.input :rating, label: 'Rating', collection: [1, 2, 3, 4, 5] %>
 					<%= f.input :review, label: 'Review', as: :text %>
+					<br>
 					<%= f.button :submit %>
 				<% end %>
 			<% end %>
 		</div>
 </div>
+<br>
+<br>
 
 
 
