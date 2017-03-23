@@ -14,7 +14,7 @@
 
 			<div class="col s10 center">
 				<% if @user == current_user %>
-					<h1 style="text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;"">Welcome back, <%= @user.full_name %>!</h1>
+					<h1 style=" color: white; text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;"">Welcome back, <%= @user.full_name %>!</h1>
 				<% else %>
 					<h1 style="color: white; text-shadow: -2px 0 black, 0 3px black, 3px 0 black, 0 -2px black;"><%= @user.full_name %></h1>
 				<% end %>
