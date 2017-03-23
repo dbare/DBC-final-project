@@ -2,7 +2,9 @@
 
 		<div class=" col s1 center-align">
 				<% if current_user.id == @user.id %>
-					<%= "Profile Views #{@user.impressionist_count}" %>
+					<strong>Total Views:</strong>
+					<br>
+					<%= "#{@user.impressionist_count} Views" %>
 				<% end %>
 		</div>
 	<div class="col s10 center">
@@ -54,11 +56,11 @@
 
 	<div class="col s6 center" >
 		<% if @profile%>
-		<div class="row">
-			<div >
-				<h4><small>About Me</small></h4>
+			<div class="row">
+				<div >
+					<h4><small>About Me</small></h4>
+				</div>
 			</div>
-		</div>
 			<br>
 
 		<div class="row center-align">
@@ -67,10 +69,10 @@
 			<div class="col s4"><h5>Summary</h5><em><%= @profile.summary %></em><br></div>
 		</div>
 			<br>
-			<% if @user == current_user%>
+			<% if @user == current_user && @user.profile %>
 				<div class="btn link"><a href="<%=edit_profile_path(@profile) %>" > <i class="fa fa-pencil" aria-hidden="true"></i> Edit 'About Me'</a></div>
 			<% end %>
-		<% else %>
+		<% elsif @user == current_user && @user.profile == nil%>
 			<div class="btn link"><%= link_to "Add 'About Me'", new_profile_path %></div>
 		<% end %>
 	</div>
@@ -174,7 +176,10 @@
 			<h3>Favorite Jobs:</h3>
 				<% @user.favorite_jobs.each do |job| %>
 					<%= link_to "#{job.company.name} - #{job.position}" , job_path(job) %>
-					<% end %>
+				<% end %>
+				<br>
+				<br>
+				<br>
 		<% end %>
 			</div>
 		</div>
