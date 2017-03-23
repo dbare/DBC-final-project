@@ -1,11 +1,9 @@
 <body >
 	<div class="row center">
 
-			<div class=" col s1 center-align">
+			<div class="btn link">
 					<% if current_user.id == @user.id %>
-						Total Views
-						<br>
-						<small><%= "#{@user.impressionist_count}" %></small>
+						Total Views: <%= "#{@user.impressionist_count}" %>
 					<% end %>
 			</div>
 
