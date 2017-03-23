@@ -1,25 +1,27 @@
 <body >
-	<div class="row center">
+<div style="background-color:white;">
 
-			<div class=" col s1 center-align">
+	<div class="row center" style="background-color: #6b7a8f;">
+
+			<div class="btn link">
 					<% if current_user.id == @user.id %>
-						Total Views
-						<br>
-						<small><%= "#{@user.impressionist_count}" %></small>
+						Total Views: <%= "#{@user.impressionist_count}" %>
 					<% end %>
 			</div>
 
 
 			<div class="col s10 center">
 				<% if @user == current_user %>
-					<h1>Welcome back, <%= @user.full_name %>!</h1>
+					<h1>Welcome Back, <%= @user.first_name.capitalize %>!</h1>
 				<% else %>
-					<h1><%= @user.full_name %></h1>
+					<h1 style="color: white; text-shadow: -2px 0 black, 0 3px black, 3px 0 black, 0 -2px black;"><%= @user.full_name %></h1>
 				<% end %>
 			</div>
 
 
 	</div>
+
+</body style="background-color: #008B8B;">
 
 	<div class="row z-depth-1 hoverable" id="user-evals">
 			<div class="col s1">
@@ -34,7 +36,7 @@
 						<% end %>
 				</div>
 				<br>
-				<strong>Contact</strong>
+				<strong>Email <%= @user.first_name.capitalize %></strong>
 				<br>
 				<small><%= @user.email %></small>
 				<br>
@@ -42,22 +44,16 @@
 
 				<br>
 				<div class="center-align">
-					<strong>Resume</strong>
-					<p><%= flash[:notice] %></p>
-					<% if !@user.resume %>
-						<%= render 'resumes/form' %>
-					<% else %>
-						<%= link_to "#{@user.first_name}'s Resume", user_resume_path(@user) %>
+					<% if @user != current_user%>
+						<div class="btn link">
+					<%= link_to 'Message me!', user_conversations_path(@user, sender_id: current_user.id, recipient_id: @user.id), method: 'post'%>
+						</div>
 					<% end %>
 				</div>
 			</div>
 
-			<% if @user != current_user%>
-				<div class="btn link">
-					<%= link_to 'Message me!', user_conversations_path(@user, sender_id: current_user.id, recipient_id: @user.id), method: 'post'%>
 
-				</div>
-			<% end %>
+
 
 		<div class="col s5 center" >
 			<% if @profile%>
@@ -72,17 +68,33 @@
 				<div class="col s4"><h5>Location</h5><i class="fa fa-map-marker" aria-hidden="true"></i> <em><%= @profile.location %></em><br></div>
 				<div class="col s4"><h5>Objective</h5><em><%= @profile.objective %></em><br></div>
 				<div class="col s4"><h5>Summary</h5><em><%= @profile.summary %></em><br></div>
+
+
 			</div>
 				<br>
 				<% if @user == current_user && @user.profile %>
-					<div class="btn link"><a href="<%=edit_profile_path(@profile) %>" > <i class="fa fa-pencil" aria-hidden="true"></i> Edit 'About Me'</a></div>
+					<div class="btn link">
+						<a href="<%=edit_profile_path(@profile) %>" > <i class="fa fa-pencil" aria-hidden="true"></i> Edit 'About Me'</a>
+					</div>
 				<% end %>
 			<% elsif @user == current_user && @user.profile == nil%>
-				<div class="btn link"><%= link_to "Add 'About Me'", new_profile_path %></div>
+				<div class="btn link">
+					<%= link_to "Add 'About Me'", new_profile_path %>
+				</div>
 			<% end %>
+			<br>
+				<div>
+
+					<strong>Resume</strong>
+					<p><%= flash[:notice] %></p>
+					<% if !@user.resume %>
+						<%= render 'resumes/form' %>
+					<% else %>
+						<%= link_to "#{@user.first_name}'s Resume", user_resume_path(@user) %>
+					<% end %>
+				</div>
 		</div>
-			<div class="col s1">
-			</div>
+		<div class="col s1"></div>
 	</div>
 
 
@@ -91,7 +103,7 @@
 		<ul>
 			<div class="carousel hoverable">
 			<h2>Portfolio</h2>
-					
+
 				<% @uploads.each do |upload| %>
 					<div class="carousel-item card z-depth-5">
 						<div class="card-image hoverable">
@@ -99,13 +111,13 @@
 						</div>
 						<div>
 							<% if @user == current_user%>
-								<div class="row">	
+								<div class="row">
 									<div>
-										<%= button_to "EDIT", edit_user_upload_path(@user, upload), method: :get, :class => "btn-floating halfway-fab left edit-btn" %> 
+										<%= button_to "EDIT", edit_user_upload_path(@user, upload), method: :get, :class => "btn-floating halfway-fab left edit-btn" %>
 									</div>
 
 									<div class="col s6 small">
-										<%= button_to "DELETE", user_upload_path(@user, upload), method: :delete, :class => "btn-floating halfway-fab right delete-btn" %> 
+										<%= button_to "DELETE", user_upload_path(@user, upload), method: :delete, :class => "btn-floating halfway-fab right delete-btn" %>
 									</div>
 
 <!-- 									<div class="col s6 small"><a href="<%= edit_user_upload_path(@user, upload) %>" class="btn-floating halfway-fab left z-depth-5" ><i class="fa fa-pencil" aria-hidden="true"></i></a></div>
@@ -114,9 +126,9 @@
 								</div>
 							<%end%>
 						</div>
-					</div>	
+					</div>
 
-				<% end%>	
+				<% end%>
 			</div>
 		</ul>
 
@@ -143,9 +155,9 @@
 							<p><em>"<%= eval.review %>"</em></p>
 							<p><small>-<%= eval.author.full_name %></small></p>
 						</div>
-						
-							<p>---------------</p>
-						
+
+							<strong><p style="color: #008B8B;"></p>- - - - - - - - - - - - - - - - - - - -</p></strong>
+
 					</div>
 					<% end %>
 			</div>
@@ -233,7 +245,7 @@
 
 	<div>
 		<% if current_user.id == @user.id %>
-			<center>Track Your Profile Views</center>
+			<center><h3>Track Your Profile Views</h3></center>
 			<%= line_chart @impressions.group_by_day(:created_at, format: "%B %d, %Y").count, discrete: false %>
 		<% end %>
 	</div>
