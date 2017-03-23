@@ -55,12 +55,12 @@
 <div class="row">
 	<% @boots.each do |boot| %>
 		<div class="col m4" >
-			<div class="card hoverable light-grey z-depth-5">
+			<div class="card hoverable light-grey ">
 				<div class="card-image">
-          <% if boot.photo? %>
-						<img src="<%= boot.photo %>">
+          	<% if boot.photo? %>
+					<img src="<%= boot.photo %>" height=430 width=566>
             <% else %>
-            <img src="https://www.soundstream.tv/assets/default_profile-e08597880fc222202f22984a4f1966a29b108e856a3fb935072bfbbc302a4b73.png" height=300 max-width=300>
+            	<img src="https://www.soundstream.tv/assets/default_profile-e08597880fc222202f22984a4f1966a29b108e856a3fb935072bfbbc302a4b73.png" height=430 width=566>
             <% end %>
 					<div class="card-title black-text"><%= boot.full_name %></div>
 					<a href="<%= user_path(boot)%>" class="btn-floating halfway-fab waves-effect z-depth-5"><i class="fa fa-user" aria-hidden="true"></i></a>
