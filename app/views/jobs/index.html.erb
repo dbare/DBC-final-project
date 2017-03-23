@@ -66,10 +66,10 @@
 			<% @jobs.each do |job| %>
 			<tr class="hoverable">
 				<div>
-					<td class="center" style=""><%= job.company.name %></td>
-					<td class="center"><%=job.location%></td>
-					<td class="center"><a href="<%=job_path(job)%>"><%=job.position%></td>
-					<td class="center" style="width:100px"> 
+					<td class="center" style="width:90px"><%= link_to job.company.name, job.company %></td>
+					<td class="center" style="width:180px"><%=job.location%></td>
+					<td class="center" style="width:180px"><a href="<%=job_path(job)%>"><%=job.position%></td>
+					<td class="center" style="width:120px"> 
 						<% if job.job_type == 'full-time'%>
 							Full Time
 						<% elsif job.job_type == 'part-time'%>
