@@ -1,26 +1,32 @@
 <body >
 <div style="background-color:white;">
+
       
 	<div class="row center" style="background-color: #dcc7aa;">
-
-			<div class=" col s1 center-align">
-					<% if current_user.id == @user.id %>
-						Total Views
-						<br>
-						<small><%= "#{@user.impressionist_count}" %></small>
-					<% end %>
+			<div class="col s1">
+				
 			</div>
 
 
 			<div class="col s10 center">
 				<% if @user == current_user %>
-					<h1 style=" color: white; text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;"">Welcome back, <%= @user.full_name %>!</h1>
+					<h1>Welcome Back, <%= @user.first_name.capitalize %>!</h1>
+
 				<% else %>
-					<h1 style="color: white; text-shadow: -2px 0 black, 0 3px black, 3px 0 black, 0 -2px black;"><%= @user.full_name %></h1>
+					<h1><%= @user.full_name %></h1>
 				<% end %>
 			</div>
 
+			<div class="col s1" id="user-evals">
+					<% if current_user.id == @user.id %>
+						Total Views: <%= "#{@user.impressionist_count}" %>
+					<% end %>
+			</div>
 
+
+	</div>
+	<div style="height: 5px;">
+		<br>
 	</div>
 
 </body style="background-color: #008B8B;">
@@ -38,9 +44,9 @@
 						<% end %>
 				</div>
 				<br>
-				<strong>Contact</strong>
+				<strong>Email <%= @user.first_name.capitalize %></strong>
 				<br>
-				<small><%= @user.email %></small>
+				<small><em><%= @user.email %></em></small>
 				<br>
 			</div>
 
@@ -49,29 +55,35 @@
 					<% if @user != current_user%>
 						<div class="btn link"  id="media-link">
 					<%= link_to 'Message me!', user_conversations_path(@user, sender_id: current_user.id, recipient_id: @user.id), method: 'post'%>
+					<br>
 						</div>
 					<% end %>
 				</div>
 			</div>
 
-					
-			
+
+
 
 		<div class="col s5 center" >
-			<% if @profile%>
+			<div class="z-depth-5" id="user-evals">
+				<% if @profile %>
 				<div class="row">
-					<div >
-						<h4><small>About Me</small></h4>
-					</div>
+				<!-- add width -->
+					<center>
+						<div id="user-evals" class="z-depth-5" style="background-color: #6b7a8f; color:white; width: 25%">
+							<h4><small>About Me</small></h4>
+						</div>
+					</center>
 				</div>
 				<br>
 
-			<div class="row center-align">
-				<div class="col s4"><h5>Location</h5><i class="fa fa-map-marker" aria-hidden="true"></i> <em><%= @profile.location %></em><br></div>
+				<div class="row center-align">
+					<div class="col s4"><h5>Location</h5><i class="fa fa-map-marker" aria-hidden="true"></i> <em><%= @profile.location %></em><br>
+				</div>
 				<div class="col s4"><h5>Objective</h5><em><%= @profile.objective %></em><br></div>
 				<div class="col s4"><h5>Summary</h5><em><%= @profile.summary %></em><br></div>
 
-			
+				</div>
 			</div>
 				<br>
 				<% if @user == current_user && @user.profile %>
@@ -101,11 +113,11 @@
 
 
 
-	<div class="center" id="user-evals">
+	<div class="center hoverable">
 		<ul>
 			<div class="carousel">
 			<h2>Portfolio</h2>
-					
+
 				<% @uploads.each do |upload| %>
 					<div class="carousel-item card z-depth-5">
 						<div class="card-image hoverable">
@@ -113,24 +125,21 @@
 						</div>
 						<div>
 							<% if @user == current_user%>
-								<div class="row">	
+								<div class="row">
 									<div>
-										<%= button_to "EDIT", edit_user_upload_path(@user, upload), method: :get, :class => "btn-floating halfway-fab left edit-btn" %> 
+										<%= button_to "EDIT", edit_user_upload_path(@user, upload), method: :get, :class => "btn-floating halfway-fab left edit-btn" %>
 									</div>
 
 									<div class="col s6 small">
-										<%= button_to "DELETE", user_upload_path(@user, upload), method: :delete, :class => "btn-floating halfway-fab right delete-btn" %> 
+										<%= button_to "DELETE", user_upload_path(@user, upload), method: :delete, :class => "btn-floating halfway-fab right delete-btn" %>
 									</div>
 
-<!-- 									<div class="col s6 small"><a href="<%= edit_user_upload_path(@user, upload) %>" class="btn-floating halfway-fab left z-depth-5" ><i class="fa fa-pencil" aria-hidden="true"></i></a></div>
-
-									<div class="col s6"><a data-method="delete" href="<%= user_upload_path(@user, upload) %>" class="btn-floating halfway-fab z-depth-5" ><i class="fa fa-trash" aria-hidden="true"></i></a></div> -->
 								</div>
 							<%end%>
 						</div>
-					</div>	
+					</div>
 
-				<% end%>	
+				<% end%>
 			</div>
 		</ul>
 
@@ -140,26 +149,29 @@
 	</div>
 	<!-- carousel ends here -->
 
-
+<div style="height: 5px;">
+	<br>
+</div>
 
 <div style="background-color: #dcc7aa">
 <br>
 
-	<div class="container">
+	<div class="container" >
 		<div class="row">
 			<div   class="col s5 center-align z-depth-2" id="user-evals"  style="background-color: white;">
-				<div style="background-color: #6b7a8f; color:white;" id="user-evals">
+				<div class="z-depth-5" style="background-color: #6b7a8f; color:white;" id="user-evals">
 					<h4><small>Testimonials</small></h4>
 				</div>
 					<% @user.evaluations.each do |eval|%>
+					<br>
 					<div>
 						<div class="hoverable" id="user-evals">
 							<p><em>"<%= eval.review %>"</em></p>
 							<p><small>-<%= eval.author.full_name %></small></p>
 						</div>
-						
-							<strong><p style="color: #008B8B;"></p>- - - - - - - - - - - - - - - - - - - -</p></strong>
-						
+
+							<strong><p style="color: #6b7a8f;">- - - - - - - - - - - - - - - - - - - -</p></strong>
+
 					</div>
 					<% end %>
 			</div>
@@ -168,14 +180,16 @@
 			<div class="col s5">
 			<div>
 				<div class="row z-depth-3 hoverable" id="user-evals" style="background-color: white;">
-					<div class="center "   >
-						<div style="background-color: #6b7a8f; color: white;" id="user-evals">
+					<div class="center">
+
+						<div class="z-depth-5" style="background-color: #6b7a8f; color: white;" id="user-evals">
 							<h4><small>Media Links</small></h4>
 						</div>
+						<br><br>`
 						<% if @user == current_user%>
 							<div class="center-align btn link">
 								<a href=" <%=new_link_path %>">Add New Link</a>
-							</div><br>
+							</div>
 						<% end %>
 					<br>
 
@@ -217,42 +231,51 @@
 		<div>
 			<br>
 			<br>
-			<% if current_user == @user && @user.favorite_jobs.any?%>
-				<div class="text-center">
-				<h3>Favorite Jobs:</h3>
+				<% if current_user == @user && @user.favorite_jobs.any?%>
+					<div class="text-center">
+					<h3>Favorite Jobs:</h3>
 					<% @user.favorite_jobs.each do |job| %>
 						<%= link_to "#{job.company.name} - #{job.position}" , job_path(job) %>
 					<% end %>
-					<br>
-					<br>
-					<br>
-			<% end %>
+						<br>
+						<br>
+						<br>
+					<% end %>
 				</div>
 			</div>
-
-			<div style="background-color: white;" id="user-evals">
-				<% if current_user.id != @user.id %>
-					<h4>Evaluate this Dev:</h4>
-					<%= simple_form_for :evaluation, url: user_evaluations_path(@user) do |f|%>
-						<%= f.input :rating, label: 'Rating', collection: [1, 2, 3, 4, 5] %>
-						<%= f.input :review, label: 'Review', as: :text %>
-						<br>
-						<%= f.button :submit %>
+		
+			<center>
+				<div style="background-color: white; width: 85%" id="user-evals" class="center z-depth-3">
+					<% if current_user.id != @user.id %>
+						<h3>Evaluate this Dev</h3>
+						<center>
+							<div style="width: 85%">
+								<%= simple_form_for :evaluation, url: user_evaluations_path(@user) do |f|%>
+									<%= f.input :rating, label: 'Rating', collection: [1, 2, 3, 4, 5] %>
+									<%= f.input :review, label: 'Review', as: :text %>
+									<br>
+									<%= f.button :submit %>
+									<br>
+								<% end %>
+							</div>
+						</center>
 					<% end %>
-				<% end %>
-
-			</div>
+				</div>
+			</center>
 			<br>
-	</div>
+		
+		
 
 
 
 
-	<div>
+
+	<div style="background-color: white;">
 		<% if current_user.id == @user.id %>
-			<center>Track Your Profile Views</center>
-			<div  id="media-link">
-				<%= line_chart @impressions.group_by_day(:created_at, format: "%B %d, %Y").count, discrete: false %>
-			</div>
+
+			<center><h3>Track Your Profile Views</h3></center>
+			<%= line_chart @impressions.group_by_day(:created_at, format: "%B %d, %Y").count, discrete: false %>
+
 		<% end %>
 	</div>
+</body>
