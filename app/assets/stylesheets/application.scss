@@ -22,7 +22,7 @@
 @import "materialize/components/mixins";
 @import "materialize/components/color";
 
-
+@import 'animate';
 
 
 // Variables;
@@ -149,4 +149,9 @@ table {
 	width: 66px;
 	border: solid 3px white;
 }
+
+.wow {
+   visibility: hidden;
+}
+
 
