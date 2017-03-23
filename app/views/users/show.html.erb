@@ -156,9 +156,7 @@
 							<p><small>-<%= eval.author.full_name %></small></p>
 						</div>
 
-
 							<strong><p style="color: #008B8B;"></p>- - - - - - - - - - - - - - - - - - - -</p></strong>
-
 
 					</div>
 					<% end %>
@@ -251,5 +249,4 @@
 			<%= line_chart @impressions.group_by_day(:created_at, format: "%B %d, %Y").count, discrete: false %>
 		<% end %>
 	</div>
-
 </body>
