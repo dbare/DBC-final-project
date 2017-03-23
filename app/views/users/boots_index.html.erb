@@ -15,35 +15,22 @@
 </div>
 
 
-
-
 <br>
 <br>
 <br>
 
-	<div class="container center">
-        <h5>Search for Boots</h5>
+<div class="container center">
+  <h5>Search for Boots</h5>
 
-		<%= search_form_for @search do |f| %>
-			<%= f.condition_fields do |c| %>
-			<div class="row">
-				<div class="col s12 m4 l8">
-						<%= c.attribute_fields do |a| %>
-				</div>
-							<%= a.attribute_select %>
-						<% end %>
-						<%= c.predicate_select %>
-						<%= c.value_fields do |v| %>
-							<%= v.text_field :value %>
-						<% end %>
-			</div>
-		<% end %>
-		<div class="center-align">
-			<div><%= f.submit "Search"%></div>
-		<% end %>
-			<div><%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %></div>
-		</div>
-	</div>
+	<%= search_form_for @search do |f| %>
+	  <%= f.label :name_cont %>
+	  <%= f.search_field :first_name_or_last_name_cont %>
+	  <%= f.submit %>
+	<% end %>
+
+</div>
+
+	
 
 <br>
 <br>
