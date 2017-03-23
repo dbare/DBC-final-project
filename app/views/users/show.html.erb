@@ -42,22 +42,16 @@
 
 				<br>
 				<div class="center-align">
-					<strong>Resume</strong>
-					<p><%= flash[:notice] %></p>
-					<% if !@user.resume %>
-						<%= render 'resumes/form' %>
-					<% else %>
-						<%= link_to "#{@user.first_name}'s Resume", user_resume_path(@user) %>
+					<% if @user != current_user%>
+						<div class="btn link">
+					<%= link_to 'Message me!', user_conversations_path(@user, sender_id: current_user.id, recipient_id: @user.id), method: 'post'%>
+						</div>
 					<% end %>
 				</div>
 			</div>
 
-			<% if @user != current_user%>
-				<div class="btn link">
-					<%= link_to 'Message me!', user_conversations_path(@user, sender_id: current_user.id, recipient_id: @user.id), method: 'post'%>
-
-				</div>
-			<% end %>
+					
+			
 
 		<div class="col s5 center" >
 			<% if @profile%>
@@ -72,17 +66,33 @@
 				<div class="col s4"><h5>Location</h5><i class="fa fa-map-marker" aria-hidden="true"></i> <em><%= @profile.location %></em><br></div>
 				<div class="col s4"><h5>Objective</h5><em><%= @profile.objective %></em><br></div>
 				<div class="col s4"><h5>Summary</h5><em><%= @profile.summary %></em><br></div>
+
+			
 			</div>
 				<br>
 				<% if @user == current_user && @user.profile %>
-					<div class="btn link"><a href="<%=edit_profile_path(@profile) %>" > <i class="fa fa-pencil" aria-hidden="true"></i> Edit 'About Me'</a></div>
+					<div class="btn link">
+						<a href="<%=edit_profile_path(@profile) %>" > <i class="fa fa-pencil" aria-hidden="true"></i> Edit 'About Me'</a>
+					</div>
 				<% end %>
 			<% elsif @user == current_user && @user.profile == nil%>
-				<div class="btn link"><%= link_to "Add 'About Me'", new_profile_path %></div>
+				<div class="btn link">
+					<%= link_to "Add 'About Me'", new_profile_path %>
+				</div>
 			<% end %>
+			<br>
+				<div>
+
+					<strong>Resume</strong>
+					<p><%= flash[:notice] %></p>
+					<% if !@user.resume %>
+						<%= render 'resumes/form' %>
+					<% else %>
+						<%= link_to "#{@user.first_name}'s Resume", user_resume_path(@user) %>
+					<% end %>
+				</div>
 		</div>
-			<div class="col s1">
-			</div>
+		<div class="col s1"></div>
 	</div>
 
 
