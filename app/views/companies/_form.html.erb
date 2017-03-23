@@ -8,12 +8,14 @@
 			<br>
 			<%= f.input :email, label: "Contact email" %>
 		</div>
-		<div id="company-form-buttons" class="col-md-6 col-lg-6">
-			<div><%= f.file_field :photo, label: "Add a photo" %>
+		<div class="col-md-6">
+				<label>Photo</label><br>
+				<%= f.file_field :photo%>
+		</div>
 			<br>
 			<br>
 			<br>
 			<%= f.button :submit %>
-		</div>		
+	</div>
 	</div>
 <% end %>

@@ -4,9 +4,8 @@ class UsersController < ApplicationController
 
 	def index
 		@boots = User.where(company_id: nil)
-		@search = @boots.search(params[:q])
+		@search = @boots.ransack(params[:q])
 		if @search
-			@search.build_condition
 			@boots = @search.result
 		end
 		render 'boots_index'
