@@ -1,28 +1,7 @@
 <div class="container ">
 	<h1>Add Information</h1>
-
-	<%= form_for @profile, :html => { multipart: true, :class => "form-signin"} do |f| %>
-		<div>
-			<%= f.label :location %>
-			<%= f.text_field :location , class: "form-control"%>
-		</div>
-
-		<div>
-			<%= f.label :objective %>
-			<%= f.text_field :objective,  class: "form-control" %>
-		</div>
-
-		<div>
-			<%= f.label :summary %>
-			<%= f.text_field :summary,  class: "form-control" %>
-		</div>
-
-
-		<%= submit_tag "Submit", :class => "btn link"  %>
-		<br>
-		<br>
-
-	<% end %>
+	<%=render 'form'%>
 </div>
+
 <br>
 <br>
