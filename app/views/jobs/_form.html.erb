@@ -18,6 +18,7 @@
 
 	    <div class="input-field col s12">
     		<select name="job[job_type]">
+    				<option value="">Job Type</option>
     		  	<option value="full-time">Full Time</option>
     		  	<option value="part-time">Part Time</option>
     		  	<option value="internship">Internship</option>
@@ -28,6 +29,9 @@
   		 <div>
 	    	<%= f.label :description %>
 	    	<%= f.text_field :description %>
+	    </div>
+	    <div>
+	    	<%= submit_tag "Submit", :class => "btn link"  %>
 	    </div>
 	</div>
 <% end %>
