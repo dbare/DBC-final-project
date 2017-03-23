@@ -4,11 +4,14 @@
 	  <div class="container">
 	    <br><br>
 	    	<div class="center text-lighten-2 teal-text" id="head1">
-	    		Job Postings
+	    		Find the Career You Deserve
 	    	</div>
+				<div class="row center">
+          <h5 class="header col s12 light white-text">Your job search starts and ends with us</h5>
+        </div>
 	    <br><br>
 	    	<div>
-	    		
+
 	    	</div>
 		</div>
 	</div>
@@ -36,7 +39,7 @@
 	</div>
 
 	<div class="center">
-		
+
 	<a href="" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Search</a>
 
 
@@ -45,14 +48,14 @@
 		</div>
 			<% end %>
 		<div>
-			<%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %>		
+			<%= button_to "Clear Search", request.path, class:"cancel-button", method: "get" %>
 		</div> -->
 	</div>
 </div>
 
 <div>
 	<table class="striped" style="margin-left: 5%">
-		<thead>	
+		<thead>
 			<tr>
 				<th class="center">Company</th>
 				<th class="center">Location</th>
@@ -61,7 +64,7 @@
 				<th class="center">Description</th>
 			</tr>
 		</thead>
-		
+
 		<tbody>
 			<% @jobs.each do |job| %>
 			<tr class="hoverable">
@@ -69,7 +72,7 @@
 					<td class="center" style="width:90px"><%= link_to job.company.name, job.company %></td>
 					<td class="center" style="width:180px"><%=job.location%></td>
 					<td class="center" style="width:180px"><a href="<%=job_path(job)%>"><%=job.position%></td>
-					<td class="center" style="width:120px"> 
+					<td class="center" style="width:120px">
 						<% if job.job_type == 'full-time'%>
 							Full Time
 						<% elsif job.job_type == 'part-time'%>
@@ -78,7 +81,7 @@
 							Internship
 						<% elsif job.job_type == 'freelance'%>
 							Freelance
-						<% else %> 
+						<% else %>
 							Other
 						<% end %>
 					</td>
@@ -97,7 +100,7 @@
 								</div>
 							</td>
 						<% end  %>
-					</div>	
+					</div>
 				</div>
 
 			</tr>
@@ -111,7 +114,7 @@
 <br>
 
 <% if current_user.company_id != nil %>
-	<div>
+	<div class="btn link">
 		<%= link_to "Post a New Job", new_job_path %>
 	</div>
 <% end %>

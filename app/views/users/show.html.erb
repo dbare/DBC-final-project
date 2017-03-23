@@ -3,18 +3,16 @@
       
 	<div class="row center" style="background-color: #6b7a8f;">
 
-			<div class=" col s1 center-align">
+			<div class="btn link">
 					<% if current_user.id == @user.id %>
-						Total Views
-						<br>
-						<small><%= "#{@user.impressionist_count}" %></small>
+						Total Views: <%= "#{@user.impressionist_count}" %>
 					<% end %>
 			</div>
 
 
 			<div class="col s10 center">
 				<% if @user == current_user %>
-					<h1 style="text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;"">Welcome back, <%= @user.full_name %>!</h1>
+					<h1>Welcome Back, <%= @user.first_name.capitalize %>!</h1>
 				<% else %>
 					<h1 style="color: white; text-shadow: -2px 0 black, 0 3px black, 3px 0 black, 0 -2px black;"><%= @user.full_name %></h1>
 				<% end %>
@@ -23,7 +21,7 @@
 
 	</div>
 
-</body style="background-color: #008B8B;>
+</body style="background-color: #008B8B;">
 
 	<div class="row z-depth-1 hoverable" id="user-evals">
 			<div class="col s1">
@@ -38,7 +36,7 @@
 						<% end %>
 				</div>
 				<br>
-				<strong>Contact</strong>
+				<strong>Email <%= @user.first_name.capitalize %></strong>
 				<br>
 				<small><%= @user.email %></small>
 				<br>
@@ -105,7 +103,7 @@
 		<ul>
 			<div class="carousel hoverable">
 			<h2>Portfolio</h2>
-					
+
 				<% @uploads.each do |upload| %>
 					<div class="carousel-item card z-depth-5">
 						<div class="card-image hoverable">
@@ -113,13 +111,13 @@
 						</div>
 						<div>
 							<% if @user == current_user%>
-								<div class="row">	
+								<div class="row">
 									<div>
-										<%= button_to "EDIT", edit_user_upload_path(@user, upload), method: :get, :class => "btn-floating halfway-fab left edit-btn" %> 
+										<%= button_to "EDIT", edit_user_upload_path(@user, upload), method: :get, :class => "btn-floating halfway-fab left edit-btn" %>
 									</div>
 
 									<div class="col s6 small">
-										<%= button_to "DELETE", user_upload_path(@user, upload), method: :delete, :class => "btn-floating halfway-fab right delete-btn" %> 
+										<%= button_to "DELETE", user_upload_path(@user, upload), method: :delete, :class => "btn-floating halfway-fab right delete-btn" %>
 									</div>
 
 <!-- 									<div class="col s6 small"><a href="<%= edit_user_upload_path(@user, upload) %>" class="btn-floating halfway-fab left z-depth-5" ><i class="fa fa-pencil" aria-hidden="true"></i></a></div>
@@ -128,9 +126,9 @@
 								</div>
 							<%end%>
 						</div>
-					</div>	
+					</div>
 
-				<% end%>	
+				<% end%>
 			</div>
 		</ul>
 
@@ -157,7 +155,7 @@
 							<p><em>"<%= eval.review %>"</em></p>
 							<p><small>-<%= eval.author.full_name %></small></p>
 						</div>
-						
+
 							<strong><p style="color: #008B8B;"></p>- - - - - - - - - - - - - - - - - - - -</p></strong>
 						
 					</div>
@@ -247,7 +245,9 @@
 
 	<div>
 		<% if current_user.id == @user.id %>
-			<center>Track Your Profile Views</center>
+			<center><h3>Track Your Profile Views</h3></center>
 			<%= line_chart @impressions.group_by_day(:created_at, format: "%B %d, %Y").count, discrete: false %>
 		<% end %>
 	</div>
+</body>
+
