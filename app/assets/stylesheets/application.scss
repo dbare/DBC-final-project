@@ -64,6 +64,10 @@
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
 
+body {
+	backgorund-color: #F5DEB3;
+	z-index: -1;
+}
 
 .btn.link a {
 	color: white;
