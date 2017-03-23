@@ -122,6 +122,16 @@ table {
 	}
 }
 
+#strips:nth-child(odd) {
+	background-color: lightgrey;
+	border-radius: 15px;
+	padding: 10px;
+}
+
+#strip:nth-child(odd) {
+	border-radius: 15px;
+	padding: 10px;
+}
 
 
 
