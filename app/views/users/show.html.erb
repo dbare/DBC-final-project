@@ -100,9 +100,17 @@
 						<div>
 							<% if @user == current_user%>
 								<div class="row">	
-									<div class="col s6 small"><a href="<%= edit_user_upload_path(@user, upload) %>" class="btn-floating halfway-fab left z-depth-5" ><i class="fa fa-pencil" aria-hidden="true"></i></a></div>
+									<div>
+										<%= button_to "EDIT", edit_user_upload_path(@user, upload), method: :get, :class => "btn-floating halfway-fab left edit-btn" %> 
+									</div>
 
-									<div class="col s6"><a data-method="delete" href="<%= user_upload_path(@user, upload) %>" class="btn-floating halfway-fab z-depth-5" ><i class="fa fa-trash" aria-hidden="true"></i></a></div>
+									<div class="col s6 small">
+										<%= button_to "DELETE", user_upload_path(@user, upload), method: :delete, :class => "btn-floating halfway-fab right delete-btn" %> 
+									</div>
+
+<!-- 									<div class="col s6 small"><a href="<%= edit_user_upload_path(@user, upload) %>" class="btn-floating halfway-fab left z-depth-5" ><i class="fa fa-pencil" aria-hidden="true"></i></a></div>
+
+									<div class="col s6"><a data-method="delete" href="<%= user_upload_path(@user, upload) %>" class="btn-floating halfway-fab z-depth-5" ><i class="fa fa-trash" aria-hidden="true"></i></a></div> -->
 								</div>
 							<%end%>
 						</div>
