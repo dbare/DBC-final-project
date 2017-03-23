@@ -79,6 +79,8 @@ gem 'gmaps4rails'
 
 gem 'underscore-rails'
 
+gem 'wow-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
