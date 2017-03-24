@@ -69,6 +69,8 @@ gem 'geocoder'
 
 gem 'impressionist'
 
+gem 'rails-controller-testing'
+
 gem "chartkick"
 
 gem 'groupdate', '~> 2.1.1'
