@@ -10,7 +10,7 @@ class UploadsController < ApplicationController
 		@user = User.find(params[:user_id])
 		@upload = Upload.new(upload_params)
 		if @upload.save
-      @upload.update_attributes(user_id: @user.id )
+      		@upload.update_attributes(user_id: @user.id )
 			redirect_to @user
 		else
 			render 'users/show'
