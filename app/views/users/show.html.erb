@@ -139,7 +139,7 @@
               <%= render 'resumes/form' %>
             <% else %>
               <div>
-                <%= link_to "#{@user.first_name}'s Resume", user_resume_path(@user), class: " btn link button-color" %>
+                <%= link_to "Display Resume", @resume.content_url, class: " btn link button-color" %>
               </div>  
             <% end %>
             <br>
