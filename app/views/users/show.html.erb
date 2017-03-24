@@ -1,14 +1,15 @@
-<body >
-<div style="background-color:white;">
+<body>
+<br>
+<div style="background-color: white;">
 
       
-  <div class="row center" style="background-color: #dcc7aa; width: 80%;" id="user-evals">
+  <div class="row center" style="background-color: #6b7a8f;width: 80%;" id="user-evals">
       <div class="col s1">
         
       </div>
 	     
 	      	
-	      <div class="col s10 center">
+	      <div class="col s10 center white-text">
 	        <% if @user == current_user %>
 	          <h1>Welcome Back, <%= @user.first_name.capitalize %>!</h1>
 
@@ -17,9 +18,9 @@
 	        <% end %>
 	      </div>
 
-	      <div class="col s1 z-depth-3 white-text" id="user-evals" style="background-color: #6b7a8f;">
+	      <div class="col s1 z-depth-3 white-text" id="user-evals" style="background-color: #dcc7aa; ">
 	          <% if current_user.id == @user.id %>
-	            Total Views <%= "#{@user.impressionist_count}" %>
+	            <strong>Total Views <%= "#{@user.impressionist_count}" %></strong>
 	          <% end %>
 	      </div>
       
@@ -30,9 +31,11 @@
     <br>
   </div>
 
-</body>
+
 
   <div style="background-color: #dcc7aa" id="user-evals">
+  <br>
+  <br>
       <div class="col s1">
       </div>
     <div class="col s5">
@@ -227,7 +230,7 @@
             <div class="z-depth-5" style="background-color: #6b7a8f; color: white;" id="user-evals">
               <h4><small>Media Links</small></h4>
             </div>
-            <br><br>`
+            <br><br>
             <% if @user == current_user%>
               <div class="center-align btn link">
                 <a href=" <%=new_link_path %>">Add New Link</a>
