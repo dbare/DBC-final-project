@@ -22,7 +22,7 @@
 @import "materialize/components/mixins";
 @import "materialize/components/color";
 
-
+@import 'animate';
 
 
 // Variables;
@@ -65,13 +65,22 @@
 
 
 
+
 .btn.link a {
 	color: white;
+
 }
 
 #border {
 	border: solid;
 }
+
+#head1 {
+	font-size: 75px;
+	text-shadow: 3px 3px 3px #000;
+}
+
+
 
 #jobs-table {
 	border-radius: 15px;
@@ -88,7 +97,7 @@
 }
 
 #media-link {
-	background-color: red;
+	background-color: #f7882f;
 	margin-bottom: 10px;
 	margin-top: 30px;
 }
@@ -102,11 +111,67 @@
 	padding: 10px;
 }
 
+#padding {
+	padding: 10px;
+}
+
+table {
+
+	width: 90%;
+
+	td{
+		height: 25px;
+	}
+}
+
+#strips:nth-child(odd) {
+	background-color: lightgrey;
+	border-radius: 15px;
+	padding: 10px;
+}
+
+#strip:nth-child(odd) {
+	border-radius: 15px;
+	padding: 10px;
+}
 
 
+.edit-btn {
+	height: 50px;
+	width: 66px;
+	border: solid 3px white;
+}
+
+.delete-btn {
+	height: 50px;
+	width: 66px;
+	border: solid 3px white;
+}
+
+.wow {
+   visibility: hidden;
+}
+
+.nav-color {
+	color: white;
+}
+
+#color1{
+	color: #6b7a8f;
+}
 
 
+.button-color {
 
+	background-color: #f7882f !important;
 
+}
 
+.button-color2 {
+	background-color: #6b7a8f !important;
+}
 
+.button-color3 {
+	background-color: white !important;
+	color: #1a0315 !important;
+}

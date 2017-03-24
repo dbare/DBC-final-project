@@ -81,6 +81,10 @@ gem 'gmaps4rails'
 
 gem 'underscore-rails'
 
+gem 'wow-rails'
+
+gem "animate-rails"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -5,9 +5,6 @@
  */
 
 
-
-
-
 .materialize-red {
   background-color: #e51c23 !important;
 }
@@ -4918,6 +4915,7 @@ small {
 
 .btn, .btn-large,
 .btn-flat {
+  background-color: #f7882f;
   border: none;
   border-radius: 2px;
   display: inline-block;
@@ -7007,7 +7005,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .side-nav a.btn:hover, .side-nav a.btn-large:hover, .side-nav a.btn-large:hover {
-  background-color: #2bbbad;
+  background-color: ;
 }
 
 .side-nav a.btn-floating:hover {

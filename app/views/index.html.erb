@@ -3,12 +3,13 @@
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center teal-text text-lighten-2">CodeConnect</h1>
+
+        <h1 class="header center " id="color1" style="text-shadow: 3px 3px 3px #000">CodeConnect</h1>
         <div class="row center">
           <h5 class="header col s12 light white-text">A platform to connect technical bootcamp graduates to success.</h5>
         </div>
         <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+          <a href="/users/new" class="btn" style="background-color: #f7882f;" >Get Started</a>
         </div>
         <br><br>
 
@@ -17,13 +18,12 @@
     <div class="parallax"><%= image_tag("sticky-notes.jpg", :alt => "Unsplashed sticky note img") %></div>
   </div>
 
-
 <div class="container">
-    <div class="section">
+    <div class="section wow fadeInUp">
 
       <!--   Icon Section   -->
       <div class="row">
-      <h2 class="center header center teal-text text-lighten-2">How it Works</h4>
+      <h2 class="center header center " id="color1" style="text-shadow: 3px 3px 3px #000">How it Works</h4>
         <div class="col s12 m4">
           <div class="icon-block">
             <h5 class="center"> Step 1 </h5>
@@ -31,6 +31,20 @@
             <p class="light center"> Obtain Your Unique Token </p>
           </div>
         </div>
+        <script type="text/javascript">
+          var wow = new WOW(
+            {
+              boxClass:     'wow',      
+              offset:       0,         
+              mobile:       true,       
+              live:         true,       
+              callback:     function(box) {
+            },
+        scrollContainer: null
+      }
+    );
+    wow.init();
+  </script>
 
         <div class="col s12 m4">
           <div class="icon-block">
@@ -66,26 +80,26 @@
 
 
     <div class="container">
-    <div class="section">
+    <div class="section section wow slideInLeft">
 
       <!--   Icon Section   -->
       <div class="row">
-      <h2 class="center header center teal-text text-lighten-2">What We Offer</h4>
+      <h2 class="center header center" id="color1" style="text-shadow: 3px 3px 3px #000">What We Offer</h4>
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
             <h5 class="center"> Advance Your Career </h5>
 
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+            <p class="light">We did most of the heavy lifting for you and linked up with companies in search of the qualities bootcamp grads possess.</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">Connect with Employers</h5>
+            <h5 class="center"> Quality over Quantity </h5>
 
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+            <p class="light">Talent is a top priority for all startup founders and executives. CodeConnect offers a way to connect with candidates that have the practical and soft skills needed in group work environment.</p>
           </div>
         </div>
 
@@ -94,10 +108,24 @@
             <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
             <h5 class="center">Manage your Connections</h5>
 
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+            <p class="light">Utilize your Inbox and message any type of user. Whether connecting over a job lead or with a fellow bootcamp grad, we've got you covered!</p>
           </div>
         </div>
       </div>
+      <script type="text/javascript">
+          var wow = new WOW(
+            {
+              boxClass:     'wow',      
+              offset:       0,         
+              mobile:       true,       
+              live:         true,       
+              callback:     function(box) {
+            },
+        scrollContainer: null
+      }
+    );
+    wow.init();
+  </script>
 
     </div>
   </div>
@@ -135,7 +163,7 @@
                     map: map,
                     title: 'Hello World!'
                   });
-  
+
                 map.setCenter(pos);
               }, function() {
                 handleLocationError(true, infoWindow, map.getCenter());
@@ -144,7 +172,7 @@
               // Browser doesn't support Geolocation
               handleLocationError(false, infoWindow, map.getCenter());
             }
-          }   
+          }
           function handleLocationError(browserHasGeolocation, infoWindow, pos) {
             infoWindow.setPosition(pos);
             infoWindow.setContent(browserHasGeolocation ?
