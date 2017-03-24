@@ -2,7 +2,7 @@
 <div style="background-color:white;">
 
       
-	<div class="row center" style="background-color: #dcc7aa;">
+	<div class="row center" style="background-color: #dcc7aa;" id="user-evals">
 			<div class="col s1">
 				
 			</div>
@@ -17,9 +17,9 @@
 				<% end %>
 			</div>
 
-			<div class="col s1" id="user-evals">
+			<div class="col s1 z-depth-3 white-text" id="user-evals" style="background-color: #6b7a8f;">
 					<% if current_user.id == @user.id %>
-						Total Views: <%= "#{@user.impressionist_count}" %>
+						Total Views <%= "#{@user.impressionist_count}" %>
 					<% end %>
 			</div>
 
@@ -29,27 +29,33 @@
 		<br>
 	</div>
 
-</body style="background-color: #008B8B;">
+</body>
 
-	<div class="  z-depth-1 hoverable" id="user-evals">
+	<div style="background-color: #dcc7aa" id="user-evals">
 			<div class="col s1">
 			</div>
 		<div class="col s5">
-			<div class="center-align" id="profile-pic">
-				<div>
-					<% if @user.photo? %>
-						<%= image_tag @user.photo.avatar.url %>
+			<center>
+				<div class="center-align z-depth-3" id="user-evals" style="background-color: white; width: 80%;">
+					<div>
+					<br>
+						<% if @user.photo? %>
+							<%= image_tag @user.photo.avatar.url %>
 						<% else %>
-						<img src="https://www.soundstream.tv/assets/default_profile-e08597880fc222202f22984a4f1966a29b108e856a3fb935072bfbbc302a4b73.png" height=300 width=300>
+							<img src="https://www.soundstream.tv/assets/default_profile-e08597880fc222202f22984a4f1966a29b108e856a3fb935072bfbbc302a4b73.png" height=300 width=300>
 						<% end %>
+					</div>
+					<br>
+					<center>
+						<div class="z-depth-3" id="user-evals" style="background-color: white; width: 25%;">
+							<strong>Email <%= @user.first_name.capitalize %></strong>
+							<br>
+							<small><em><%= @user.email %></em></small>
+						</div>
+					</center>
+					<br>
 				</div>
-				<br>
-				<strong>Email <%= @user.first_name.capitalize %></strong>
-				<br>
-				<small><em><%= @user.email %></em></small>
-				<br>
-			</div>
-
+			</center>
 				<br>
 				<div class="center-align">
 					<% if @user != current_user%>
@@ -65,61 +71,92 @@
 
 
 		<div class="col s5 center" >
-			<div class="z-depth-5" id="user-evals">
-				<% if @profile %>
-				<div class="row">
-				<!-- add width -->
-					<center>
-						<div id="user-evals" class="z-depth-5" style="background-color: #6b7a8f; color:white; width: 25%">
-							<h4><small>About Me</small></h4>
+			<center>
+				<div class="z-depth-5" id="user-evals" style="width: 80%; background: white;">
+						<% if @profile %>
+						<div class="row">
+						<!-- add width -->
+							<center>
+							<br>
+								<div id="user-evals" class="z-depth-5" style="background-color: #6b7a8f; color:white; width: 25%">
+									<h4><small>About Me</small></h4>
+								</div>
+								<br>
+							</center>
 						</div>
-					</center>
-				</div>
-				<br>
+						<br>
 
-				<div class="row center-align">
-					<div class="col s4"><h5>Location</h5><i class="fa fa-map-marker" aria-hidden="true"></i> <em><%= @profile.location %></em><br>
-				</div>
-				<div class="col s4"><h5>Objective</h5><em><%= @profile.objective %></em><br></div>
-				<div class="col s4"><h5>Summary</h5><em><%= @profile.summary %></em><br></div>
+						<div class="row center-align">
+							<div class="col s1">
+							</div>
 
-				</div>
-			</div>
-				<br>
-				<% if @user == current_user && @user.profile %>
-					<div class="btn link">
-						<a href="<%=edit_profile_path(@profile) %>" > <i class="fa fa-pencil" aria-hidden="true"></i> Edit 'About Me'</a>
-					</div>
-				<% end %>
-			<% elsif @user == current_user && @user.profile == nil%>
-				<div class="btn link">
-					<%= link_to "Add 'About Me'", new_profile_path %>
-				</div>
-			<% end %>
-			<br>
-				<div>
+							<div class="col s3 z-depth-3" id="user-evals" style="padding: 10px;">
+								<h5>Summary</h5><em><%= @profile.summary %></em><br><br>
+							</div>
 
-					<strong>Resume</strong>
-					<p><%= flash[:notice] %></p>
-					<% if !@user.resume %>
-						<%= render 'resumes/form' %>
-					<% else %>
-						<%= link_to "#{@user.first_name}'s Resume", user_resume_path(@user) %>
+							<div class="col s1">
+							</div>
+
+							<div class="col s2 z-depth-3" id="user-evals" style="padding: 10px;"><h5>Location</h5><i class="fa fa-map-marker" aria-hidden="true"></i> <em><%= @profile.location %></em><br><br>
+							</div>
+
+							<div class="col s1">
+							</div>
+
+							<div class="col s3 z-depth-3" id="user-evals" style="padding: 10px;">
+								<h5>Objective</h5><em><%= @profile.objective %></em>
+								<br>
+							</div>
+
+
+							<div class="col s1">
+							</div>
+
+						</div>
+						<br>
+						<% if @user == current_user && @user.profile %>
+							<div class="btn link">
+								<a href="<%=edit_profile_path(@profile) %>" > <i class="fa fa-pencil" aria-hidden="true"></i> Edit 'About Me'</a>
+							</div>
+							<br>
+						<% end %>
+					<% elsif @user == current_user && @user.profile == nil%>
+						<div class="btn link">
+							<%= link_to "Add 'About Me'", new_profile_path %>
+						</div>
 					<% end %>
+				<br>
+				<br>
+					<div class="user-evals z-depth-3" id="user-evals" style="width: 50%">
+						<br>
+						<strong>Resume</strong>
+						<p><%= flash[:notice] %></p>
+						<% if !@user.resume %>
+							<%= render 'resumes/form' %>
+						<% else %>
+							<%= link_to "#{@user.first_name}'s Resume", user_resume_path(@user) %>
+						<% end %>
+						<br>
+					</div>
+					<br>
 				</div>
+			<center>
 		</div>
+		<br><br>
 		<div class="col s1"></div>
 	</div>
 
 
 
-	<div class="center hoverable">
+	<div class="center hoverable z-depth-1">
 		<ul>
-			<div class="carousel">
-			<h2>Portfolio</h2>
+			<div class="carousel" style="background-color: #6b7a8f;" id="user-evals">
+				<div class="white-text">
+					<h2 >Portfolio</h2>
+				<div>
 
 				<% @uploads.each do |upload| %>
-					<div class="carousel-item card z-depth-5">
+					<div class="carousel-item card z-depth-5" >
 						<div class="card-image hoverable">
 							<img src="<%= upload.photo.avatar.url%>" height=250>
 						</div>
@@ -142,10 +179,14 @@
 				<% end%>
 			</div>
 		</ul>
-
 		<% if @user == current_user%>
-			<div class="btn link"><%= link_to "Upload Portfolio Image", new_user_upload_path(@user) %></div>
+			<div class="btn link" style="margin-bottom: 15px;" id="media-link">
+				<%= link_to "Upload Portfolio Image", new_user_upload_path(@user) %>
+				<br>
+			</div>
+
 		<% end %>
+
 	</div>
 	<!-- carousel ends here -->
 
@@ -165,7 +206,7 @@
 					<% @user.evaluations.each do |eval|%>
 					<br>
 					<div>
-						<div class="hoverable" id="user-evals">
+						<div class="hoverable z-depth-2" id="user-evals">
 							<p><em>"<%= eval.review %>"</em></p>
 							<p><small>-<%= eval.author.full_name %></small></p>
 						</div>
@@ -245,8 +286,8 @@
 			</div>
 		
 			<center>
-				<div style="background-color: white; width: 85%" id="user-evals" class="center z-depth-3">
-					<% if current_user.id != @user.id %>
+				<% if current_user.id != @user.id %>
+					<div style="background-color: white; width: 85%" id="user-evals" class="center z-depth-3">
 						<h3>Evaluate this Dev</h3>
 						<center>
 							<div style="width: 85%">
@@ -259,8 +300,8 @@
 								<% end %>
 							</div>
 						</center>
-					<% end %>
-				</div>
+					</div>
+				<% end %>
 			</center>
 			<br>
 		
@@ -270,12 +311,20 @@
 
 
 
-	<div style="background-color: white;">
+	<div style="background-color: white;" id="user-evals">
 		<% if current_user.id == @user.id %>
+		<br>
 
-			<center><h3>Track Your Profile Views</h3></center>
+			<center>
+				<div class="z-depth-5 white-text" id="user-evals" style="width: 50%; background-color: #6b7a8f;">
+					<h3>Track Your Profile Views</h3>
+				</div>
+				<br>
+
+			</center>
 			<%= line_chart @impressions.group_by_day(:created_at, format: "%B %d, %Y").count, discrete: false %>
 
 		<% end %>
 	</div>
+	<br>
 </body>
