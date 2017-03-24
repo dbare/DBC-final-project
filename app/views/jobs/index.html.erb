@@ -3,7 +3,7 @@
 	<div class="section no-pad-bot">
 	  <div class="container">
 	    <br><br>
-	    	<div class="center text-lighten-2 teal-text" id="head1">
+	    	<div class="center " id="head1" style="color: #6b7a8f;">
 	    		Find the Career You Deserve
 	    	</div>
 				<div class="row center">
@@ -15,7 +15,7 @@
 	    	</div>
 		</div>
 	</div>
-<div class="parallax"><%= image_tag("workspace2.jpg", :alt => "Unsplashed workspace2 img") %></div>
+<div class="parallax"><%= image_tag("sf-skyline.jpg", :alt => "Unsplashed sf skyline img") %></div>
 </div>
 <br>
 <br>
@@ -23,7 +23,7 @@
 <!-- FYI: the below search interface has a 'dummy' search button. Uncomment the real one below on lines 43-48 and delete line 40 to return to working version.  -->
 
 <div class="row">
-	<div class="container">
+	<div class="container" >
 	<%= search_form_for @search do |f| %>
 			 <div>
         <%= f.label :position_cont %>
@@ -39,71 +39,77 @@
       </div>
       <div class="center">
       <div>
-			<%= f.submit "Search", class: "btn-small waves-effect waves-light teal lighten-1"%>
+
+			<%= f.submit "Search", class: "btn button-color"%>
 	</div>
+
+
 <%end%>
 <br>
-			<%= button_to "Clear Search", request.path, class: "cancel-button btn-small waves-effect waves-light teal lighten-1", method: "get" %>		
+			<%= button_to "Clear Search", request.path, class: "cancel-button btn button-color", method: "get" %>		
+
 		</div>
 	</div>
   </div>
   </div>
 
 		
-<div>
-	<table class="striped" style="margin-left: 5%">
-		<thead>
-			<tr>
-				<th class="center">Company</th>
-				<th class="center">Location</th>
-				<th class="center">Position</th>
-				<th class="center">Job Type</th>
-				<th class="center">Description</th>
-			</tr>
-		</thead>
+<div class="row">
+	<div class="">
+		<table class="striped" style="margin-left: 5%">
+			<thead>
+				<tr>
+					<th class="center">Company</th>
+					<th class="center">Location</th>
+					<th class="center">Position</th>
+					<th class="center">Job Type</th>
+					<th class="center">Description</th>
+				</tr>
+			</thead>
 
-		<tbody>
-			<% @jobs.each do |job| %>
-			<tr class="hoverable">
-				<div>
-					<td class="center" style="width:90px"><%= link_to job.company.name, job.company %></td>
-					<td class="center" style="width:180px"><%=job.location%></td>
-					<td class="center" style="width:180px"><a href="<%=job_path(job)%>"><%=job.position%></td>
-					<td class="center" style="width:120px">
-						<% if job.job_type == 'full-time'%>
-							Full Time
-						<% elsif job.job_type == 'part-time'%>
-							Part Time
-						<% elsif job.job_type == 'internship'%>
-							Internship
-						<% elsif job.job_type == 'freelance'%>
-							Freelance
-						<% else %>
-							Other
-						<% end %>
-					</td>
-
+			<tbody>
+				<% @jobs.each do |job| %>
+				<tr class="hoverable">
 					<div>
-						<%if job.description.length  >= 150%>
-							<td>
-								<div>
-									<%= job.description[0...150] %> ....
-								</div>
-							</td>
-						<% else %>
-							<td>
-								<div id="">
-									<%= job.description %>
-								</div>
-							</td>
-						<% end  %>
-					</div>
-				</div>
+						<td class="center" style="width:90px"><%= link_to job.company.name, job.company %></td>
+						<td class="center" style="width:180px"><%=job.location%></td>
+						<td class="center" style="width:180px"><a href="<%=job_path(job)%>"><%=job.position%><</td>
+						<td class="center" style="width:120px">
+							<% if job.job_type == 'full-time'%>
+								Full Time
+							<% elsif job.job_type == 'part-time'%>
+								Part Time
+							<% elsif job.job_type == 'internship'%>
+								Internship
+							<% elsif job.job_type == 'freelance'%>
+								Freelance
+							<% else %>
+								Other
+							<% end %>
+						</td>
 
-			</tr>
-			<% end %>
-		</tbody>
-	</table>
+						<div>
+							<%if job.description.length  >= 150%>
+								<td>
+									<div>
+										<%= job.description[0...150] %> ....
+									</div>
+								</td>
+							<% else %>
+								<td>
+									<div>
+										<%= job.description %>
+									</div>
+								</td>
+							<% end  %>
+						</div>
+					</div>
+
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
 </div>
 
 <br>
