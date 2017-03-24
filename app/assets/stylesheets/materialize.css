@@ -4915,6 +4915,7 @@ small {
 
 .btn, .btn-large,
 .btn-flat {
+  background-color: #f7882f;
   border: none;
   border-radius: 2px;
   display: inline-block;
