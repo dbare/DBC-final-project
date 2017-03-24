@@ -45,7 +45,7 @@ RSpec.describe UsersController, type: :controller do
 		   			user = { user: { first_name: nil, last_name: "b", email: "a@a.com", password: "a", :unique_token => "a" } }
 		   			post :create, user
 		   			expect(response).to render_template "new"
-		   		end
+		   		end	
 		   	end 
 	   	end
    	end
