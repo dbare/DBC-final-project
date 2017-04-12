@@ -44,8 +44,8 @@ class UsersController < ApplicationController
 		end
 		@profile = @user.profile
 		@uploads = @user.uploads
-		# @resume = Resume.new
-		@resume = @user.resume
+		@resume = Resume.new
+		@resume1 = @user.resume
 		@impressions = Impression.where(user_id: current_user.id)
 	end
 
