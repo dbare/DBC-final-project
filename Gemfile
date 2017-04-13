@@ -69,6 +69,8 @@ gem 'geocoder'
 
 gem 'impressionist'
 
+gem 'rails-controller-testing'
+
 gem "chartkick"
 
 gem 'groupdate', '~> 2.1.1'
@@ -78,6 +80,10 @@ gem 'active_median', '~> 0.1.0'
 gem 'gmaps4rails'
 
 gem 'underscore-rails'
+
+gem 'wow-rails'
+
+gem "animate-rails"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

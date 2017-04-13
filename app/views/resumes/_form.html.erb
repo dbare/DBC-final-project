@@ -2,6 +2,6 @@
 	<%= simple_form_for [@user, @resume], :html => { multipart: true } do |f| %>
 		<%= f.hidden_field :user_id, :value => @user.id %>
 		<%= f.file_field :content, label: "Add Resume" %>
-		<%= f.button :submit %>
-	<% end %>
+		<%= f.button :submit, :value => "Upload Resume", class: "btn button-color" %>
+		<% end %>
 </div>

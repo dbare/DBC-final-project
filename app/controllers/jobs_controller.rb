@@ -4,9 +4,8 @@ class JobsController < ApplicationController
 	impressionist actions: [:show] #, unique: [:session_hash]
 
 	def index
-		@search = Job.search(params[:q])
+		@search = Job.ransack(params[:q])
 		if @search
-			@search.build_condition
 			@jobs = @search.result
 		else
 			@jobs = Job.all

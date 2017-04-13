@@ -2,7 +2,7 @@
   <div class="section no-pad-bot">
     <div class="container">
       	<br><br>
-      	<div class="header center text-teal text-lighten-2" id="head1">
+      	<div class="header center" id="head1" style="color: #6b7a8f;">
 	      	
 	      	<%= @job.position %><br>
 			<small>at</small><br>
@@ -28,7 +28,7 @@
 <br>
 <br>
 
-
+<div >
 	<div class="container">
 		<p class="flow-text center">
 			<strong>Position Details</strong>
@@ -38,60 +38,61 @@
 		</p>
 		<br>
 	</div>
-<div class="container">	
-	<div class="row">
-		<div class=" row center z-depth-5" id="user-evals">
-			<div class="col s2">
-				<p>Position:<br><small><%= @job.position %></small></p>
-			</div>
+	<div class="container">	
+		<div class="row">
+			<div class=" row center z-depth-5" id="user-evals">
+				<div class="col s2">
+					<p>Position:<br><small><%= @job.position %></small></p>
+				</div>
 
-			<div class="col s2">		
-				<p>Job Type:
-				<br> 
-				<small>
-					<% if @job.job_type == 'full-time'%>
-						Full Time
-					<% elsif @job.job_type == 'part-time'%>
-						Part Time
-					<% elsif @job.job_type == 'internship'%>
-						Internship
-					<% elsif @job.job_type == 'freelance'%>
-						Freelance
-					<% else %> 
-						Other
+				<div class="col s2">		
+					<p>Job Type:
+					<br> 
+					<small>
+						<% if @job.job_type == 'full-time'%>
+							Full Time
+						<% elsif @job.job_type == 'part-time'%>
+							Part Time
+						<% elsif @job.job_type == 'internship'%>
+							Internship
+						<% elsif @job.job_type == 'freelance'%>
+							Freelance
+						<% else %> 
+							Other
+						<% end %>
+					</small>
+					</p>
+				</div>
+
+				<div class="col s2">
+					<!-- What does this if statement do -->
+					<% if @job.company%>
+						<p>Company:<br> <small><%= @job.company.name %></small></p>
 					<% end %>
-				</small>
-				</p>
-			</div>
+					<!-- if statement ends here -->
+				</div>
 
-			<div class="col s2">
-				<!-- What does this if statement do -->
-				<% if @job.company%>
-					<p>Company:<br> <small><%= @job.company.name %></small></p>
-				<% end %>
-				<!-- if statement ends here -->
-			</div>
+				<div class="col s2">
+					<p>Location:<br><small><%= @job.location %></small></p>
+				</div>
 
-			<div class="col s2">
-				<p>Location:<br><small><%= @job.location %></small></p>
-			</div>
-
-		
-
-
-
-
-
-
-
-
-			<br>
-				<% if @user_favorite %>
-					<div class="btn"><%= link_to "Unfavorite", favorite_path(@user_favorite), method: :delete %></div>
-				<% else %>
-					<%= render 'favorites/form' %>
-				<% end %> 
 			
+
+
+
+
+
+
+
+
+				
+					<% if @user_favorite %>
+						<div class="btn"><%= link_to "Unfavorite", favorite_path(@user_favorite), method: :delete %></div>
+					<% else %>
+						<%= render 'favorites/form' %>
+					<% end %> 
+				
+			</div>
 		</div>
 	</div>
 </div>

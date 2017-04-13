@@ -1,4 +1,4 @@
-# Company.destroy_all
+  # Company.destroy_all
 # User.destroy_all
 # Job.destroy_all
 # Profile.destroy_all

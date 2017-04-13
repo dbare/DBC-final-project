@@ -4,9 +4,8 @@ class UsersController < ApplicationController
 
 	def index
 		@boots = User.where(company_id: nil)
-		@search = @boots.search(params[:q])
+		@search = @boots.ransack(params[:q])
 		if @search
-			@search.build_condition
 			@boots = @search.result
 		end
 		render 'boots_index'
@@ -20,13 +19,14 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_params)
-		@token = Token.find_by(characters: params[:user][:unique_token])
+		p user_params
+		@token = Token.find_by(characters: params[:user][:unique_token]) 
 		if @token && @token.used? == false && @user.save
 			@user.update_attributes(:company_id => @token.company_id, :admin_status => @token.admin_status)
 			@token.update_attribute(:user_id, @user.id)
 			UserMailer.welcome_email(@user).deliver
 			login
-			redirect_to @user
+			redirect_to user_path(@user)
 		else
 			flash[:user_notice_1] = "User has attempted to register an email already in use." if User.find_by(email: params[:user][:email]) != nil
 			flash[:user_notice_2] = "User has entered an invalid token." if @token == nil
@@ -45,13 +45,14 @@ class UsersController < ApplicationController
 		@profile = @user.profile
 		@uploads = @user.uploads
 		@resume = Resume.new
+		@resume1 = @user.resume
 		@impressions = Impression.where(user_id: current_user.id)
 	end
 
 	private
 
 	def user_params
-		params.require(:user).permit(:first_name, :last_name, :email, :password, :photo, :company_id)
+		params.require(:user).permit(:first_name, :last_name, :email, :password, :photo, :company_id, :unique_token)
 	end
 
 end

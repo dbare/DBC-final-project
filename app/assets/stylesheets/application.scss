@@ -22,7 +22,7 @@
 @import "materialize/components/mixins";
 @import "materialize/components/color";
 
-
+@import 'animate';
 
 
 // Variables;
@@ -65,8 +65,10 @@
 
 
 
+
 .btn.link a {
 	color: white;
+
 }
 
 #border {
@@ -95,7 +97,7 @@
 }
 
 #media-link {
-	background-color: red;
+	background-color: #f7882f;
 	margin-bottom: 10px;
 	margin-top: 30px;
 }
@@ -146,3 +148,30 @@ table {
 	border: solid 3px white;
 }
 
+.wow {
+   visibility: hidden;
+}
+
+.nav-color {
+	color: white;
+}
+
+#color1{
+	color: #6b7a8f;
+}
+
+
+.button-color {
+
+	background-color: #f7882f !important;
+
+}
+
+.button-color2 {
+	background-color: #6b7a8f !important;
+}
+
+.button-color3 {
+	background-color: white !important;
+	color: #1a0315 !important;
+}
